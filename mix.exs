@@ -37,7 +37,7 @@ defmodule UIKitDemo.Mixfile do
         extras: [
           "README.md"
         ]
-      ]      
+      ]
     ]
   end
 
@@ -69,10 +69,14 @@ defmodule UIKitDemo.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
 
+      # frontend
+      {:taggart, path: "~/work/ijcd/taggart"},
+      {:uikit_ex, path: "~/work/ijcd/uikit_ex"},
+
       # docs
       {:ex_doc, "~> 0.16.4", only: :dev, runtime: false},
       {:earmark, "~> 1.2", only: :dev, runtime: false},
-      
+
       # dev / test
       {:mix_test_watch, "~> 0.3", only: [:dev, :test], runtime: false},
       {:credo, "~> 0.8.5", only: [:dev, :test], runtime: false},

@@ -16,12 +16,12 @@ defmodule UIKitDemo.Web.Router do
   scope "/", UIKitDemo.Web do
     pipe_through :browser # Use the default browser stack
 
-    get "/", HTML.PageController, :index
+    get "/*path", HTML.PageController, :index
 
     get "/health", HealthController, :index
     if Application.get_env(:uikit_demo, :include_debug_routes) do
       get "/nodes", HealthController, :nodes
-    end    
+    end
   end
 
   # Other scopes may use custom stacks.
