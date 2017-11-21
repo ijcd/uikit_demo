@@ -70,7 +70,7 @@ exports.config = {
     globals: {
       $: "jquery",
       jQuery: "jquery",
-      uikit: "uikit",
+      UIkit: "uikit",
       icons: "uikit/dist/js/uikit-icons",
     },
     styles: {

@@ -20,4 +20,4 @@ import "phoenix_html"
 
 // import socket from "./socket"
 
-uikit.use(icons);
+UIkit.use(icons);

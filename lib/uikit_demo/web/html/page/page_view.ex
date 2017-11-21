@@ -12,7 +12,7 @@ defmodule UIKitDemo.Web.HTML.PageView do
 
   @sections %{
     "style" => ~w[align base margin padding print visibility width],
-    "layout" => ~w[column comment container cover dynamic_grid flex grid panel parallax_grid position section utility],
+    "layout" => ~w[column comment container cover dynamic_grid flex grid grid_parallax panel position section utility],
     "navigation" => ~w[breadcrumb dotnav dynamic_pagination iconnav nav navbar pagination slidenav subnav tab thumbnav],
     "component" => ~w[accordion alert article background badge button card close countdown datepicker description_list divider dropdown form heading html_editor icon label lightbox link list marker modal nestable notification off_canvas overlay placeholder progress search slider slideset slideshow sortable spinner switcher table text thumbnail tile timepicker toggle tooltip upload],
     "behavior" => ~w[animation autocomplete drop inverse parallax scroll scrollspy sticky totop transition],
@@ -23,6 +23,14 @@ defmodule UIKitDemo.Web.HTML.PageView do
       nav_menu()
       content_for(assigns.path)
     end
+  end
+
+  def render("head.html", assigns) do
+    head_content_for(assigns.path)
+  end
+
+  def render("js.html", assigns) do
+    js_content_for(assigns.path)
   end
 
   def nav_menu() do
@@ -42,13 +50,41 @@ defmodule UIKitDemo.Web.HTML.PageView do
   end
 
   def content_for([section, page]) do
-    sec_mod = String.capitalize(section)
-    page_mod = page |> String.split("/") |> List.first |> String.capitalize()
+    module_for(section, page).demo_content()
+  end
 
-    IO.inspect(sec_mod)
-    IO.inspect(page_mod)
+  def head_content_for([section, page]) do
+    mod = module_for(section, page)
 
-    # mod = Module.concat(UIKit.Demo.Core, String.capitalize(section), String.capitalize(page))
-    UIKitDemo.Core.Layout.Section.demo_content()
+    # mod.__info__(:functions)
+    if :erlang.function_exported(mod, :head_content, 0) do
+      mod.head_content()
+    else
+      nil
+    end
+  end
+
+  def js_content_for([section, page]) do
+    mod = module_for(section, page)
+
+    # mod.__info__(:functions)
+    if :erlang.function_exported(mod, :js_content, 0) do
+      mod.js_content()
+    else
+      nil
+    end
+  end
+
+  def module_for(section, page) do
+    sec_mod = Macro.camelize(section)
+    page_mod =
+      page
+      |> String.split("/")
+      |> List.first
+      |> String.split(".")
+      |> List.first
+      |> Macro.camelize()
+
+    mod = Module.concat([UIKitDemo.Core, sec_mod, page_mod])
   end
 end

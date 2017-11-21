@@ -9,6 +9,8 @@
 
     <title>Hello UIKitDemo!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+
+    <%= render_existing(@view_module, "head.html", assigns) %>
   </head>
 
   <body>
@@ -16,5 +18,6 @@
 
     <script src="<%= static_path(@conn, "/js/vendor.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <%= render_existing(@view_module, "js.html", assigns) %>
   </body>
 </html>
