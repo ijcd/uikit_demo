@@ -6,7 +6,7 @@
 
 '''
 for x in * ; do
-curl $(echo "https://getuikit.com/assets/uikit/tests/$x.html" | sed 's/.ex//') | ~/work/ijcd/taggart/taggart >! $x
+curl $(echo "https://getuikit.com/assets/uikit/tests/$x.html" | sed 's/.ex$//') | ~/work/ijcd/taggart/taggart >! $x
 SECTION=$(basename $(pwd))
 SECTION="$(tr '[:lower:]' '[:upper:]' <<< ${SECTION:0:1})${SECTION:1}"
 PAGE=$(echo $x | sed 's/.ex//')
