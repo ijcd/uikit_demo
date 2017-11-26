@@ -695,9 +695,9 @@ defmodule UIKitDemo.Core.Layout.Utility do
               div do
                 div(class: "uk-panel") do
                   "1-2-M"
-                  br
+                  br()
                   "..."
-                  br
+                  br()
                   "..."
                 end
               end
@@ -709,7 +709,7 @@ defmodule UIKitDemo.Core.Layout.Utility do
               div do
                 div(class: "uk-panel") do
                   "1-2-M"
-                  br
+                  br()
                   "..."
                 end
               end
@@ -728,9 +728,9 @@ defmodule UIKitDemo.Core.Layout.Utility do
               div do
                 div(class: "uk-panel") do
                   "1-2-M"
-                  br
+                  br()
                   "..."
-                  br
+                  br()
                   "..."
                 end
               end
@@ -742,7 +742,7 @@ defmodule UIKitDemo.Core.Layout.Utility do
               div do
                 div(class: "uk-panel") do
                   "1-2-M"
-                  br
+                  br()
                   "..."
                 end
               end
@@ -761,16 +761,16 @@ defmodule UIKitDemo.Core.Layout.Utility do
               div do
                 div(class: "uk-panel", style: "display: none;") do
                   "1-2-M"
-                  br
+                  br()
                   "..."
-                  br
+                  br()
                   "..."
                 end
               end
               div do
                 div(class: "uk-panel") do
                   "1-2-M"
-                  br
+                  br()
                   "..."
                 end
               end

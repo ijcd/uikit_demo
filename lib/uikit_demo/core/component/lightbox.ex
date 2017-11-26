@@ -419,7 +419,7 @@ defmodule UIKitDemo.Core.Component.Lightbox do
                 td do
                   "String"
                 end
-                td
+                td()
                 td do
                   "The template string."
                 end

@@ -14,36 +14,36 @@ defmodule UIKitDemo.Core.Component.Background do
           div do
             div(class: "uk-background-norepeat uk-background-image@s uk-background-default uk-background-top-left uk-padding uk-flex uk-flex-center uk-flex-middle uk-text-center", style: "background-image: url('/images/photo.jpg'); background-size: 60px 40px;") do
               "Default"
-              br
+              br()
               "Top Left"
-              br
+              br()
               "S"
             end
           end
           div do
             div(class: "uk-background-norepeat uk-background-image@m uk-background-muted uk-background-top-right uk-padding uk-flex uk-flex-center uk-flex-middle uk-text-center", style: "background-image: url('/images/photo.jpg'); background-size: 60px 40px;") do
               "Muted"
-              br
+              br()
               "Top Right"
-              br
+              br()
               "M"
             end
           end
           div do
             div(class: "uk-background-norepeat uk-background-image@l uk-background-primary uk-background-bottom-left uk-padding uk-flex uk-flex-center uk-flex-middle uk-text-center", style: "background-image: url('/images/photo.jpg'); background-size: 60px 40px;") do
               "Primary"
-              br
+              br()
               "Bottom Left"
-              br
+              br()
               "L"
             end
           end
           div do
             div(class: "uk-background-norepeat uk-background-image@xl uk-background-secondary uk-background-bottom-right uk-padding uk-flex uk-flex-center uk-flex-middle uk-text-center", style: "background-image: url('/images/photo.jpg'); background-size: 60px 40px;") do
               "Secondary"
-              br
+              br()
               "Bottom Right"
-              br
+              br()
               "XL"
             end
           end

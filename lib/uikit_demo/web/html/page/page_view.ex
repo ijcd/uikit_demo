@@ -1,6 +1,6 @@
 defmodule UIKitDemo.Web.HTML.PageView do
   use UIKitDemo.Web, :view
-  use Taggart
+  use Taggart.HTML
 
   @uikit_docs "https://getuikit.com/docs/section"
   @uikit_examples "https://getuikit.com/assets/uikit/tests/section.html"
@@ -49,10 +49,12 @@ defmodule UIKitDemo.Web.HTML.PageView do
     "/#{section}/#{page}.html"
   end
 
+  def content_for([]), do: []
   def content_for([section, page]) do
     module_for(section, page).demo_content()
   end
 
+  def head_content_for([]), do: []
   def head_content_for([section, page]) do
     mod = module_for(section, page)
 
@@ -64,6 +66,7 @@ defmodule UIKitDemo.Web.HTML.PageView do
     end
   end
 
+  def js_content_for([]), do: []
   def js_content_for([section, page]) do
     mod = module_for(section, page)
 
@@ -85,6 +88,6 @@ defmodule UIKitDemo.Web.HTML.PageView do
       |> List.first
       |> Macro.camelize()
 
-    mod = Module.concat([UIKitDemo.Core, sec_mod, page_mod])
+    Module.concat([UIKitDemo.Core, sec_mod, page_mod])
   end
 end

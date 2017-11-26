@@ -80,7 +80,7 @@ defmodule UIKitDemo.Core.Style.Base do
             p do
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum."
             end
-            hr
+            hr()
             p do
               "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
             end
@@ -93,10 +93,10 @@ defmodule UIKitDemo.Core.Style.Base do
             p do
               "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
             end
-            hr
+            hr()
             h1 do
               "This is a H1 heading"
-              br
+              br()
               "with some more text"
             end
             p do
@@ -104,7 +104,7 @@ defmodule UIKitDemo.Core.Style.Base do
             end
             h2 do
               "This is a H2 heading"
-              br
+              br()
               "with some more text"
             end
             p do
@@ -112,7 +112,7 @@ defmodule UIKitDemo.Core.Style.Base do
             end
             h3 do
               "This is a H3 heading"
-              br
+              br()
               "with some more text"
             end
             p do
@@ -120,7 +120,7 @@ defmodule UIKitDemo.Core.Style.Base do
             end
             h4 do
               "This is a H4 heading"
-              br
+              br()
               "with some more text"
             end
             p do
@@ -128,7 +128,7 @@ defmodule UIKitDemo.Core.Style.Base do
             end
             h5 do
               "This is a H5 heading"
-              br
+              br()
               "with some more text"
             end
             p do
@@ -136,7 +136,7 @@ defmodule UIKitDemo.Core.Style.Base do
             end
             h6 do
               "This is a H6 heading"
-              br
+              br()
               "with some more text"
             end
             p do
@@ -322,14 +322,14 @@ defmodule UIKitDemo.Core.Style.Base do
             end
             address do
               "\n                        The address element."
-              br
+              br()
               a(href: "#") do
                 "John Doe"
               end
-              br
+              br()
               "\n                        somewhere, world\n                    "
             end
-            hr
+            hr()
             h3 do
               "Figure"
             end
@@ -339,7 +339,7 @@ defmodule UIKitDemo.Core.Style.Base do
                 "Figcaption content"
               end
             end
-            hr
+            hr()
             h3 do
               "Unordered List"
             end

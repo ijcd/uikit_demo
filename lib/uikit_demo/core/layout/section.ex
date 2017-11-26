@@ -204,7 +204,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-margin-large uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
+          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
             div do
               p do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -233,7 +233,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-margin-large uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
+          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
             div do
               p do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -262,7 +262,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-margin-large uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
+          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
             div do
               p do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -291,7 +291,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-margin-large uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
+          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
             div do
               p do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -320,7 +320,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-margin-large uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
+          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
             div do
               p do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -349,7 +349,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-margin-large uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
+          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
             div do
               p do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -378,7 +378,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-margin-large uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
+          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
             div do
               p do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -407,7 +407,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-margin-large uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
+          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
             div do
               p do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."

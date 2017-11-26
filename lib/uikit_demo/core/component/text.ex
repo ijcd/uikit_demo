@@ -28,7 +28,7 @@ defmodule UIKitDemo.Core.Component.Text do
               a(href: "#") do
                 "Blog"
               end
-              br
+              br()
               "And wrapping into the next line."
             end
             h1 do

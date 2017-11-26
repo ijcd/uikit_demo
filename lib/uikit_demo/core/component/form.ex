@@ -59,7 +59,7 @@ defmodule UIKitDemo.Core.Component.Form do
                     input(class: "uk-radio", type: "radio", name: "radio1")
                     " Option 01"
                   end
-                  br
+                  br()
                   label do
                     input(class: "uk-radio", type: "radio", name: "radio1")
                     " Option 02"
@@ -94,7 +94,7 @@ defmodule UIKitDemo.Core.Component.Form do
                     input(class: "uk-checkbox", type: "checkbox")
                     " Option 01"
                   end
-                  br
+                  br()
                   label do
                     " "
                     input(class: "uk-checkbox", type: "checkbox")
@@ -386,22 +386,22 @@ defmodule UIKitDemo.Core.Component.Form do
                   input(class: "uk-radio", type: "radio", name: "radio1", checked: true)
                   " Checked"
                 end
-                br
+                br()
                 label do
                   input(class: "uk-radio", type: "radio", name: "radio1")
                   " Unchecked"
                 end
-                br
+                br()
                 label do
                   input(class: "uk-radio", type: "radio", name: "radio1")
                   " Unchecked"
                 end
-                br
+                br()
                 label do
                   input(class: "uk-radio", type: "radio", name: "radio2", disabled: true)
                   " Disabled"
                 end
-                br
+                br()
                 label do
                   input(class: "uk-radio", type: "radio", name: "radio2", disabled: true, checked: true)
                   " Disabled Checked"
@@ -434,31 +434,31 @@ defmodule UIKitDemo.Core.Component.Form do
                   input(class: "uk-checkbox", type: "checkbox", checked: true)
                   " Checked"
                 end
-                br
+                br()
                 label do
                   " "
                   input(class: "uk-checkbox", type: "checkbox")
                   " Unchecked"
                 end
-                br
+                br()
                 label do
                   " "
                   input(class: "uk-checkbox", type: "checkbox")
                   " Unchecked"
                 end
-                br
+                br()
                 label do
                   " "
                   input(class: "uk-checkbox", type: "checkbox", disabled: true)
                   " Disabled"
                 end
-                br
+                br()
                 label do
                   " "
                   input(class: "uk-checkbox", type: "checkbox", disabled: true, checked: true)
                   " Disabled Checked"
                 end
-                br
+                br()
                 div(class: "uk-margin uk-grid-small uk-child-width-auto", "uk-grid": true) do
                   label do
                     " "
@@ -490,25 +490,25 @@ defmodule UIKitDemo.Core.Component.Form do
                   input(class: "uk-checkbox js-indeterminate", type: "checkbox")
                   " Indeterminate"
                 end
-                br
+                br()
                 label do
                   " "
                   input(class: "uk-checkbox", type: "checkbox")
                   " Unchecked"
                 end
-                br
+                br()
                 label do
                   " "
                   input(class: "uk-checkbox", type: "checkbox")
                   " Unchecked"
                 end
-                br
+                br()
                 label do
                   " "
                   input(class: "uk-checkbox", type: "checkbox", disabled: true)
                   " Disabled"
                 end
-                br
+                br()
                 label do
                   input(class: "uk-checkbox js-indeterminate", type: "checkbox", disabled: true)
                   " Disabled Indeterminate"
@@ -595,7 +595,7 @@ defmodule UIKitDemo.Core.Component.Form do
                         "Option 04"
                       end
                     end
-                    span
+                    span()
                   end
                 end
                 div(class: "uk-margin") do
@@ -617,7 +617,7 @@ defmodule UIKitDemo.Core.Component.Form do
                     span(class: "uk-link") do
                       span("uk-icon": "icon: pencil")
                       " "
-                      span
+                      span()
                     end
                   end
                 end
@@ -642,7 +642,7 @@ defmodule UIKitDemo.Core.Component.Form do
                     end
                     " "
                     button(class: "uk-button uk-button-default", type: "button", tabindex: "-1") do
-                      span
+                      span()
                       " "
                       span("uk-icon": "icon: chevron-down")
                     end
@@ -768,7 +768,7 @@ defmodule UIKitDemo.Core.Component.Form do
                   input(class: "uk-radio", type: "radio", name: "radio1")
                   " Option 01"
                 end
-                br
+                br()
                 label do
                   input(class: "uk-radio", type: "radio", name: "radio1")
                   " Option 02"
@@ -801,7 +801,7 @@ defmodule UIKitDemo.Core.Component.Form do
                   input(class: "uk-checkbox", type: "checkbox")
                   " Option 01"
                 end
-                br
+                br()
                 label do
                   " "
                   input(class: "uk-checkbox", type: "checkbox")

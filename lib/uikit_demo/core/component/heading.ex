@@ -15,7 +15,7 @@ defmodule UIKitDemo.Core.Component.Heading do
         end
         h1(class: "uk-heading-primary uk-text-center") do
           "This is a primary heading"
-          br
+          br()
           "with some more text"
         end
         p do
@@ -35,7 +35,7 @@ defmodule UIKitDemo.Core.Component.Heading do
         end
         h1(class: "uk-heading-hero uk-text-center") do
           "Hero"
-          br
+          br()
           "Heading"
         end
         p do

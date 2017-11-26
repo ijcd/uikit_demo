@@ -66,9 +66,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
           div do
             div(class: "uk-panel") do
               "1-4-M"
-              br
+              br()
               "..."
-              br
+              br()
               "..."
             end
           end
@@ -82,7 +82,7 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "1-2-L"
-                  br
+                  br()
                   "..."
                 end
               end
@@ -198,9 +198,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
           div do
             div(class: "uk-panel") do
               "1-4-M"
-              br
+              br()
               "..."
-              br
+              br()
               "..."
             end
           end
@@ -214,7 +214,7 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "1-2-L"
-                  br
+                  br()
                   "..."
                 end
               end
@@ -330,9 +330,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
           div do
             div(class: "uk-panel") do
               "1-4-M"
-              br
+              br()
               "..."
-              br
+              br()
               "..."
             end
           end
@@ -346,7 +346,7 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "1-2-L"
-                  br
+                  br()
                   "..."
                 end
               end
@@ -462,9 +462,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
           div do
             div(class: "uk-panel") do
               "1-4-M"
-              br
+              br()
               "..."
-              br
+              br()
               "..."
             end
           end
@@ -478,7 +478,7 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "1-2-L"
-                  br
+                  br()
                   "..."
                 end
               end
@@ -594,9 +594,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
           div do
             div(class: "uk-panel") do
               "1-4-M"
-              br
+              br()
               "..."
-              br
+              br()
               "..."
             end
           end
@@ -610,7 +610,7 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "1-2-L"
-                  br
+                  br()
                   "..."
                 end
               end
@@ -726,9 +726,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
           div do
             div(class: "uk-panel") do
               "1-4-M"
-              br
+              br()
               "..."
-              br
+              br()
               "..."
             end
           end
@@ -742,7 +742,7 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "1-2-L"
-                  br
+                  br()
                   "..."
                 end
               end
@@ -858,9 +858,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
           div do
             div(class: "uk-panel") do
               "1-4-M"
-              br
+              br()
               "..."
-              br
+              br()
               "..."
             end
           end
@@ -874,7 +874,7 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "1-2-L"
-                  br
+                  br()
                   "..."
                 end
               end
@@ -990,9 +990,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
           div do
             div(class: "uk-panel") do
               "1-4-M"
-              br
+              br()
               "..."
-              br
+              br()
               "..."
             end
           end
@@ -1006,7 +1006,7 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "1-2-L"
-                  br
+                  br()
                   "..."
                 end
               end
@@ -1122,9 +1122,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
           div do
             div(class: "uk-panel") do
               "1-4-M"
-              br
+              br()
               "..."
-              br
+              br()
               "..."
             end
           end
@@ -1138,7 +1138,7 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "1-2-L"
-                  br
+                  br()
                   "..."
                 end
               end
@@ -1284,9 +1284,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "Last"
-                  br
+                  br()
                   "..."
-                  br
+                  br()
                   "..."
                 end
               end
@@ -1307,9 +1307,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div(class: "uk-flex-first") do
                 div(class: "uk-panel") do
                   "Last"
-                  br
+                  br()
                   "..."
-                  br
+                  br()
                   "..."
                 end
               end
@@ -1325,9 +1325,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "First"
-                  br
+                  br()
                   "..."
-                  br
+                  br()
                   "..."
                 end
               end
@@ -1353,9 +1353,9 @@ defmodule UIKitDemo.Core.Layout.Grid do
               div do
                 div(class: "uk-panel") do
                   "Last"
-                  br
+                  br()
                   "..."
-                  br
+                  br()
                   "..."
                 end
               end

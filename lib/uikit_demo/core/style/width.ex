@@ -37,78 +37,78 @@ defmodule UIKitDemo.Core.Style.Width do
           div do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
@@ -120,78 +120,78 @@ defmodule UIKitDemo.Core.Style.Width do
           div(class: "uk-width-1-2 uk-width-1-3@s uk-width-1-4@m uk-width-1-5@l uk-width-1-6@xl") do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div(class: "uk-width-1-2 uk-width-1-3@s uk-width-1-4@m uk-width-1-5@l uk-width-1-6@xl") do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div(class: "uk-width-1-2 uk-width-1-3@s uk-width-1-4@m uk-width-1-5@l uk-width-1-6@xl") do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div(class: "uk-width-1-2 uk-width-1-3@s uk-width-1-4@m uk-width-1-5@l uk-width-1-6@xl") do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div(class: "uk-width-1-2 uk-width-1-3@s uk-width-1-4@m uk-width-1-5@l uk-width-1-6@xl") do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div(class: "uk-width-1-2 uk-width-1-3@s uk-width-1-4@m uk-width-1-5@l uk-width-1-6@xl") do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
@@ -213,39 +213,39 @@ defmodule UIKitDemo.Core.Style.Width do
           div do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end
           div do
             div(class: "uk-panel") do
               "1-2"
-              br
+              br()
               "1-3-S"
-              br
+              br()
               "1-4-M"
-              br
+              br()
               "1-5-L"
-              br
+              br()
               "1-6-XL"
             end
           end

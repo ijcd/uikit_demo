@@ -45,14 +45,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div do
             "1-4"
-            br
+            br()
             "..."
           end
           div do
             "1-4"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
         end
@@ -65,14 +65,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div do
             "1-4"
-            br
+            br()
             "..."
           end
           div do
             "1-4"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
         end
@@ -85,14 +85,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div do
             "1-4"
-            br
+            br()
             "..."
           end
           div do
             "1-4"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
         end
@@ -105,14 +105,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div do
             "1-4"
-            br
+            br()
             "..."
           end
           div do
             "1-4"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
         end
@@ -125,14 +125,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div do
             "1-4"
-            br
+            br()
             "..."
           end
           div do
             "1-4"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
         end
@@ -148,14 +148,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
@@ -163,14 +163,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
         end
@@ -183,14 +183,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
@@ -198,14 +198,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
         end
@@ -218,14 +218,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
@@ -233,14 +233,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
         end
@@ -253,14 +253,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
@@ -268,14 +268,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
         end
@@ -288,14 +288,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
@@ -303,14 +303,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
         end
@@ -323,14 +323,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
@@ -338,14 +338,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
           end
           div(class: "uk-width-1-2") do
             "1-2"
-            br
+            br()
             "..."
           end
           div(class: "uk-width-1-3") do
             "1-3"
-            br
+            br()
             "..."
-            br
+            br()
             "..."
           end
         end
@@ -359,14 +359,14 @@ defmodule UIKitDemo.Core.Layout.Flex do
             end
             div do
               "1-4"
-              br
+              br()
               "..."
             end
             div do
               "1-4"
-              br
+              br()
               "..."
-              br
+              br()
               "..."
             end
           end
