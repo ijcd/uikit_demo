@@ -73,6 +73,8 @@ defmodule UIKitDemo.Mixfile do
       {:taggart, path: "~/work/ijcd/taggart"},
       {:uikit_ex, path: "~/work/ijcd/uikit_ex"},
 
+      # {:macpato, "~> 0.1.2"},
+
       # docs
       {:ex_doc, "~> 0.16.4", only: :dev, runtime: false},
       {:earmark, "~> 1.2", only: :dev, runtime: false},
