@@ -1,11 +1,13 @@
 defmodule UIKitDemo.Core.Layout.Section do
   use Taggart.HTML
+  import UIKit.Layout.Container
   import UIKit.Layout.Section
+  import UIKit.StyleHelpers
 
   def demo_content do
     taggart do
       uk_section(:default) do
-        div(class: "uk-container uk-position-relative") do
+        uk_container(position(:relative)) do
           button(class: "uk-button uk-button-default uk-float-right uk-margin-remove-adjacent", type: "button", "uk-toggle": "target: .uk-section; cls: uk-section-overlap") do
             "Overlap"
           end
@@ -32,7 +34,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:muted) do
-        div(class: "uk-container") do
+        uk_container do
           h1 do
             "Section Muted"
           end
@@ -56,7 +58,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:primary) do
-        div(class: "uk-container") do
+        uk_container do
           h1 do
             "Section Primary"
           end
@@ -80,7 +82,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:secondary) do
-        div(class: "uk-container") do
+        uk_container do
           h1 do
             "Section Secondary"
           end
@@ -104,35 +106,35 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:default | :xsmall) do
-        div(class: "uk-container") do
+        uk_container do
           p do
             "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
           end
         end
       end
       uk_section(:muted | :xsmall) do
-        div(class: "uk-container") do
+        uk_container do
           p do
             "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
           end
         end
       end
       uk_section(:primary | :xsmall) do
-        div(class: "uk-container") do
+        uk_container do
           p do
             "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
           end
         end
       end
       uk_section(:secondary | :xsmall) do
-        div(class: "uk-container") do
+        uk_container do
           p do
             "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
           end
         end
       end
       uk_section(:default | :small) do
-        div(class: "uk-container") do
+        uk_container do
           div(class: "uk-grid-large uk-flex-middle", "uk-grid": true) do
             div(class: "uk-width-expand") do
               p(class: "uk-text-large") do
@@ -148,7 +150,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:muted | :small) do
-        div(class: "uk-container") do
+        uk_container do
           div(class: "uk-grid-large uk-flex-middle", "uk-grid": true) do
             div(class: "uk-width-expand") do
               p(class: "uk-text-large") do
@@ -164,7 +166,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:primary | :small) do
-        div(class: "uk-container") do
+        uk_container do
           div(class: "uk-grid-large uk-flex-middle", "uk-grid": true) do
             div(class: "uk-width-expand") do
               p(class: "uk-text-large") do
@@ -180,7 +182,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:secondary | :small) do
-        div(class: "uk-container") do
+        uk_container do
           div(class: "uk-grid-large uk-flex-middle", "uk-grid": true) do
             div(class: "uk-width-expand") do
               p(class: "uk-text-large") do
@@ -196,7 +198,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:default | :large) do
-        div(class: "uk-container") do
+        uk_container do
           h1(class: "uk-heading-primary uk-text-center") do
             "Default Large"
           end
@@ -225,7 +227,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:muted | :large) do
-        div(class: "uk-container") do
+        uk_container do
           h1(class: "uk-heading-primary uk-text-center") do
             "Muted Large"
           end
@@ -254,7 +256,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:primary | :large) do
-        div(class: "uk-container") do
+        uk_container do
           h1(class: "uk-heading-primary uk-text-center") do
             "Primary Large"
           end
@@ -283,7 +285,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:secondary | :large) do
-        div(class: "uk-container") do
+        uk_container do
           h1(class: "uk-heading-primary uk-text-center") do
             "Secondary Large"
           end
@@ -312,7 +314,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:default | :xlarge) do
-        div(class: "uk-container") do
+        uk_container do
           h1(class: "uk-heading-primary uk-text-center") do
             "Default XLarge"
           end
@@ -341,7 +343,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:muted | :xlarge) do
-        div(class: "uk-container") do
+        uk_container do
           h1(class: "uk-heading-primary uk-text-center") do
             "Muted XLarge"
           end
@@ -370,7 +372,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:primary | :xlarge) do
-        div(class: "uk-container") do
+        uk_container do
           h1(class: "uk-heading-primary uk-text-center") do
             "Primary XLarge"
           end
@@ -399,7 +401,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:secondary | :xlarge) do
-        div(class: "uk-container") do
+        uk_container do
           h1(class: "uk-heading-primary uk-text-center") do
             "Secondary XLarge"
           end
@@ -428,7 +430,7 @@ defmodule UIKitDemo.Core.Layout.Section do
         end
       end
       uk_section(:default | padding(:remove_vertical)) do
-        div(class: "uk-container") do
+        uk_container do
           h1 do
             "Padding Remove"
           end
