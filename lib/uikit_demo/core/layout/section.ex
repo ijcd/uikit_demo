@@ -2,6 +2,7 @@ defmodule UIKitDemo.Core.Layout.Section do
   use Taggart.HTML
   import UIKit.Layout.Container
   import UIKit.Layout.Section
+  import UIKit.Layout.Grid
   import UIKit.StyleHelpers
 
   def demo_content do
@@ -11,131 +12,67 @@ defmodule UIKitDemo.Core.Layout.Section do
           button(class: "uk-button uk-button-default uk-float-right uk-margin-remove-adjacent", type: "button", "uk-toggle": "target: .uk-section; cls: uk-section-overlap") do
             "Overlap"
           end
-          h1 do
-            "Section Default"
-          end
-          div(class: "uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          h1 "Section Default"
+          uk_grid(:match | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
       uk_section(:muted) do
         uk_container do
-          h1 do
-            "Section Muted"
-          end
-          div(class: "uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          h1 "Section Muted"
+          uk_grid(:match | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
       uk_section(:primary) do
         uk_container do
-          h1 do
-            "Section Primary"
-          end
-          div(class: "uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          h1 "Section Primary"
+          uk_grid(:match | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
       uk_section(:secondary) do
         uk_container do
-          h1 do
-            "Section Secondary"
-          end
-          div(class: "uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          h1 "Section Secondary"
+          uk_grid(:match | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
       uk_section(:default | :xsmall) do
         uk_container do
-          p do
-            "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-          end
+          p "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
         end
       end
       uk_section(:muted | :xsmall) do
         uk_container do
-          p do
-            "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-          end
+          p "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
         end
       end
       uk_section(:primary | :xsmall) do
         uk_container do
-          p do
-            "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-          end
+          p "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
         end
       end
       uk_section(:secondary | :xsmall) do
         uk_container do
-          p do
-            "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-          end
+          p "XSmall Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
         end
       end
       uk_section(:default | :small) do
         uk_container do
-          div(class: "uk-grid-large uk-flex-middle", "uk-grid": true) do
+          uk_grid(:large | flex(:middle)) do
             div(class: "uk-width-expand") do
               p(class: "uk-text-large") do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
@@ -151,7 +88,7 @@ defmodule UIKitDemo.Core.Layout.Section do
       end
       uk_section(:muted | :small) do
         uk_container do
-          div(class: "uk-grid-large uk-flex-middle", "uk-grid": true) do
+          uk_grid(:large | flex(:middle)) do
             div(class: "uk-width-expand") do
               p(class: "uk-text-large") do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
@@ -167,7 +104,7 @@ defmodule UIKitDemo.Core.Layout.Section do
       end
       uk_section(:primary | :small) do
         uk_container do
-          div(class: "uk-grid-large uk-flex-middle", "uk-grid": true) do
+          uk_grid(:large | flex(:middle)) do
             div(class: "uk-width-expand") do
               p(class: "uk-text-large") do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
@@ -183,7 +120,7 @@ defmodule UIKitDemo.Core.Layout.Section do
       end
       uk_section(:secondary | :small) do
         uk_container do
-          div(class: "uk-grid-large uk-flex-middle", "uk-grid": true) do
+          uk_grid(:large | flex(:middle)) do
             div(class: "uk-width-expand") do
               p(class: "uk-text-large") do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
@@ -207,22 +144,10 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
@@ -236,22 +161,10 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
@@ -265,22 +178,10 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
@@ -294,22 +195,10 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
@@ -323,22 +212,10 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
@@ -352,22 +229,10 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
@@ -381,22 +246,10 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
@@ -410,49 +263,29 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          div(class: "uk-grid-match uk-margin-large uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
       uk_section(:default | padding(:remove_vertical)) do
         uk_container do
-          h1 do
-            "Padding Remove"
-          end
-          div(class: "uk-grid-match uk-child-width-1-3@m", "uk-grid": true) do
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
-            div do
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
-            end
+          h1 "Padding Remove"
+          uk_grid(:match | width(:child, 1, 3, :m)) do
+            lorem()
+            lorem()
+            lorem()
           end
         end
       end
+    end
+  end
+
+  defp lorem() do
+    div do
+      p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     end
   end
 end
