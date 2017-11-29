@@ -3,6 +3,9 @@ defmodule UIKitDemo.Core.Layout.Section do
   import UIKit.Layout.Container
   import UIKit.Layout.Section
   import UIKit.Layout.Grid
+  import UIKit.Layout.Heading
+  import UIKit.Layout.Width
+  import UIKit.Layout.Text
   import UIKit.StyleHelpers
 
   def demo_content do
@@ -73,12 +76,12 @@ defmodule UIKitDemo.Core.Layout.Section do
       uk_section(:default | :small) do
         uk_container do
           uk_grid(:large | flex(:middle)) do
-            div(class: "uk-width-expand") do
-              p(class: "uk-text-large") do
+            uk_width(:expand) do
+              uk_text(:large) do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
               end
             end
-            div(class: "uk-width-auto") do
+            uk_width(:auto) do
               a(class: "uk-button uk-button-primary uk-button-large", href: "#") do
                 "Default Small"
               end
@@ -89,12 +92,12 @@ defmodule UIKitDemo.Core.Layout.Section do
       uk_section(:muted | :small) do
         uk_container do
           uk_grid(:large | flex(:middle)) do
-            div(class: "uk-width-expand") do
-              p(class: "uk-text-large") do
+            uk_width(:expand) do
+              uk_text(:large) do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
               end
             end
-            div(class: "uk-width-auto") do
+            uk_width(:auto) do
               a(class: "uk-button uk-button-primary uk-button-large", href: "#") do
                 "Muted Small"
               end
@@ -105,12 +108,12 @@ defmodule UIKitDemo.Core.Layout.Section do
       uk_section(:primary | :small) do
         uk_container do
           uk_grid(:large | flex(:middle)) do
-            div(class: "uk-width-expand") do
-              p(class: "uk-text-large") do
+            uk_width(:expand) do
+              uk_text(:large) do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
               end
             end
-            div(class: "uk-width-auto") do
+            uk_width(:auto) do
               a(class: "uk-button uk-button-primary uk-button-large", href: "#") do
                 "Primary Small"
               end
@@ -121,12 +124,12 @@ defmodule UIKitDemo.Core.Layout.Section do
       uk_section(:secondary | :small) do
         uk_container do
           uk_grid(:large | flex(:middle)) do
-            div(class: "uk-width-expand") do
-              p(class: "uk-text-large") do
+            uk_width(:expand) do
+              uk_text(:large) do
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
               end
             end
-            div(class: "uk-width-auto") do
+            uk_width(:auto) do
               a(class: "uk-button uk-button-primary uk-button-large", href: "#") do
                 "Secondary Small"
               end
@@ -136,10 +139,10 @@ defmodule UIKitDemo.Core.Layout.Section do
       end
       uk_section(:default | :large) do
         uk_container do
-          h1(class: "uk-heading-primary uk-text-center") do
+          uk_heading(:primary | text(:center)) do
             "Default Large"
           end
-          p(class: "uk-text-large uk-text-center") do
+          uk_text(:large | :center) do
             "Excepteur sint occaecat cupidatat non proident, sunt in"
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
@@ -153,10 +156,10 @@ defmodule UIKitDemo.Core.Layout.Section do
       end
       uk_section(:muted | :large) do
         uk_container do
-          h1(class: "uk-heading-primary uk-text-center") do
+          uk_heading(:primary | text(:center)) do
             "Muted Large"
           end
-          p(class: "uk-text-large uk-text-center") do
+          uk_text(:large | :center) do
             "Excepteur sint occaecat cupidatat non proident, sunt in"
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
@@ -170,10 +173,10 @@ defmodule UIKitDemo.Core.Layout.Section do
       end
       uk_section(:primary | :large) do
         uk_container do
-          h1(class: "uk-heading-primary uk-text-center") do
+          uk_heading(:primary | text(:center)) do
             "Primary Large"
           end
-          p(class: "uk-text-large uk-text-center") do
+          uk_text(:large | :center) do
             "Excepteur sint occaecat cupidatat non proident, sunt in"
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
@@ -187,10 +190,10 @@ defmodule UIKitDemo.Core.Layout.Section do
       end
       uk_section(:secondary | :large) do
         uk_container do
-          h1(class: "uk-heading-primary uk-text-center") do
+          uk_heading(:primary | text(:center)) do
             "Secondary Large"
           end
-          p(class: "uk-text-large uk-text-center") do
+          uk_text(:large | :center) do
             "Excepteur sint occaecat cupidatat non proident, sunt in"
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
@@ -204,10 +207,10 @@ defmodule UIKitDemo.Core.Layout.Section do
       end
       uk_section(:default | :xlarge) do
         uk_container do
-          h1(class: "uk-heading-primary uk-text-center") do
+          uk_heading(:primary | text(:center)) do
             "Default XLarge"
           end
-          p(class: "uk-text-large uk-text-center") do
+          uk_text(:large | :center) do
             "Excepteur sint occaecat cupidatat non proident, sunt in"
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
@@ -221,10 +224,10 @@ defmodule UIKitDemo.Core.Layout.Section do
       end
       uk_section(:muted | :xlarge) do
         uk_container do
-          h1(class: "uk-heading-primary uk-text-center") do
+          uk_heading(:primary | text(:center)) do
             "Muted XLarge"
           end
-          p(class: "uk-text-large uk-text-center") do
+          uk_text(:large | :center) do
             "Excepteur sint occaecat cupidatat non proident, sunt in"
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
@@ -238,10 +241,10 @@ defmodule UIKitDemo.Core.Layout.Section do
       end
       uk_section(:primary | :xlarge) do
         uk_container do
-          h1(class: "uk-heading-primary uk-text-center") do
+          uk_heading(:primary | text(:center)) do
             "Primary XLarge"
           end
-          p(class: "uk-text-large uk-text-center") do
+          uk_text(:large | :center) do
             "Excepteur sint occaecat cupidatat non proident, sunt in"
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
@@ -255,10 +258,10 @@ defmodule UIKitDemo.Core.Layout.Section do
       end
       uk_section(:secondary | :xlarge) do
         uk_container do
-          h1(class: "uk-heading-primary uk-text-center") do
+          uk_heading(:primary | text(:center)) do
             "Secondary XLarge"
           end
-          p(class: "uk-text-large uk-text-center") do
+          uk_text(:large | :center) do
             "Excepteur sint occaecat cupidatat non proident, sunt in"
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
