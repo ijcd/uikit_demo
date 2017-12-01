@@ -1,12 +1,6 @@
 defmodule UIKitDemo.Core.Layout.Section do
   use Taggart.HTML
-  import UIKit.Layout.Container
-  import UIKit.Layout.Section
-  import UIKit.Layout.Grid
-  import UIKit.Layout.Heading
-  import UIKit.Layout.Width
-  import UIKit.Layout.Text
-  import UIKit.StyleHelpers
+  use UIKit
 
   def demo_content do
     taggart do
