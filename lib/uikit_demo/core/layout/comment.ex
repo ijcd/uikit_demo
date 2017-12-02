@@ -1,6 +1,10 @@
 defmodule UIKitDemo.Core.Layout.Comment do
   use Taggart.HTML
 
+  def lorem() do
+    p "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+  end
+
   def demo_content do
     taggart do
       div(class: "uk-container") do
@@ -36,9 +40,7 @@ defmodule UIKitDemo.Core.Layout.Comment do
                   end
                 end
                 div(class: "uk-comment-body") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                  end
+                  lorem()
                 end
               end
             end
@@ -69,9 +71,7 @@ defmodule UIKitDemo.Core.Layout.Comment do
                   end
                 end
                 div(class: "uk-comment-body") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                  end
+                  lorem()
                 end
               end
               ul do
@@ -240,9 +240,7 @@ defmodule UIKitDemo.Core.Layout.Comment do
                   end
                 end
                 div(class: "uk-comment-body") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                  end
+                  lorem()
                 end
               end
             end
@@ -273,9 +271,7 @@ defmodule UIKitDemo.Core.Layout.Comment do
                   end
                 end
                 div(class: "uk-comment-body") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                  end
+                  lorem()
                 end
               end
               ul do
