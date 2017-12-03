@@ -10,7 +10,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             "Overlap"
           end
           h1 "Section Default"
-          uk_grid(:match | width(:child, 1, 3, :m)) do
+          uk_grid(:match | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -20,7 +20,7 @@ defmodule UIKitDemo.Core.Layout.Section do
       uk_section(:muted) do
         uk_container do
           h1 "Section Muted"
-          uk_grid(:match | width(:child, 1, 3, :m)) do
+          uk_grid(:match | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -30,7 +30,7 @@ defmodule UIKitDemo.Core.Layout.Section do
       uk_section(:primary) do
         uk_container do
           h1 "Section Primary"
-          uk_grid(:match | width(:child, 1, 3, :m)) do
+          uk_grid(:match | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -40,7 +40,7 @@ defmodule UIKitDemo.Core.Layout.Section do
       uk_section(:secondary) do
         uk_container do
           h1 "Section Secondary"
-          uk_grid(:match | width(:child, 1, 3, :m)) do
+          uk_grid(:match | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -141,7 +141,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+          uk_grid(:match | margin(:large) | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -158,7 +158,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+          uk_grid(:match | margin(:large) | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -175,7 +175,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+          uk_grid(:match | margin(:large) | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -192,7 +192,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+          uk_grid(:match | margin(:large) | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -209,7 +209,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+          uk_grid(:match | margin(:large) | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -226,7 +226,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+          uk_grid(:match | margin(:large) | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -243,7 +243,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+          uk_grid(:match | margin(:large) | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -260,7 +260,7 @@ defmodule UIKitDemo.Core.Layout.Section do
             br(class: "uk-visible@m")
             " culpa qui officia deserunt mollit anim id est laborum."
           end
-          uk_grid(:match | margin(:large) | width(:child, 1, 3, :m)) do
+          uk_grid(:match | margin(:large) | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
@@ -270,7 +270,7 @@ defmodule UIKitDemo.Core.Layout.Section do
       uk_section(:default | padding(:remove_vertical)) do
         uk_container do
           h1 "Padding Remove"
-          uk_grid(:match | width(:child, 1, 3, :m)) do
+          uk_grid(:match | child_width("1-3@m")) do
             lorem()
             lorem()
             lorem()
