@@ -5,43 +5,29 @@ defmodule UIKitDemo.Core.Layout.Column do
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Column"
-        end
-        div(class: "uk-margin uk-column-1-2@s uk-column-1-3@m uk-column-1-4@l uk-column-1-5@xl uk-text-justify") do
+        h1 "Column"
+        div(class: uk_style(margin() | column("1-2@s") | column("1-3@m") | column("1-4@l") | column("1-5@xl") | text(:justify))) do
           lorem()
-          h3 do
-            "Headline"
-          end
+          h3 "Headline"
           lorem()
           img(src: "/images/photo.jpg", alt: "")
           lorem()
         end
-        h2 do
-          "Divider"
-        end
-        div(class: "uk-margin uk-column-divider uk-column-1-2@s uk-column-1-3@m uk-column-1-4@l uk-column-1-5@xl uk-text-justify") do
+        h2 "Divider"
+        div(class: uk_style(margin() | column(:divider) | column("1-2@s") | column("1-3@m") | column("1-4@l") | column("1-5@xl") | text(:justify))) do
           lorem()
-          h3 do
-            "Headline"
-          end
+          h3 "Headline"
           lorem()
           img(src: "/images/photo.jpg", alt: "")
           lorem()
         end
-        h2 do
-          "Span all columns"
-        end
-        div(class: "uk-margin uk-column-divider uk-column-1-2@s uk-column-1-3@m uk-text-justify") do
+        h2 "Span all columns"
+        div(class: uk_style(margin() | column(:divider) | column("1-2@s") | column("1-3@m") | text(:justify))) do
           lorem()
-          h3 do
-            "Headline"
-          end
+          h3 "Headline"
           lorem()
-          blockquote(cite: "#", class: "uk-column-span uk-width-3-4@m uk-margin-auto uk-margin-large") do
-            p do
-              "The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a footer or cite element."
-            end
+          blockquote(cite: "#", class: uk_style(column(:span) | width("3-4@m") | margin(:auto) | margin(:large))) do
+            p "The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a footer or cite element."
             footer do
               "Someone famous in "
               cite do
