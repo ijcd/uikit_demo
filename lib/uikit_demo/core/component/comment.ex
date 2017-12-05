@@ -1,5 +1,6 @@
 defmodule UIKitDemo.Core.Layout.Comment do
   use Taggart.HTML
+  use UIKit 
   use UIKit
 
   def lorem() do

@@ -1,5 +1,6 @@
 defmodule UIKitDemo.Core.Component.Background do
   use Taggart.HTML
+  use UIKit 
 
   def demo_content do
     taggart do

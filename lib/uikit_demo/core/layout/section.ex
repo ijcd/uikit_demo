@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Layout.Section do
   use Taggart.HTML
   use UIKit
+  use UIKit
 
   def demo_content do
     taggart do

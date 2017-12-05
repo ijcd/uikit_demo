@@ -1,5 +1,6 @@
 defmodule UIKitDemo.Core.Component.Upload do
   use Taggart.HTML
+  use UIKit 
 
   def demo_content do
     taggart do
@@ -460,7 +461,7 @@ defmodule UIKitDemo.Core.Component.Upload do
                loadStart: function (e) {
                        console.log('loadStart', arguments);
 
-                       bar.removeAttrBuilderibute('hidden');
+                       bar.removeAttribute('hidden');
                        bar.max = e.total;
                        bar.value = e.loaded;
                },
@@ -483,7 +484,7 @@ defmodule UIKitDemo.Core.Component.Upload do
                        console.log('completeAll', arguments);
 
                        setTimeout(function () {
-                               bar.setAttrBuilderibute('hidden', 'hidden');
+                               bar.setAttribute('hidden', 'hidden');
                        }, 1000);
 
                        alert('Upload Completed');

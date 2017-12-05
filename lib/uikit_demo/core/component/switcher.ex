@@ -1,5 +1,6 @@
 defmodule UIKitDemo.Core.Component.Switcher do
   use Taggart.HTML
+  use UIKit 
 
   def demo_content do
     taggart do

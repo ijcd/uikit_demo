@@ -1,5 +1,6 @@
 defmodule UIKitDemo.Core.Behavior.Transition do
   use Taggart.HTML
+  use UIKit 
 
   def demo_content do
     taggart do

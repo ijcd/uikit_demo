@@ -1,5 +1,6 @@
 defmodule UIKitDemo.Core.Component.Slideshow do
   use Taggart.HTML
+  use UIKit 
 
   def demo_content do
     taggart do

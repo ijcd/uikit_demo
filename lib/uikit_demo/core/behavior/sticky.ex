@@ -1,5 +1,6 @@
 defmodule UIKitDemo.Core.Behavior.Sticky do
   use Taggart.HTML
+  use UIKit 
 
   #   #viewport { border: 1px dashed rgba(0,0,0,0.2); }
 

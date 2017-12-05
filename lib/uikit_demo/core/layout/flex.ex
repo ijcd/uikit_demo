@@ -1,5 +1,6 @@
 defmodule UIKitDemo.Core.Layout.Flex do
   use Taggart.HTML
+  use UIKit 
 
   def head_content do
     style(type: "text/css") do

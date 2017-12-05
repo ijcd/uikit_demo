@@ -2,6 +2,7 @@
 
 defmodule UIKitDemo.Core.Component.Marker do
   use Taggart.HTML
+  use UIKit 
 
   def demo_content do
     taggart do

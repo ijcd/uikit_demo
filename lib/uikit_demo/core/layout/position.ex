@@ -1,6 +1,7 @@
 
 defmodule UIKitDemo.Core.Layout.Position do
   use Taggart.HTML
+  use UIKit 
 
   def head_content do
     style(type: "text/css") do

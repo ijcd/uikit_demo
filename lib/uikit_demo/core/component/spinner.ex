@@ -1,5 +1,6 @@
 defmodule UIKitDemo.Core.Component.Spinner do
   use Taggart.HTML
+  use UIKit 
 
   def demo_content do
     taggart do

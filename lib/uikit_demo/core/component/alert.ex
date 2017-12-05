@@ -1,5 +1,6 @@
 defmodule UIKitDemo.Core.Component.Alert do
   use Taggart.HTML
+  use UIKit 
 
   def demo_content do
     taggart do
