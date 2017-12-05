@@ -3,6 +3,7 @@
 # TODO: https://getuikit.com/v2/docs/documentation_layouts.html
 # TODO: https://getuikit.com/assets/uikit/tests/index.html (overview
 # TODO: https://getuikit.com/v2/docs/documentation_layouts.html
+# TODO: add typing so that incorrect styles are not accepted (fail in dev/test, warn in prod)
 
 '''
 for x in * ; do

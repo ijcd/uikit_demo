@@ -460,7 +460,7 @@ defmodule UIKitDemo.Core.Component.Upload do
                loadStart: function (e) {
                        console.log('loadStart', arguments);
 
-                       bar.removeAttribute('hidden');
+                       bar.removeAttrBuilderibute('hidden');
                        bar.max = e.total;
                        bar.value = e.loaded;
                },
@@ -483,7 +483,7 @@ defmodule UIKitDemo.Core.Component.Upload do
                        console.log('completeAll', arguments);
 
                        setTimeout(function () {
-                               bar.setAttribute('hidden', 'hidden');
+                               bar.setAttrBuilderibute('hidden', 'hidden');
                        }, 1000);
 
                        alert('Upload Completed');
