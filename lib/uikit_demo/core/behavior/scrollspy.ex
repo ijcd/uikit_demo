@@ -84,7 +84,7 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
           end
         end
       end
-      div(class: "uk-container") do
+      uk_container do
         h1 do
           "ScrollSpy"
         end

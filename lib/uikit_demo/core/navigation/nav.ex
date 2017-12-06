@@ -4,11 +4,11 @@ defmodule UIKitDemo.Core.Navigation.Nav do
 
   def demo_content do
     taggart do
-      div(class: "uk-container") do
+      uk_container do
         h1 do
           "Nav"
         end
-        div(class: "uk-child-width-1-4@m", "uk-grid": true) do
+        uk_grid(child_width("1-4@m")) do
           div do
             h2 do
               "Default"
@@ -330,7 +330,7 @@ defmodule UIKitDemo.Core.Navigation.Nav do
             end
           end
         end
-        div(class: "uk-child-width-1-4@m", "uk-grid": true) do
+        uk_grid(child_width("1-4@m")) do
           div do
             h2 do
               "Primary"

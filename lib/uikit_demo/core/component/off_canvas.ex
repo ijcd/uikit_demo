@@ -5,7 +5,7 @@ defmodule UIKitDemo.Core.Component.OffCanvas do
   def demo_content do
     taggart do
       div(class: "uk-offcanvas-content") do
-        div(class: "uk-container") do
+        uk_container do
           h1 do
             "Off-canvas"
           end

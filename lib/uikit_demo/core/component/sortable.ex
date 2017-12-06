@@ -14,7 +14,7 @@ defmodule UIKitDemo.Core.Component.Sortable do
 
   def demo_content do
     taggart do
-      div(class: "uk-container") do
+      uk_container do
         h1 do
           "Sortable"
         end

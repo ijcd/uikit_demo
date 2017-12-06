@@ -4,14 +4,14 @@ defmodule UIKitDemo.Core.Component.Modal do
 
   def demo_content do
     taggart do
-      div(class: "uk-container") do
+      uk_container do
         button(class: "uk-button uk-button-default uk-float-right uk-margin-remove-adjacent", type: "button", "uk-toggle": "target: #scrollbar") do
           "Toggle scrollbar"
         end
         h1 do
           "Modal"
         end
-        div(class: "uk-child-width-1-4@m", "uk-grid": true) do
+        uk_grid(child_width("1-4@m")) do
           div do
             h2 do
               "Objects"
@@ -173,7 +173,7 @@ defmodule UIKitDemo.Core.Component.Modal do
         div(class: "uk-float-right") do
           "Right"
         end
-        div(class: "uk-container") do
+        uk_container do
           "Container"
         end
       end

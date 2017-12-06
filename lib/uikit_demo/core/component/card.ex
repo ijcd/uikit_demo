@@ -5,7 +5,7 @@ defmodule UIKitDemo.Core.Component.Card do
   def demo_content do
     taggart do
       div(class: "uk-section uk-section-default uk-section-small uk-padding-remove-top") do
-        div(class: "uk-container") do
+        uk_container do
           h1 do
             "Card"
           end
@@ -122,7 +122,7 @@ defmodule UIKitDemo.Core.Component.Card do
         end
       end
       div(class: "uk-section uk-section-muted uk-section-small") do
-        div(class: "uk-container") do
+        uk_container do
           div(class: "uk-child-width-1-3@m uk-grid-match", "uk-grid": true) do
             div do
               div(class: "uk-card uk-card-default uk-card-hover uk-card-body") do
@@ -158,7 +158,7 @@ defmodule UIKitDemo.Core.Component.Card do
         end
       end
       div(class: "uk-section uk-section-primary uk-section-small uk-preserve-color") do
-        div(class: "uk-container") do
+        uk_container do
           div(class: "uk-child-width-1-3@m uk-grid-match", "uk-grid": true) do
             div do
               div(class: "uk-card uk-card-default uk-card-hover uk-card-body") do
@@ -194,7 +194,7 @@ defmodule UIKitDemo.Core.Component.Card do
         end
       end
       div(class: "uk-section uk-section-secondary uk-section-small uk-preserve-color") do
-        div(class: "uk-container") do
+        uk_container do
           div(class: "uk-child-width-1-3@m uk-grid-match", "uk-grid": true) do
             div do
               div(class: "uk-card uk-card-default uk-card-hover uk-card-body") do
@@ -231,7 +231,7 @@ defmodule UIKitDemo.Core.Component.Card do
       end
       div(class: "uk-section-default ") do
         div(class: "uk-section uk-section-small uk-background-cover", style: "background-image: url('/images/photo.jpg');") do
-          div(class: "uk-container") do
+          uk_container do
             div(class: "uk-child-width-1-3@m uk-grid-match", "uk-grid": true) do
               div do
                 div(class: "uk-card uk-card-default uk-card-hover uk-card-body") do
@@ -271,7 +271,7 @@ defmodule UIKitDemo.Core.Component.Card do
         h2 do
           "Media"
         end
-        div(class: "uk-child-width-1-4@m", "uk-grid": true) do
+        uk_grid(child_width("1-4@m")) do
           div do
             div(class: "uk-card uk-card-default") do
               div(class: "uk-card-media-top") do
@@ -340,7 +340,7 @@ defmodule UIKitDemo.Core.Component.Card do
         h2 do
           "Header and Footer"
         end
-        div(class: "uk-child-width-1-4@m", "uk-grid": true) do
+        uk_grid(child_width("1-4@m")) do
           div do
             div(class: "uk-card uk-card-default") do
               div(class: "uk-card-header") do
@@ -443,7 +443,7 @@ defmodule UIKitDemo.Core.Component.Card do
         h2 do
           "Nav"
         end
-        div(class: "uk-child-width-1-4@m", "uk-grid": true) do
+        uk_grid(child_width("1-4@m")) do
           div do
             div(class: "uk-card uk-card-default uk-card-body") do
               ul(class: "uk-nav uk-nav-default") do
@@ -679,7 +679,7 @@ defmodule UIKitDemo.Core.Component.Card do
         h2 do
           "Small"
         end
-        div(class: "uk-child-width-1-4@m", "uk-grid": true) do
+        uk_grid(child_width("1-4@m")) do
           div do
             div(class: "uk-card uk-card-default uk-card-small") do
               div(class: "uk-card-header") do

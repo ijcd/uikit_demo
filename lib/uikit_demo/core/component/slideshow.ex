@@ -4,7 +4,7 @@ defmodule UIKitDemo.Core.Component.Slideshow do
 
   def demo_content do
     taggart do
-      div(class: "uk-container") do
+      uk_container do
         h1 do
           "Slideshow"
         end
@@ -435,7 +435,7 @@ defmodule UIKitDemo.Core.Component.Slideshow do
           end
         end
       end
-      div(class: "uk-container") do
+      uk_container do
         h2 do
           "Viewport Height"
         end
@@ -516,7 +516,7 @@ defmodule UIKitDemo.Core.Component.Slideshow do
           end
         end
       end
-      div(class: "uk-container") do
+      uk_container do
         h3 do
           "Slideshow"
         end

@@ -4,7 +4,7 @@ defmodule UIKitDemo.Core.Component.Form do
 
   def demo_content do
     taggart do
-      div(class: "uk-container") do
+      uk_container do
         h1 do
           "Form"
         end

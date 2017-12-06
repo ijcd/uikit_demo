@@ -21,7 +21,7 @@ defmodule UIKitDemo.Core.Behavior.Parallax do
         end
       end
       div(class: "uk-section uk-section-default") do
-        div(class: "uk-container") do
+        uk_container do
           h2 do
             "Target"
           end

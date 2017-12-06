@@ -12,11 +12,11 @@ defmodule UIKitDemo.Core.Component.Button do
 
   def demo_content do
     taggart do
-      div(class: "uk-container") do
+      uk_container do
         h1 do
           "Button"
         end
-        div(class: "uk-child-width-1-4@m", "uk-grid": true) do
+        uk_grid(child_width("1-4@m")) do
           div(class: "uk-width-1-2@m") do
             h2 do
               "Styles"

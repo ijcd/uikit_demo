@@ -4,7 +4,7 @@ defmodule UIKitDemo.Core.Component.Heading do
 
   def demo_content do
     taggart do
-      div(class: "uk-container") do
+      uk_container do
         h1(class: "uk-heading-primary") do
           "This is a primary heading"
         end

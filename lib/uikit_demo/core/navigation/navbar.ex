@@ -3834,7 +3834,7 @@ defmodule UIKitDemo.Core.Navigation.Navbar do
         end
       end
       nav(class: "uk-navbar-container uk-margin") do
-        div(class: "uk-container") do
+        uk_container do
           div(class: "uk-navbar") do
             div(class: "uk-navbar-left") do
               a(class: "uk-navbar-item uk-logo", href: "#") do
@@ -3867,7 +3867,7 @@ defmodule UIKitDemo.Core.Navigation.Navbar do
         end
       end
       nav(class: "uk-navbar-container uk-margin") do
-        div(class: "uk-container") do
+        uk_container do
           div(class: "uk-navbar") do
             div(class: "uk-navbar-left") do
               a(class: "uk-navbar-item uk-logo", href: "#") do
@@ -3932,7 +3932,7 @@ defmodule UIKitDemo.Core.Navigation.Navbar do
         end
       end
       nav(class: "uk-navbar-container uk-margin") do
-        div(class: "uk-container") do
+        uk_container do
           div(class: "uk-navbar") do
             div(class: "uk-navbar-left") do
               a(class: "uk-navbar-item uk-logo", href: "#") do
@@ -4130,7 +4130,7 @@ defmodule UIKitDemo.Core.Navigation.Navbar do
           end
         end
       end
-      div(class: "uk-container") do
+      uk_container do
         h2 do
           "Javascript Options"
         end

@@ -4,7 +4,7 @@ defmodule UIKitDemo.Core.Navigation.Iconnav do
 
   def demo_content do
     taggart do
-      div(class: "uk-container") do
+      uk_container do
         h1 do
           "Iconnav"
         end

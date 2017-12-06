@@ -4,7 +4,7 @@ defmodule UIKitDemo.Core.Component.Table do
 
   def demo_content do
     taggart do
-      div(class: "uk-container") do
+      uk_container do
         button(class: "uk-button uk-button-default uk-float-right uk-margin-small-left", type: "button", "uk-toggle": "target: .uk-table; cls: uk-table-small") do
           "Small"
         end

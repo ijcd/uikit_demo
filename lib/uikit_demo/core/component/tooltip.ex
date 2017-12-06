@@ -4,7 +4,7 @@ defmodule UIKitDemo.Core.Component.Tooltip do
 
   def demo_content do
     taggart do
-      div(class: "uk-container") do
+      uk_container do
         h1 do
           "Tooltip"
         end

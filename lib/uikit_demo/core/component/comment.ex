@@ -9,7 +9,7 @@ defmodule UIKitDemo.Core.Layout.Comment do
 
   def demo_content do
     taggart do
-      div(class: "uk-container") do
+      uk_container do
         h3 do
           "Comment"
         end
