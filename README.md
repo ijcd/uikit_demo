@@ -15,7 +15,7 @@ PAGE="$(tr '[:lower:]' '[:upper:]' <<< ${PAGE:0:1})${PAGE:1}"
 pbcopy <$x
 cat >! $x <<END
 defmodule UIKitDemo.Core.${SECTION}.${PAGE} do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
 
   def demo_content do
     taggart do

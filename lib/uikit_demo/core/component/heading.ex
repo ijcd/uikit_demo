@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Component.Heading do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
 
   def demo_content do
@@ -172,7 +172,7 @@ defmodule UIKitDemo.Core.Component.Heading do
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             end
           end
-          div(class: "uk-text-center") do
+          uk_text(:center, tag: :div) do
             h1(class: "uk-heading-line") do
               span do
                 "H1 heading line"

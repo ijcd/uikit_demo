@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Behavior.Animation do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit
 
   def animation_to_title(animation) do

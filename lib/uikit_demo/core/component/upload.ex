@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Component.Upload do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
 
   def demo_content do
@@ -39,7 +39,7 @@ defmodule UIKitDemo.Core.Component.Upload do
           "Javascript Options"
         end
         div(class: "uk-overflow-auto") do
-          table(class: "uk-table uk-table-striped") do
+          Taggart.HTML.table(class: "uk-table uk-table-striped") do
             thead do
               tr do
                 th do

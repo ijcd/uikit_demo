@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Navigation.Nav do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
 
   def demo_content do
@@ -655,7 +655,7 @@ defmodule UIKitDemo.Core.Navigation.Nav do
         h2 do
           "Javascript Options"
         end
-        table(class: "uk-table uk-table-striped") do
+        Taggart.HTML.table(class: "uk-table uk-table-striped") do
           thead do
             tr do
               th do

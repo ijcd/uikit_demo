@@ -1,6 +1,6 @@
 defmodule UIKitDemo.Core.Behavior.Drop do
-  use Taggart.HTML
-  use UIKit 
+  use Taggart.HTML, except: [table: 2]
+  use UIKit
 
   def head_content do
     style(type: "text/css") do
@@ -411,7 +411,7 @@ defmodule UIKitDemo.Core.Behavior.Drop do
           "Javascript Options"
         end
         div(class: "uk-overflow-auto") do
-          table(class: "uk-table uk-table-striped") do
+          Taggart.HTML.table(class: "uk-table uk-table-striped") do
             thead do
               tr do
                 th do

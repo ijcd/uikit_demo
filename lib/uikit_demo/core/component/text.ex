@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Component.Text do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
 
   def demo_content do
@@ -137,7 +137,7 @@ defmodule UIKitDemo.Core.Component.Text do
                 end
               end
             end
-            table(class: "uk-table uk-table-striped") do
+            Taggart.HTML.table(class: "uk-table uk-table-striped") do
               tr do
                 td(class: "uk-text-truncate uk-width-1-2") do
                   "Truncate ipsum dolor sit amet, consectetur adipiscing elit."
@@ -147,7 +147,7 @@ defmodule UIKitDemo.Core.Component.Text do
                 end
               end
             end
-            table(class: "uk-table uk-table-striped") do
+            Taggart.HTML.table(class: "uk-table uk-table-striped") do
               tr do
                 td(class: "uk-text-break uk-width-1-2") do
                   "Break ipsum dolorsitamet,consecteturadipiscing elit."

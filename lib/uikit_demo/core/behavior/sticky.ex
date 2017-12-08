@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Behavior.Sticky do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
 
   #   #viewport { border: 1px dashed rgba(0,0,0,0.2); }
@@ -52,7 +52,7 @@ defmodule UIKitDemo.Core.Behavior.Sticky do
           "Javascript Options"
         end
         div(class: "uk-overflow-auto") do
-          table(class: "uk-table uk-table-striped") do
+          Taggart.HTML.table(class: "uk-table uk-table-striped") do
             thead do
               tr do
                 th do

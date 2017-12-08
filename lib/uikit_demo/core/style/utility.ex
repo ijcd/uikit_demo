@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Layout.Utility do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
 
   def head_content do
@@ -122,7 +122,7 @@ defmodule UIKitDemo.Core.Layout.Utility do
               "Overflow Auto"
             end
             div(class: "uk-overflow-auto") do
-              table(class: "uk-table uk-table-striped uk-table-small uk-text-nowrap") do
+              Taggart.HTML.table(class: "uk-table uk-table-striped uk-table-small uk-text-nowrap") do
                 thead do
                   tr do
                     th do
@@ -456,7 +456,7 @@ defmodule UIKitDemo.Core.Layout.Utility do
             "Price"
           end
         end
-        table(class: "uk-table uk-table-striped") do
+        Taggart.HTML.table(class: "uk-table uk-table-striped") do
           thead do
             tr do
               th do
@@ -566,7 +566,7 @@ defmodule UIKitDemo.Core.Layout.Utility do
             img(width: "20", height: "20", src: "../src/images/backgrounds/nav-parent-open.svg#notfound", "uk-svg": true)
           end
         end
-        table(class: "uk-table uk-table-striped") do
+        Taggart.HTML.table(class: "uk-table uk-table-striped") do
           thead do
             tr do
               th do
@@ -628,7 +628,7 @@ defmodule UIKitDemo.Core.Layout.Utility do
             iframe(src: "//www.youtube.com/embed/YE7VzlLtp-4?autoplay=0&showinfo=0&rel=0&modestbranding=1&playsinline=1", width: "560", height: "315", frameborder: "0", allowfullscreen: true, "uk-responsive": true, "uk-video": "automute: true")
           end
         end
-        table(class: "uk-table uk-table-striped") do
+        Taggart.HTML.table(class: "uk-table uk-table-striped") do
           thead do
             tr do
               th do
@@ -778,7 +778,7 @@ defmodule UIKitDemo.Core.Layout.Utility do
             end
           end
         end
-        table(class: "uk-table uk-table-striped") do
+        Taggart.HTML.table(class: "uk-table uk-table-striped") do
           thead do
             tr do
               th do

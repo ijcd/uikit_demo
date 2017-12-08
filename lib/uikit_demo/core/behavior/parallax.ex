@@ -1,6 +1,6 @@
 defmodule UIKitDemo.Core.Behavior.Parallax do
-  use Taggart.HTML
-  use UIKit 
+  use Taggart.HTML, except: [table: 2]
+  use UIKit
 
   def head_content do
     style(type: "text/css") do
@@ -13,18 +13,16 @@ defmodule UIKitDemo.Core.Behavior.Parallax do
   def demo_content do
     taggart do
       html_comment(" uk-flex-top is needed to make vertical margin work for IE11 ")
-      div(class: "uk-section-default") do
+      uk_section(:default) do
         div(class: "uk-section uk-background-cover uk-background-primary uk-overflow-hidden uk-light uk-flex uk-flex-top", style: "background-image: url('/images/dark.jpg');", "uk-parallax": "bgy: -400; sepia:100", "uk-height-viewport": "offset-top: true") do
           h1(class: "uk-heading-hero uk-margin-auto uk-margin-auto-vertical") do
             "Parallax"
           end
         end
       end
-      div(class: "uk-section uk-section-default") do
+      uk_section(:default) do
         uk_container do
-          h2 do
-            "Target"
-          end
+          h2 "Target"
           div(id: "test-target", class: "uk-height-large uk-background-cover uk-margin uk-overflow-hidden uk-light uk-flex uk-flex-top", style: "background-image: url('/images/dark.jpg');", "uk-parallax": "bgx: -200") do
             div(class: "uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical") do
               h1("uk-parallax": "target: #test-target; opacity: 0; y: -200; scale: 2") do
@@ -35,9 +33,7 @@ defmodule UIKitDemo.Core.Behavior.Parallax do
               end
             end
           end
-          h2 do
-            "Start + End (Reverse)"
-          end
+          h2 "Start + End (Reverse)"
           div(id: "test-reverse", class: "uk-height-large uk-background-cover uk-margin uk-overflow-hidden uk-light uk-flex uk-flex-top", style: "background-image: url('/images/dark.jpg');", "uk-parallax": "bgy: -200") do
             div(class: "uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical") do
               h1("uk-parallax": "target: #test-reverse; opacity: 0,1; y: -200,0; scale: 2,1; viewport: 0.5") do
@@ -48,9 +44,7 @@ defmodule UIKitDemo.Core.Behavior.Parallax do
               end
             end
           end
-          h2 do
-            "Easing"
-          end
+          h2 "Easing"
           div(id: "test-easing", class: "uk-height-large uk-background-cover uk-margin uk-overflow-hidden uk-light uk-flex uk-flex-top", style: "background-image: url('/images/dark.jpg');", "uk-parallax": "bgy: -200") do
             div(class: "uk-grid uk-margin-auto uk-margin-auto-vertical uk-flex-inline") do
               div do
@@ -105,9 +99,7 @@ defmodule UIKitDemo.Core.Behavior.Parallax do
               end
             end
           end
-          h2 do
-            "Color and Viewport"
-          end
+          h2 "Color and Viewport"
           div(id: "test-color", class: "test-color uk-height-large uk-margin uk-overflow-hidden uk-flex uk-flex-top", "uk-parallax": "background-color: yellow,white; border-color: #00f,#f00; viewport: 0.5") do
             div(class: "uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical") do
               h1("uk-parallax": "target: #test-color; opacity: 0,1; y: -200%,0; viewport: 0.5") do
@@ -123,9 +115,7 @@ defmodule UIKitDemo.Core.Behavior.Parallax do
               end
             end
           end
-          h2 do
-            "Filter"
-          end
+          h2 "Filter"
           div(id: "test-filter", class: "uk-height-large uk-background-cover uk-margin uk-overflow-hidden uk-light uk-flex uk-flex-top", style: "background-image: url('/images/dark.jpg');", "uk-parallax": "invert: 100; viewport: 0.5") do
             div(class: "uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical") do
               h1("uk-parallax": "target: #test-filter; opacity: 0,1; y: -200%,0; viewport: 0.5") do
@@ -141,9 +131,7 @@ defmodule UIKitDemo.Core.Behavior.Parallax do
               end
             end
           end
-          h2 do
-            "Multiple Steps"
-          end
+          h2 "Multiple Steps"
           div(class: "uk-height-large uk-background-cover uk-margin uk-overflow-hidden uk-light uk-flex uk-flex-top", style: "background-image: url('/images/dark.jpg');", "uk-parallax": "bgx: 0,200,0,200") do
             div(class: "uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical") do
               h1("uk-parallax": "x: -200,200,-200,200; scale: 2,1,2,1;") do
@@ -154,11 +142,9 @@ defmodule UIKitDemo.Core.Behavior.Parallax do
               end
             end
           end
-          h2 do
-            "Javascript Options"
-          end
+          h2 "Javascript Options"
           div(class: "uk-overflow-auto") do
-            table(class: "uk-table uk-table-striped") do
+            Taggart.HTML.table(class: "uk-table uk-table-striped") do
               thead do
                 tr do
                   th do
@@ -243,14 +229,12 @@ defmodule UIKitDemo.Core.Behavior.Parallax do
               end
             end
           end
-          h2 do
-            "Animated properties"
-          end
+          h2 "Animated properties"
           p do
             "You can define multiple steps by using a comma separated list of values. (e.g. x: 0,50,150)"
           end
           div(class: "uk-overflow-auto") do
-            table(class: "uk-table uk-table-striped") do
+            Taggart.HTML.table(class: "uk-table uk-table-striped") do
               thead do
                 tr do
                   th do

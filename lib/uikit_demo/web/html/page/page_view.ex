@@ -1,6 +1,6 @@
 defmodule UIKitDemo.Web.HTML.PageView do
   use UIKitDemo.Web, :view
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
 
   @uikit_docs "https://getuikit.com/docs/section"
   @uikit_examples "https://getuikit.com/assets/uikit/tests/section.html"
@@ -14,8 +14,8 @@ defmodule UIKitDemo.Web.HTML.PageView do
     "style" => ~w[align base margin padding print visibility width],
     "layout" => ~w[column comment container cover dynamic_grid flex grid grid_parallax panel position section utility],
     "navigation" => ~w[breadcrumb dotnav dynamic_pagination iconnav nav navbar pagination slidenav subnav tab thumbnav],
-    "component" => ~w[accordion alert article background badge button card close countdown datepicker description_list divider dropdown form heading html_editor icon label lightbox link list marker modal nestable notification off_canvas overlay placeholder progress search slider slideset slideshow sortable spinner switcher table text thumbnail tile timepicker toggle tooltip upload],
-    "behavior" => ~w[animation autocomplete drop inverse parallax scroll scrollspy sticky totop transition],
+    "component" => ~w[accordion alert article background badge button card close countdown datepicker description_list divider drop dropdown form heading html_editor icon label lightbox link list marker modal nestable notification off_canvas overlay placeholder progress search slider slideset slideshow sortable spinner switcher table text thumbnail tile timepicker toggle tooltip upload],
+    "behavior" => ~w[animation autocomplete inverse parallax scroll scrollspy sticky totop transition],
   }
 
   def render("index.html", assigns) do

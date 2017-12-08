@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Layout.Flex do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
 
   def head_content do
@@ -353,7 +353,7 @@ defmodule UIKitDemo.Core.Layout.Flex do
         h2 do
           "Inline Flex"
         end
-        div(class: "uk-text-center") do
+        uk_text(:center, tag: :div) do
           div(class: "uk-flex uk-flex-inline") do
             div do
               "1-4"

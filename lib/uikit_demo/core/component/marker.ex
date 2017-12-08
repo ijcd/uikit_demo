@@ -1,7 +1,7 @@
 # TODO: still showing black crosses (should be white on right side)
 
 defmodule UIKitDemo.Core.Component.Marker do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
 
   def demo_content do

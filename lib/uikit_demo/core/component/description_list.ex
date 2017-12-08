@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Component.DescriptionList do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
 
   def demo_content do

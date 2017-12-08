@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Style.Padding do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
 
   def head_content do

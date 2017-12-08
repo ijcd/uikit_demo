@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Layout.Container do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
   use UIKit
 

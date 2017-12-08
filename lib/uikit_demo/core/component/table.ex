@@ -1,5 +1,5 @@
 defmodule UIKitDemo.Core.Component.Table do
-  use Taggart.HTML
+  use Taggart.HTML, except: [table: 2]
   use UIKit 
 
   def demo_content do
@@ -15,7 +15,7 @@ defmodule UIKitDemo.Core.Component.Table do
           "Table"
         end
         div(class: "uk-overflow-auto") do
-          table(class: "uk-table uk-table-hover") do
+          Taggart.HTML.table(class: "uk-table uk-table-hover") do
             caption do
               "Table caption"
             end
@@ -167,7 +167,7 @@ defmodule UIKitDemo.Core.Component.Table do
           "Table Divider"
         end
         div(class: "uk-overflow-auto") do
-          table(class: "uk-table uk-table-divider uk-table-hover") do
+          Taggart.HTML.table(class: "uk-table uk-table-divider uk-table-hover") do
             thead do
               tr do
                 th do
@@ -276,7 +276,7 @@ defmodule UIKitDemo.Core.Component.Table do
           "Table Striped"
         end
         div(class: "uk-overflow-auto") do
-          table(class: "uk-table uk-table-striped uk-table-hover ") do
+          Taggart.HTML.table(class: "uk-table uk-table-striped uk-table-hover ") do
             thead do
               tr do
                 th do
@@ -385,7 +385,7 @@ defmodule UIKitDemo.Core.Component.Table do
           "Widths"
         end
         div(class: "uk-overflow-auto") do
-          table(class: "uk-table uk-table-divider uk-table-hover") do
+          Taggart.HTML.table(class: "uk-table uk-table-divider uk-table-hover") do
             thead do
               tr do
                 th(class: "uk-table-shrink")
@@ -500,7 +500,7 @@ defmodule UIKitDemo.Core.Component.Table do
           "Responsive"
         end
         div(class: "uk-overflow-auto") do
-          table(class: "uk-table uk-table-divider uk-table-hover uk-table-responsive") do
+          Taggart.HTML.table(class: "uk-table uk-table-divider uk-table-hover uk-table-responsive") do
             thead do
               tr do
                 th(class: "uk-table-shrink")
