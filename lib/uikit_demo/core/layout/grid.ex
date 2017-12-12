@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Layout.Grid do
   use Taggart.HTML, except: [table: 2]
-  use UIKit 
+  use UIKit
+  import UIKitDemo.Core.Common
 
   def head_content do
     style(type: "text/css") do
@@ -29,45 +30,24 @@ defmodule UIKitDemo.Core.Layout.Grid do
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Grid"
+
+        h1 "Grid"
+        uk_grid(child_width("1-2")) do
+          div uk_panel(do: "1-2")
+          div uk_panel(do: "1-2")
         end
-        div(class: "uk-child-width-1-2", "uk-grid": true) do
+        uk_grid(:match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
           div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-        end
-        div(class: "uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-child-width-1-2@l", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
+            uk_grid(child_width("1-2@l")) do
+              div uk_panel(do: "1-2-L")
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div(class: "uk-child-width-1-4@m uk-grid-match", "uk-grid": true) do
+        uk_grid(:match, child_width("1-4@m")) do
           div do
-            div(class: "uk-panel") do
+            uk_panel do
               "1-4-M"
               br()
               "..."
@@ -75,131 +55,79 @@ defmodule UIKitDemo.Core.Layout.Grid do
               "..."
             end
           end
-          div do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
-          end
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-child-width-1-2@l uk-grid-match", "uk-grid": true) do
+          div uk_panel(do: "1-4-M")
+          uk_width("1-2@m") do
+            uk_grid(:match, child_width("1-2@l")) do
               div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "1-2-L"
                   br()
                   "..."
                 end
               end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div(class: "uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
+        uk_grid(:match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
           div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-            div(class: "uk-panel uk-margin-medium") do
+            uk_panel(do: "1-2-M")
+            uk_panel(margin(:medium)) do
               "1-2-M"
             end
           end
         end
-        div("uk-grid": true) do
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+        uk_grid do
+          uk_width("1-2@m") do
+            uk_panel(do: "1-2-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-3-5@m") do
-            div(class: "uk-panel") do
-              "3-5-M"
+          uk_width("3-5@m") do
+            uk_panel(do: "3-5-M")
+          end
+        end
+        uk_grid do
+          uk_width("auto@m") do
+            uk_panel(do: "Auto-M")
+          end
+          uk_width("1-3@m") do
+            uk_panel(do: "1-3-M")
+          end
+          uk_width("expand@m") do
+            uk_panel(do: "Expand-M")
+          end
+        end
+
+
+        h3 "Divider"
+        uk_grid(:divider, child_width("1-2")) do
+          div uk_panel(do: "1-2")
+          div uk_panel(do: "1-2")
+        end
+        uk_grid(:divider, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
+          div do
+            uk_grid(:divider, child_width("1-2@l")) do
+              div uk_panel(do: "1-2-L")
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div("uk-grid": true) do
-          div(class: "uk-width-auto@m") do
-            div(class: "uk-panel") do
-              "Auto-M"
-            end
-          end
-          div(class: "uk-width-1-3@m") do
-            div(class: "uk-panel") do
-              "1-3-M"
-            end
-          end
-          div(class: "uk-width-expand@m") do
-            div(class: "uk-panel") do
-              "Expand-M"
-            end
-          end
-        end
-        h3 do
-          "Divider"
-        end
-        div(class: "uk-grid-divider uk-child-width-1-2", "uk-grid": true) do
+        uk_grid(:divider, :match, child_width("1-4@m")) do
           div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-        end
-        div(class: "uk-grid-divider uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-grid-divider uk-child-width-1-2@l", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-            end
-          end
-        end
-        div(class: "uk-grid-divider uk-child-width-1-4@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
+            uk_panel do
               "1-4-M"
               br()
               "..."
@@ -207,131 +135,79 @@ defmodule UIKitDemo.Core.Layout.Grid do
               "..."
             end
           end
-          div do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
-          end
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-grid-divider uk-child-width-1-2@l uk-grid-match", "uk-grid": true) do
+          div uk_panel(do: "1-4-M")
+          uk_width("1-2@m") do
+            uk_grid(:divider, :match, child_width("1-2@l")) do
               div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "1-2-L"
                   br()
                   "..."
                 end
               end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div(class: "uk-grid-divider uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
+        uk_grid(:divider, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
           div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-            div(class: "uk-panel uk-margin-medium") do
+            uk_panel(do: "1-2-M")
+            uk_panel(margin(:medium)) do
               "1-2-M"
             end
           end
         end
-        div(class: "uk-grid-divider", "uk-grid": true) do
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+        uk_grid(:divider) do
+          uk_width("1-2@m") do
+            uk_panel(do: "1-2-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-3-5@m") do
-            div(class: "uk-panel") do
-              "3-5-M"
+          uk_width("3-5@m") do
+            uk_panel(do: "3-5-M")
+          end
+        end
+        uk_grid(:divider) do
+          uk_width("auto@m") do
+            uk_panel(do: "Auto-M")
+          end
+          uk_width("1-3@m") do
+            uk_panel(do: "1-3-M")
+          end
+          uk_width("expand@m") do
+            uk_panel(do: "Expand-M")
+          end
+        end
+
+
+        h2 "Small"
+        uk_grid(:small, child_width("1-2")) do
+          div uk_panel(do: "1-2")
+          div uk_panel(do: "1-2")
+        end
+        uk_grid(:small, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
+          div do
+            uk_grid(:small, child_width("1-2@l")) do
+              div uk_panel(do: "1-2-L")
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div(class: "uk-grid-divider", "uk-grid": true) do
-          div(class: "uk-width-auto@m") do
-            div(class: "uk-panel") do
-              "Auto-M"
-            end
-          end
-          div(class: "uk-width-1-3@m") do
-            div(class: "uk-panel") do
-              "1-3-M"
-            end
-          end
-          div(class: "uk-width-expand@m") do
-            div(class: "uk-panel") do
-              "Expand-M"
-            end
-          end
-        end
-        h2 do
-          "Small"
-        end
-        div(class: "uk-grid-small uk-child-width-1-2", "uk-grid": true) do
+        uk_grid(:small, :match, child_width("1-4@m")) do
           div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-        end
-        div(class: "uk-grid-small uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-grid-small uk-child-width-1-2@l", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-            end
-          end
-        end
-        div(class: "uk-grid-small uk-child-width-1-4@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
+            uk_panel do
               "1-4-M"
               br()
               "..."
@@ -339,131 +215,79 @@ defmodule UIKitDemo.Core.Layout.Grid do
               "..."
             end
           end
-          div do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
-          end
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-grid-small uk-child-width-1-2@l uk-grid-match", "uk-grid": true) do
+          div uk_panel(do: "1-4-M")
+          uk_width("1-2@m") do
+            uk_grid(:small, :match, child_width("1-2@l")) do
               div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "1-2-L"
                   br()
                   "..."
                 end
               end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div(class: "uk-grid-small uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
+        uk_grid(:small, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
           div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+            uk_panel(do: "1-2-M")
             div(class: "uk-panel uk-margin") do
               "1-2-M"
             end
           end
         end
-        div(class: "uk-grid-small", "uk-grid": true) do
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+        uk_grid(:small) do
+          uk_width("1-2@m") do
+            uk_panel(do: "1-2-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-3-5@m") do
-            div(class: "uk-panel") do
-              "3-5-M"
+          uk_width("3-5@m") do
+            uk_panel(do: "3-5-M")
+          end
+        end
+        uk_grid(:small) do
+          uk_width("auto@m") do
+            uk_panel(do: "Auto-M")
+          end
+          uk_width("1-3@m") do
+            uk_panel(do: "1-3-M")
+          end
+          uk_width("expand@m") do
+            uk_panel(do: "Expand-M")
+          end
+        end
+
+
+        h3 "Divider"
+        uk_grid(:small, :divider, child_width("1-2")) do
+          div uk_panel(do: "1-2")
+          div uk_panel(do: "1-2")
+        end
+        uk_grid(:small, :divider, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
+          div do
+            uk_grid(:small, :divider, child_width("1-2@l")) do
+              div uk_panel(do: "1-2-L")
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div(class: "uk-grid-small", "uk-grid": true) do
-          div(class: "uk-width-auto@m") do
-            div(class: "uk-panel") do
-              "Auto-M"
-            end
-          end
-          div(class: "uk-width-1-3@m") do
-            div(class: "uk-panel") do
-              "1-3-M"
-            end
-          end
-          div(class: "uk-width-expand@m") do
-            div(class: "uk-panel") do
-              "Expand-M"
-            end
-          end
-        end
-        h3 do
-          "Divider"
-        end
-        div(class: "uk-grid-small uk-grid-divider uk-child-width-1-2", "uk-grid": true) do
+        uk_grid(:small, :divider, :match, child_width("1-4@m")) do
           div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-        end
-        div(class: "uk-grid-small uk-grid-divider uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-grid-small uk-grid-divider uk-child-width-1-2@l", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-            end
-          end
-        end
-        div(class: "uk-grid-small uk-grid-divider uk-child-width-1-4@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
+            uk_panel do
               "1-4-M"
               br()
               "..."
@@ -471,131 +295,81 @@ defmodule UIKitDemo.Core.Layout.Grid do
               "..."
             end
           end
-          div do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
-          end
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-grid-small uk-grid-divider uk-child-width-1-2@l uk-grid-match", "uk-grid": true) do
+          div uk_panel(do: "1-4-M")
+          uk_width("1-2@m") do
+            uk_grid(:small, :divider, :match, child_width("1-2@l")) do
               div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "1-2-L"
                   br()
                   "..."
                 end
               end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div(class: "uk-grid-small uk-grid-divider uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
+        uk_grid(:small, :divider, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
           div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+            uk_panel(do: "1-2-M")
             div(class: "uk-panel uk-margin") do
               "1-2-M"
             end
           end
         end
         div(class: "uk-grid-small uk-grid-divider", "uk-grid": true) do
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+          uk_width("1-2@m") do
+            uk_panel(do: "1-2-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-3-5@m") do
-            div(class: "uk-panel") do
-              "3-5-M"
-            end
+          uk_width("3-5@m") do
+            uk_panel(do: "3-5-M")
           end
         end
         div(class: "uk-grid-small uk-grid-divider", "uk-grid": true) do
-          div(class: "uk-width-auto@m") do
-            div(class: "uk-panel") do
-              "Auto-M"
-            end
+          uk_width("auto@m") do
+            uk_panel(do: "Auto-M")
           end
-          div(class: "uk-width-1-3@m") do
-            div(class: "uk-panel") do
-              "1-3-M"
-            end
+          uk_width("1-3@m") do
+            uk_panel(do: "1-3-M")
           end
-          div(class: "uk-width-expand@m") do
-            div(class: "uk-panel") do
-              "Expand-M"
-            end
+          uk_width("expand@m") do
+            uk_panel(do: "Expand-M")
           end
         end
-        h2 do
-          "Medium"
-        end
+
+
+        h2 "Medium"
         div(class: "uk-grid-medium uk-child-width-1-2", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
+          div uk_panel(do: "1-2")
+          div uk_panel(do: "1-2")
         end
         div(class: "uk-grid-medium uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
           div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+            uk_panel(do: "1-2-M")
           end
           div do
             div(class: "uk-grid-medium uk-child-width-1-2@l", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
+              div uk_panel(do: "1-2-L")
+              div uk_panel(do: "1-2-L")
             end
           end
         end
         div(class: "uk-grid-medium uk-child-width-1-4@m uk-grid-match", "uk-grid": true) do
           div do
-            div(class: "uk-panel") do
+            uk_panel do
               "1-4-M"
               br()
               "..."
@@ -604,130 +378,80 @@ defmodule UIKitDemo.Core.Layout.Grid do
             end
           end
           div do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-2@m") do
+          uk_width("1-2@m") do
             div(class: "uk-grid-medium uk-child-width-1-2@l uk-grid-match", "uk-grid": true) do
               div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "1-2-L"
                   br()
                   "..."
                 end
               end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
+              div uk_panel(do: "1-2-L")
             end
           end
         end
         div(class: "uk-grid-medium uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
+          div uk_panel(do: "1-2-M")
           div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-            div(class: "uk-panel uk-margin-medium") do
+            uk_panel(do: "1-2-M")
+            uk_panel(margin(:medium)) do
               "1-2-M"
             end
           end
         end
         div(class: "uk-grid-medium", "uk-grid": true) do
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+          uk_width("1-2@m") do
+            uk_panel(do: "1-2-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-3-5@m") do
-            div(class: "uk-panel") do
-              "3-5-M"
-            end
+          uk_width("3-5@m") do
+            uk_panel(do: "3-5-M")
           end
         end
         div(class: "uk-grid-medium", "uk-grid": true) do
-          div(class: "uk-width-auto@m") do
-            div(class: "uk-panel") do
-              "Auto-M"
-            end
+          uk_width("auto@m") do
+            uk_panel(do: "Auto-M")
           end
-          div(class: "uk-width-1-3@m") do
-            div(class: "uk-panel") do
-              "1-3-M"
-            end
+          uk_width("1-3@m") do
+            uk_panel(do: "1-3-M")
           end
-          div(class: "uk-width-expand@m") do
-            div(class: "uk-panel") do
-              "Expand-M"
+          uk_width("expand@m") do
+            uk_panel(do: "Expand-M")
+          end
+        end
+
+
+        h3 "Divider"
+        uk_grid(:medium, :divider, child_width("1-2")) do
+          div uk_panel(do: "1-2")
+          div uk_panel(do: "1-2")
+        end
+        uk_grid(:medium, :divider, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
+          div do
+        uk_grid(:medium, :divider, child_width("1-2@l")) do
+              div uk_panel(do: "1-2-L")
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        h3 do
-          "Divider"
-        end
-        div(class: "uk-grid-medium uk-grid-divider uk-child-width-1-2", "uk-grid": true) do
+        uk_grid(:medium, :divider, :match, child_width("1-4@m")) do
           div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-        end
-        div(class: "uk-grid-medium uk-grid-divider uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-grid-medium uk-grid-divider uk-child-width-1-2@l", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-            end
-          end
-        end
-        div(class: "uk-grid-medium uk-grid-divider uk-child-width-1-4@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
+            uk_panel do
               "1-4-M"
               br()
               "..."
@@ -735,131 +459,79 @@ defmodule UIKitDemo.Core.Layout.Grid do
               "..."
             end
           end
-          div do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
-          end
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-grid-medium uk-grid-divider uk-child-width-1-2@l uk-grid-match", "uk-grid": true) do
+          div uk_panel(do: "1-4-M")
+          uk_width("1-2@m") do
+        uk_grid(:medium, :divider, :match, child_width("1-2@l")) do
               div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "1-2-L"
                   br()
                   "..."
                 end
               end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div(class: "uk-grid-medium uk-grid-divider uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
+        uk_grid(:medium, :divider, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
           div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-            div(class: "uk-panel uk-margin-medium") do
+            uk_panel(do: "1-2-M")
+            uk_panel(margin(:medium)) do
               "1-2-M"
             end
           end
         end
-        div(class: "uk-grid-medium uk-grid-divider", "uk-grid": true) do
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+        uk_grid(:medium, :divider) do
+          uk_width("1-2@m") do
+            uk_panel(do: "1-2-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-3-5@m") do
-            div(class: "uk-panel") do
-              "3-5-M"
+          uk_width("3-5@m") do
+            uk_panel(do: "3-5-M")
+          end
+        end
+        uk_grid(:medium, :divider) do
+          uk_width("auto@m") do
+            uk_panel(do: "Auto-M")
+          end
+          uk_width("1-3@m") do
+            uk_panel(do: "1-3-M")
+          end
+          uk_width("expand@m") do
+            uk_panel(do: "Expand-M")
+          end
+        end
+
+
+        h2 "Large"
+        uk_grid(:large, child_width("1-2")) do
+          div uk_panel(do: "1-2")
+          div uk_panel(do: "1-2")
+        end
+        uk_grid(:large, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
+          div do
+        uk_grid(:large, child_width("1-2@l")) do
+              div uk_panel(do: "1-2-L")
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div(class: "uk-grid-medium uk-grid-divider", "uk-grid": true) do
-          div(class: "uk-width-auto@m") do
-            div(class: "uk-panel") do
-              "Auto-M"
-            end
-          end
-          div(class: "uk-width-1-3@m") do
-            div(class: "uk-panel") do
-              "1-3-M"
-            end
-          end
-          div(class: "uk-width-expand@m") do
-            div(class: "uk-panel") do
-              "Expand-M"
-            end
-          end
-        end
-        h2 do
-          "Large"
-        end
-        div(class: "uk-grid-large uk-child-width-1-2", "uk-grid": true) do
+        uk_grid(:large, :match, child_width("1-4@m")) do
           div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-        end
-        div(class: "uk-grid-large uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-grid-large uk-child-width-1-2@l", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-            end
-          end
-        end
-        div(class: "uk-grid-large uk-child-width-1-4@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
+            uk_panel do
               "1-4-M"
               br()
               "..."
@@ -867,131 +539,79 @@ defmodule UIKitDemo.Core.Layout.Grid do
               "..."
             end
           end
-          div do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
-          end
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-grid-large uk-child-width-1-2@l uk-grid-match", "uk-grid": true) do
+          div uk_panel(do: "1-4-M")
+          uk_width("1-2@m") do
+        uk_grid(:large, :match, child_width("1-2@l")) do
               div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "1-2-L"
                   br()
                   "..."
                 end
               end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div(class: "uk-grid-large uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
+        uk_grid(:large, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
           div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-            div(class: "uk-panel uk-margin-large") do
+            uk_panel(do: "1-2-M")
+            uk_panel(margin(:large)) do
               "1-2-M"
             end
           end
         end
         div(class: "uk-grid-large", "uk-grid": true) do
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+          uk_width("1-2@m") do
+            uk_panel(do: "1-2-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-3-5@m") do
-            div(class: "uk-panel") do
-              "3-5-M"
-            end
+          uk_width("3-5@m") do
+            uk_panel(do: "3-5-M")
           end
         end
         div(class: "uk-grid-large", "uk-grid": true) do
-          div(class: "uk-width-auto@m") do
-            div(class: "uk-panel") do
-              "Auto-M"
-            end
+          uk_width("auto@m") do
+            uk_panel(do: "Auto-M")
           end
-          div(class: "uk-width-1-3@m") do
-            div(class: "uk-panel") do
-              "1-3-M"
-            end
+          uk_width("1-3@m") do
+            uk_panel(do: "1-3-M")
           end
-          div(class: "uk-width-expand@m") do
-            div(class: "uk-panel") do
-              "Expand-M"
-            end
+          uk_width("expand@m") do
+            uk_panel(do: "Expand-M")
           end
         end
-        h3 do
-          "Divider"
-        end
+
+
+        h3 "Divider"
         div(class: "uk-grid-large uk-grid-divider uk-child-width-1-2", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
+          div uk_panel(do: "1-2")
+          div uk_panel(do: "1-2")
         end
         div(class: "uk-grid-large uk-grid-divider uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
+          div uk_panel(do: "1-2-M")
           div do
             div(class: "uk-grid-large uk-grid-divider uk-child-width-1-2@l", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
+              div uk_panel(do: "1-2-L")
+              div uk_panel(do: "1-2-L")
             end
           end
         end
         div(class: "uk-grid-large uk-grid-divider uk-child-width-1-4@m uk-grid-match", "uk-grid": true) do
           div do
-            div(class: "uk-panel") do
+            uk_panel do
               "1-4-M"
               br()
               "..."
@@ -999,131 +619,81 @@ defmodule UIKitDemo.Core.Layout.Grid do
               "..."
             end
           end
-          div do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
-          end
-          div(class: "uk-width-1-2@m") do
+          div uk_panel(do: "1-4-M")
+          uk_width("1-2@m") do
             div(class: "uk-grid-large uk-grid-divider uk-child-width-1-2@l uk-grid-match", "uk-grid": true) do
               div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "1-2-L"
                   br()
                   "..."
                 end
               end
               div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
+                uk_panel(do: "1-2-L")
               end
             end
           end
         end
         div(class: "uk-grid-large uk-grid-divider uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
+          div uk_panel(do: "1-2-M")
           div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-            div(class: "uk-panel uk-margin-large") do
+            uk_panel(do: "1-2-M")
+            uk_panel(margin(:large)) do
               "1-2-M"
             end
           end
         end
         div(class: "uk-grid-large uk-grid-divider", "uk-grid": true) do
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+          uk_width("1-2@m") do
+            uk_panel(do: "1-2-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
           end
-          div(class: "uk-width-3-5@m") do
-            div(class: "uk-panel") do
-              "3-5-M"
-            end
+          uk_width("3-5@m") do
+            uk_panel(do: "3-5-M")
           end
         end
         div(class: "uk-grid-large uk-grid-divider", "uk-grid": true) do
-          div(class: "uk-width-auto@m") do
-            div(class: "uk-panel") do
-              "Auto-M"
-            end
+          uk_width("auto@m") do
+            uk_panel(do: "Auto-M")
           end
-          div(class: "uk-width-1-3@m") do
-            div(class: "uk-panel") do
-              "1-3-M"
-            end
+          uk_width("1-3@m") do
+            uk_panel(do: "1-3-M")
           end
-          div(class: "uk-width-expand@m") do
-            div(class: "uk-panel") do
-              "Expand-M"
+          uk_width("expand@m") do
+            uk_panel(do: "Expand-M")
+          end
+        end
+
+
+        h2 "Collapse"
+        uk_grid(:collapse, child_width("1-2")) do
+          div uk_panel(do: "1-2")
+          div uk_panel(do: "1-2")
+        end
+        uk_grid(:collapse, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
+          div do
+        uk_grid(:collapse, child_width("1-2@l")) do
+              div uk_panel(do: "1-2-L")
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        h2 do
-          "Collapse"
-        end
-        div(class: "uk-grid-collapse uk-child-width-1-2", "uk-grid": true) do
+        uk_grid(:collapse, :match, child_width("1-4@m")) do
           div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-          div do
-            div(class: "uk-panel") do
-              "1-2"
-            end
-          end
-        end
-        div(class: "uk-grid-collapse uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div do
-            div(class: "uk-grid-collapse uk-child-width-1-2@l", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
-            end
-          end
-        end
-        div(class: "uk-grid-collapse uk-child-width-1-4@m uk-grid-match", "uk-grid": true) do
-          div do
-            div(class: "uk-panel") do
+            uk_panel do
               "1-4-M"
               br()
               "..."
@@ -1131,161 +701,98 @@ defmodule UIKitDemo.Core.Layout.Grid do
               "..."
             end
           end
-          div do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
-          end
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-grid-collapse uk-child-width-1-2@l uk-grid-match", "uk-grid": true) do
+          div uk_panel(do: "1-4-M")
+          uk_width("1-2@m") do
+        uk_grid(:collapse, :match, child_width("1-2@l")) do
               div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "1-2-L"
                   br()
                   "..."
                 end
               end
-              div do
-                div(class: "uk-panel") do
-                  "1-2-L"
-                end
-              end
+              div uk_panel(do: "1-2-L")
             end
           end
         end
-        div(class: "uk-grid-collapse uk-child-width-1-2@m uk-grid-match", "uk-grid": true) do
+        uk_grid(:collapse, :match, child_width("1-2@m")) do
+          div uk_panel(do: "1-2-M")
           div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
+            uk_panel(do: "1-2-M")
+            uk_panel(do: "1-2-M")
           end
+        end
+        uk_grid(:collapse) do
+          uk_width("1-2@m") do
+            uk_panel(do: "1-2-M")
+          end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
+          end
+          uk_width("1-4@m") do
+            uk_panel(do: "1-4-M")
+          end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
+          end
+          uk_width("1-5@m") do
+            uk_panel(do: "1-5-M")
+          end
+          uk_width("3-5@m") do
+            uk_panel(do: "3-5-M")
+          end
+        end
+        uk_grid(:collapse) do
+          uk_width("auto@m") do
+            uk_panel(do: "Auto-M")
+          end
+          uk_width("1-3@m") do
+            uk_panel(do: "1-3-M")
+          end
+          uk_width("expand@m") do
+            uk_panel(do: "Expand-M")
+          end
+        end
+        
+
+        h2 "Divider"
+
+        h3 "Order"
+        uk_grid(:divider, child_width("1-2@m")) do
           div do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-        end
-        div(class: "uk-grid-collapse", "uk-grid": true) do
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-panel") do
-              "1-2-M"
-            end
-          end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
-          end
-          div(class: "uk-width-1-4@m") do
-            div(class: "uk-panel") do
-              "1-4-M"
-            end
-          end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
-          end
-          div(class: "uk-width-1-5@m") do
-            div(class: "uk-panel") do
-              "1-5-M"
-            end
-          end
-          div(class: "uk-width-3-5@m") do
-            div(class: "uk-panel") do
-              "3-5-M"
-            end
-          end
-        end
-        div(class: "uk-grid-collapse", "uk-grid": true) do
-          div(class: "uk-width-auto@m") do
-            div(class: "uk-panel") do
-              "Auto-M"
-            end
-          end
-          div(class: "uk-width-1-3@m") do
-            div(class: "uk-panel") do
-              "1-3-M"
-            end
-          end
-          div(class: "uk-width-expand@m") do
-            div(class: "uk-panel") do
-              "Expand-M"
-            end
-          end
-        end
-        h2 do
-          "Divider"
-        end
-        h3 do
-          "Order"
-        end
-        div(class: "uk-grid-divider uk-child-width-1-2@m", "uk-grid": true) do
-          div do
-            div(class: "uk-grid-small uk-grid-divider uk-child-width-1-4@m", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "First"
-                end
-              end
+            uk_grid(:small, :divider, child_width("1-4@m")) do
+              div uk_panel(do: "First")
               div(class: "uk-flex-last") do
-                div(class: "uk-panel") do
-                  "Second"
-                end
+                uk_panel(do: "Second")
               end
-              div do
-                div(class: "uk-panel") do
-                  "Third"
-                end
-              end
+              div uk_panel(do: "Third")
               div(class: "uk-flex-first") do
-                div(class: "uk-panel") do
-                  "Last"
-                end
+                uk_panel(do: "Last")
               end
             end
           end
           div do
-            div(class: "uk-grid-small uk-grid-divider uk-child-width-1-4@m", "uk-grid": true) do
+            uk_grid(:small, :divider, child_width("1-4@m")) do
               div(class: "uk-flex-last") do
-                div(class: "uk-panel") do
-                  "First"
-                end
+                uk_panel(do: "First")
               end
-              div do
-                div(class: "uk-panel") do
-                  "Second"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "Third"
-                end
-              end
+              div uk_panel(do: "Second")
+              div uk_panel(do: "Third")
               div(class: "uk-flex-first") do
-                div(class: "uk-panel") do
-                  "Last"
-                end
+                uk_panel(do: "Last")
               end
             end
           end
         end
-        h3 do
-          "Wrap + Order"
-        end
-        div(class: "uk-grid-divider uk-child-width-1-4@m", "uk-grid": true) do
+
+
+        h3 "Wrap + Order"
+        uk_grid(:divider, child_width("1-4@m")) do
           div do
-            div(class: "uk-grid-small uk-grid-divider uk-child-width-1-2@m uk-flex-middle", "uk-grid": true) do
+            uk_grid(:small, :divider, child_width("1-2@m"), flex(:middle)) do
+              div uk_panel(do: "First")
               div do
-                div(class: "uk-panel") do
-                  "First"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "Last"
                   br()
                   "..."
@@ -1293,22 +800,14 @@ defmodule UIKitDemo.Core.Layout.Grid do
                   "..."
                 end
               end
-              div do
-                div(class: "uk-panel") do
-                  "Wrap"
-                end
-              end
+              div uk_panel(do: "Wrap")
             end
           end
           div do
-            div(class: "uk-grid-small uk-grid-divider uk-child-width-1-2@m uk-flex-middle", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "First"
-                end
-              end
+            uk_grid(:small, :divider, child_width("1-2@m"), flex(:middle)) do
+              div uk_panel(do: "First")
               div(class: "uk-flex-first") do
-                div(class: "uk-panel") do
+                uk_panel do
                   "Last"
                   br()
                   "..."
@@ -1316,17 +815,13 @@ defmodule UIKitDemo.Core.Layout.Grid do
                   "..."
                 end
               end
-              div do
-                div(class: "uk-panel") do
-                  "Wrap"
-                end
-              end
+              div uk_panel(do: "Wrap")
             end
           end
           div do
-            div(class: "uk-grid-small uk-grid-divider uk-child-width-1-2@m uk-flex-middle", "uk-grid": true) do
+            uk_grid(:small, :divider, child_width("1-2@m"), flex(:middle)) do
               div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "First"
                   br()
                   "..."
@@ -1335,26 +830,18 @@ defmodule UIKitDemo.Core.Layout.Grid do
                 end
               end
               div(class: "uk-flex-first") do
-                div(class: "uk-panel") do
-                  "Last"
-                end
+                uk_panel(do: "Last")
               end
-              div do
-                div(class: "uk-panel") do
-                  "Wrap"
-                end
-              end
+              div uk_panel(do: "Wrap")
             end
           end
           div do
-            div(class: "uk-grid-small uk-grid-divider uk-child-width-1-2@m uk-flex-middle", "uk-grid": true) do
+            uk_grid(:small, :divider, child_width("1-2@m"), flex(:middle)) do
               div(class: "uk-flex-last") do
-                div(class: "uk-panel") do
-                  "First"
-                end
+                uk_panel(do: "First")
               end
               div do
-                div(class: "uk-panel") do
+                uk_panel do
                   "Last"
                   br()
                   "..."
@@ -1362,131 +849,47 @@ defmodule UIKitDemo.Core.Layout.Grid do
                   "..."
                 end
               end
-              div do
-                div(class: "uk-panel") do
-                  "Wrap"
-                end
-              end
+              div uk_panel(do: "Wrap")
             end
           end
         end
-        div(class: "uk-grid-divider uk-child-width-1-2@m", "uk-grid": true) do
+        uk_grid(:divider, child_width("1-2@m")) do
           div do
-            h3 do
-              "Stack"
-            end
-            div(class: "uk-grid-small uk-grid-divider uk-child-width-1-1", "uk-grid": true) do
-              div do
-                div(class: "uk-panel") do
-                  "First"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "Second"
-                end
-              end
+            h3     "Stack"
+            uk_grid(:small, :divider, child_width("1-1")) do
+              div uk_panel(do: "First")
+              div uk_panel(do: "Second")
               div(class: "uk-flex-first") do
-                div(class: "uk-panel") do
-                  "Last"
-                end
+                uk_panel(do: "Last")
               end
             end
           end
           div do
-            h3 do
-              "Align"
-            end
-            div(class: "uk-grid-small uk-grid-divider uk-child-width-1-4@s uk-flex-center", "uk-grid": true) do
+            h3     "Align"
+            uk_grid(:small, :divider, child_width("1-4@s"), flex(:center)) do
               div(class: "uk-flex-last") do
-                div(class: "uk-panel") do
-                  "First"
-                end
+                uk_panel(do: "First")
               end
-              div do
-                div(class: "uk-panel") do
-                  "Second"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "Third"
-                end
-              end
-              div do
-                div(class: "uk-panel") do
-                  "Forth"
-                end
-              end
+              div uk_panel(do: "Second")
+              div uk_panel(do: "Third")
+              div uk_panel(do: "Forth")
               div(class: "uk-flex-first") do
-                div(class: "uk-panel") do
-                  "Fifth"
-                end
+                uk_panel(do: "Fifth")
               end
-              div do
-                div(class: "uk-panel") do
-                  "Last"
-                end
-              end
+              div uk_panel(do: "Last")
             end
           end
         end
-        h2 do
-          "Javascript Options"
-        end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "margin"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-grid-margin"
-                end
-                td do
-                  "This class is added to items that break into the next row, typically to create margin to the previous row."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "first-column"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-first-column"
-                end
-                td do
-                  "This class is added to the first element in each row."
-                end
-              end
-            end
-          end
+
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do          
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["margin", "String", "uk-grid-margin", "This class is added to items that break into the next row, typically to create margin to the previous row."],
+              ["first-column", "String", "uk-first-column", "This class is added to the first element in each row."],
+            ]
+          )
         end
       end
     end
