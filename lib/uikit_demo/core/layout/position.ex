@@ -41,298 +41,293 @@ defmodule UIKitDemo.Core.Layout.Position do
     taggart do
 
       uk_container do
-        h1 do
-          "Position"
-        end
-        div(class: "uk-child-width-1-2@s", "uk-grid": true) do
+
+        h1 "Position"
+
+        uk_grid(child_width("1-2@s")) do
           div do
-            div(class: "uk-inline") do
+            uk_inline do
               a(class: "uk-display-block", href: "#") do
                 img(src: "/images/photo.jpg", alt: "")
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-top-left") do
+              uk_overlay(:default, padding(:small), position(:top_left)) do
                 "Top Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-top-center") do
+              uk_overlay(:default, padding(:small), position(:top_center)) do
                 "Top Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-top-right") do
+              uk_overlay(:default, padding(:small), position(:top_right)) do
                 "Top Right"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-center-left") do
+              uk_overlay(:default, padding(:small), position(:center_left)) do
                 "Center Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-center") do
+              uk_overlay(:default, padding(:small), position(:center)) do
                 "Center Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-center-right") do
+              uk_overlay(:default, padding(:small), position(:center_right)) do
                 "Center Right"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-bottom-left") do
+              uk_overlay(:default, padding(:small), position(:bottom_left)) do
                 "Bottom Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-bottom-center") do
+              uk_overlay(:default, padding(:small), position(:bottom_center)) do
                 "Bottom Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-bottom-right") do
+              uk_overlay(:default, padding(:small), position(:bottom_right)) do
                 "Bottom Right"
               end
             end
           end
           div do
-            div(class: "uk-inline") do
+            uk_inline do
               a(class: "uk-display-block", href: "#") do
                 img(src: "/images/photo.jpg", alt: "")
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-top uk-text-center") do
+              uk_overlay(:default, padding(:small), position(:top), text(:center)) do
                 "Top"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-bottom uk-text-center") do
+              uk_overlay(:default, padding(:small), position(:bottom), text(:center)) do
                 "Bottom"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-left uk-flex uk-flex-middle") do
+              uk_overlay(:default, padding(:small), position(:left), flex(:middle)) do
                 "Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-right uk-flex uk-flex-middle") do
+              uk_overlay(:default, padding(:small), position(:right), flex(:middle)) do
                 "Right"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-center") do
+              uk_overlay(:default, padding(:small), position(:center)) do
                 "This is a test for text wrapping if centered"
               end
             end
           end
         end
-        h2 do
-          "Small"
-        end
-        div(class: "uk-child-width-1-2@s", "uk-grid": true) do
+
+        h2 "Small"
+        uk_grid(child_width("1-2@s")) do
           div do
-            div(class: "uk-inline") do
+            uk_inline do
               a(class: "uk-display-block", href: "#") do
                 img(src: "/images/photo.jpg", alt: "")
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-top-left") do
+              uk_overlay(:default, padding(:small), position(:small, :top_left)) do
                 "Top Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-top-center") do
+              uk_overlay(:default, padding(:small), position(:small, :top_center)) do
                 "Top Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-top-right") do
+              uk_overlay(:default, padding(:small), position(:small, :top_right)) do
                 "Top Right"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-center-left") do
+              uk_overlay(:default, padding(:small), position(:small, :center_left)) do
                 "Center Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-center") do
+              uk_overlay(:default, padding(:small), position(:small, :center)) do
                 "Center Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-center-right") do
+              uk_overlay(:default, padding(:small), position(:small, :center_right)) do
                 "Center Right"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-bottom-left") do
+              uk_overlay(:default, padding(:small), position(:small, :bottom_left)) do
                 "Bottom Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-bottom-center") do
+              uk_overlay(:default, padding(:small), position(:small, :bottom_center)) do
                 "Bottom Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-bottom-right") do
+              uk_overlay(:default, padding(:small), position(:small, :bottom_right)) do
                 "Bottom Right"
               end
             end
           end
           div do
-            div(class: "uk-inline") do
+            uk_inline do
               a(class: "uk-display-block", href: "#") do
                 img(src: "/images/photo.jpg", alt: "")
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-top uk-text-center") do
+              uk_overlay(:default, padding(:small), position(:small, :top), text(:center)) do
                 "Top"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-bottom uk-text-center") do
+              uk_overlay(:default, padding(:small), position(:small, :bottom), text(:center)) do
                 "Bottom"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-left uk-flex uk-flex-middle") do
+              uk_overlay(:default, padding(:small), position(:small, :left), flex(:middle)) do
                 "Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-right uk-flex uk-flex-middle") do
+              uk_overlay(:default, padding(:small), position(:small, :right), flex(:middle)) do
                 "Right"
               end
             end
           end
         end
-        h2 do
-          "Medium"
-        end
-        div(class: "uk-child-width-1-2@s", "uk-grid": true) do
+
+        h2 "Medium"
+        uk_grid(child_width("1-2@s")) do
           div do
-            div(class: "uk-inline") do
+            uk_inline do
               a(class: "uk-display-block", href: "#") do
                 img(src: "/images/photo.jpg", alt: "")
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-top-left") do
+              uk_overlay(:default, padding(:small), position(:medium, :top_left)) do
                 "Top Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-top-center") do
+              uk_overlay(:default, padding(:small), position(:medium, :top_center)) do
                 "Top Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-top-right") do
+              uk_overlay(:default, padding(:small), position(:medium, :top_right)) do
                 "Top Right"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-center-left") do
+              uk_overlay(:default, padding(:small), position(:medium, :center_left)) do
                 "Center Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-center") do
+              uk_overlay(:default, padding(:small), position(:medium, :center)) do
                 "Center Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-center-right") do
+              uk_overlay(:default, padding(:small), position(:medium, :center_right)) do
                 "Center Right"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-bottom-left") do
+              uk_overlay(:default, padding(:small), position(:medium, :bottom_left)) do
                 "Bottom Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-bottom-center") do
+              uk_overlay(:default, padding(:small), position(:medium, :bottom_center)) do
                 "Bottom Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-bottom-right") do
+              uk_overlay(:default, padding(:small), position(:medium, :bottom_right)) do
                 "Bottom Right"
               end
             end
           end
           div do
-            div(class: "uk-inline") do
+            uk_inline do
               a(class: "uk-display-block", href: "#") do
                 img(src: "/images/photo.jpg", alt: "")
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-top uk-text-center") do
+              uk_overlay(:default, padding(:small), position(:medium, :top), text(:center)) do
                 "Top"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-bottom uk-text-center") do
+              uk_overlay(:default, padding(:small), position(:medium, :bottom), text(:center)) do
                 "Bottom"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-left uk-flex uk-flex-middle") do
+              uk_overlay(:default, padding(:small), position(:medium, :left), flex(:middle)) do
                 "Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-right uk-flex uk-flex-middle") do
+              uk_overlay(:default, padding(:small), position(:medium, :right), flex(:middle)) do
                 "Right"
               end
             end
           end
         end
-        h2 do
-          "Large"
-        end
-        div(class: "uk-child-width-1-2@s", "uk-grid": true) do
+
+        h2 "Large"
+        uk_grid(child_width("1-2@s")) do
           div do
-            div(class: "uk-inline") do
+            uk_inline do
               a(class: "uk-display-block", href: "#") do
                 img(src: "/images/photo.jpg", alt: "")
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-top-left") do
+              uk_overlay(:default, padding(:small), position(:large, :top_left)) do
                 "Top Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-top-center") do
+              uk_overlay(:default, padding(:small), position(:large, :top_center)) do
                 "Top Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-top-right") do
+              uk_overlay(:default, padding(:small), position(:large, :top_right)) do
                 "Top Right"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-center-left") do
+              uk_overlay(:default, padding(:small), position(:large, :center_left)) do
                 "Center Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-center") do
+              uk_overlay(:default, padding(:small), position(:large, :center)) do
                 "Center Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-center-right") do
+              uk_overlay(:default, padding(:small), position(:large, :center_right)) do
                 "Center Right"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-bottom-left") do
+              uk_overlay(:default, padding(:small), position(:large, :bottom_left)) do
                 "Bottom Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-bottom-center") do
+              uk_overlay(:default, padding(:small), position(:large, :bottom_center)) do
                 "Bottom Center"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-bottom-right") do
+              uk_overlay(:default, padding(:small), position(:large, :bottom_right)) do
                 "Bottom Right"
               end
             end
           end
           div do
-            div(class: "uk-inline") do
+            uk_inline do
               a(class: "uk-display-block", href: "#") do
                 img(src: "/images/photo.jpg", alt: "")
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-top uk-text-center") do
+              uk_overlay(:default, padding(:small), position(:large, :top), text(:center)) do
                 "Top"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-bottom uk-text-center") do
+              uk_overlay(:default, padding(:small), position(:large, :bottom), text(:center)) do
                 "Bottom"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-left uk-flex uk-flex-middle") do
+              uk_overlay(:default, padding(:small), position(:large, :left), flex(:middle)) do
                 "Left"
               end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-right uk-flex uk-flex-middle") do
+              uk_overlay(:default, padding(:small), position(:large, :right), flex(:middle)) do
                 "Right"
               end
             end
           end
         end
-        h2 do
-          "Cover"
+
+        h2 "Cover"
+        uk_grid(child_width("1-4@s")) do
+          div do
+            uk_inline do
+              a(class: "uk-display-block", href: "#") do
+                img(src: "/images/photo.jpg", alt: "")
+              end
+              uk_overlay(:default, padding(:small), position(:cover), flex(:center, :middle)) do
+                "Cover"
+              end
+            end
+          end
+          div do
+            uk_inline do
+              a(class: "uk-display-block", href: "#") do
+                img(src: "/images/photo.jpg", alt: "")
+              end
+              uk_overlay(:default, padding(:small), position(:small, :cover), flex(:center, :middle)) do
+                "Cover"
+              end
+            end
+          end
+          div do
+            uk_inline do
+              a(class: "uk-display-block", href: "#") do
+                img(src: "/images/photo.jpg", alt: "")
+              end
+              uk_overlay(:default, padding(:small), position(:medium, :cover), flex(:center, :middle)) do
+                "Cover"
+              end
+            end
+          end
+          div do
+            uk_inline do
+              a(class: "uk-display-block", href: "#") do
+                img(src: "/images/photo.jpg", alt: "")
+              end
+              uk_overlay(:default, padding(:small), position(:large, :cover), flex(:center, :middle)) do
+                "Cover"
+              end
+            end
+          end
         end
-        div(class: "uk-child-width-1-4@s", "uk-grid": true) do
-          div do
-            div(class: "uk-inline") do
-              a(class: "uk-display-block", href: "#") do
-                img(src: "/images/photo.jpg", alt: "")
-              end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-cover uk-flex uk-flex-center uk-flex-middle") do
-                "Cover"
-              end
-            end
-          end
-          div do
-            div(class: "uk-inline") do
-              a(class: "uk-display-block", href: "#") do
-                img(src: "/images/photo.jpg", alt: "")
-              end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-small uk-position-cover uk-flex uk-flex-center uk-flex-middle") do
-                "Cover"
-              end
-            end
-          end
-          div do
-            div(class: "uk-inline") do
-              a(class: "uk-display-block", href: "#") do
-                img(src: "/images/photo.jpg", alt: "")
-              end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-medium uk-position-cover uk-flex uk-flex-center uk-flex-middle") do
-                "Cover"
-              end
-            end
-          end
-          div do
-            div(class: "uk-inline") do
-              a(class: "uk-display-block", href: "#") do
-                img(src: "/images/photo.jpg", alt: "")
-              end
-              div(class: "uk-overlay uk-overlay-default uk-padding-small uk-position-large uk-position-cover uk-flex uk-flex-center uk-flex-middle") do
-                "Cover"
-              end
-            end
-          end
-        end
-        h2 do
-          "JavaScript"
-        end
+
+        h2 "JavaScript"
         div(id: "js-boundary", class: "uk-margin") do
           div(id: "js-target", class: "uk-flex uk-flex-center uk-flex-middle", draggable: "true") do
             "Drag me!"
           end
         end
         div(id: "js-element")
-        div(class: "uk-grid uk-child-width-auto uk-form-stacked") do
+        uk_grid(child_width(:auto), class("uk-form-stacked")) do
           div do
-            div(class: "uk-margin") do
+            uk(:div, margin()) do
               span(class: "uk-form-label") do
                 "Element"
               end
@@ -365,7 +360,7 @@ defmodule UIKitDemo.Core.Layout.Position do
                 end
               end
             end
-            div(class: "uk-margin") do
+            uk(:div, margin()) do
               span(class: "uk-form-label") do
                 "Target"
               end
@@ -400,7 +395,7 @@ defmodule UIKitDemo.Core.Layout.Position do
             end
           end
           div do
-            div(class: "uk-margin") do
+            uk(:div, margin()) do
               span(class: "uk-form-label") do
                 "Offset"
               end
@@ -413,7 +408,7 @@ defmodule UIKitDemo.Core.Layout.Position do
                 input(id: "js-offset_y", class: "uk-input uk-form-small uk-form-width-xsmall", type: "text")
               end
             end
-            div(class: "uk-margin") do
+            uk(:div, margin()) do
               span(class: "uk-form-label") do
                 "Flip"
               end
