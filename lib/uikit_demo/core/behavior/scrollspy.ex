@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Behavior.Scrollspy do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def head_content do
     style(type: "text/css") do
@@ -19,880 +20,201 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
     taggart do
       # div(class: "uk-card uk-card-default uk-card-body test-fixed") do
       uk_card(:default, :body, class("test-fixed")) do 
-        h3(class: "uk-card-title") do
-          "Scrollspy Nav"
-        end
+        uk_card_title(do: "Scrollspy Nav")
         ul(class: "uk-nav uk-nav-default", "uk-scrollspy-nav": "closest: li; scroll: true") do
-          li do
-            a(href: "#animation-repeat") do
-              "Single"
-            end
-          end
-          li do
-            a(href: "#animation-delay") do
-              "Group"
-            end
-          end
-          li do
-            a(href: "#animation-fade") do
-              "Fade"
-            end
-          end
-          li do
-            a(href: "#animation-scale-up") do
-              "Scale Up"
-            end
-          end
-          li do
-            a(href: "#animation-scale-down") do
-              "Scale Down"
-            end
-          end
-          li do
-            a(href: "#animation-slide-left") do
-              "Slide Left"
-            end
-          end
-          li do
-            a(href: "#animation-slide-right") do
-              "Slide Right"
-            end
-          end
-          li do
-            a(href: "#animation-slide-top") do
-              "Slide Top"
-            end
-          end
-          li do
-            a(href: "#animation-slide-bottom") do
-              "Slide Bottom"
-            end
-          end
-          li do
-            a(href: "#animation-different") do
-              "Different Animations"
-            end
-          end
-          li do
-            a(href: "#adjacent1") do
-              "Adjacent 1"
-            end
-          end
-          li do
-            a(href: "#adjacent2") do
-              "Adjacent 2"
-            end
+          for [href, title] <- [
+            ["#animation-repeat", "Single"],
+            ["#animation-delay", "Group"],
+            ["#animation-fade", "Fade"],
+            ["#animation-scale-up", "Scale Up"],
+            ["#animation-scale-down", "Scale Down"],
+            ["#animation-slide-left", "Slide Left"],
+            ["#animation-slide-right", "Slide Right"],
+            ["#animation-slide-top", "Slide Top"],
+            ["#animation-slide-bottom", "Slide Bottom"],
+            ["#animation-different", "Different Animations"],
+            ["#adjacent1", "Adjacent 1"],
+            ["#adjacent2", "Adjacent 2"],
+          ] do
+            li a(href: href, do: title)
           end
         end
       end
+
       uk_container do
-        h1 do
-          "ScrollSpy"
-        end
+        h1 "ScrollSpy"
         h2(id: "animation-repeat") do
           "Single, Repeat, Delay"
         end
-        div(class: "uk-child-width-1-4@m", "uk-grid": true, "uk-height-match": "target: > div > .uk-card") do
+        uk_grid(child_width("1-4@m"), height_match(target: "> div > .uk-card")) do
           div do
-            div(class: "uk-card uk-card-default uk-card-body", "uk-scrollspy": "cls: uk-animation-fade") do
-              p do
-                "The element is animated only the first time it appears in the viewport."
-              end
+            uk_card(:default, :body, scrollspy(cls: "uk-animation-fade")) do
+              p "The element is animated only the first time it appears in the viewport."
             end
           end
           div do
-            div(class: "uk-card uk-card-default uk-card-body", "uk-scrollspy": "cls: uk-animation-slide-right; repeat: true") do
-              p do
-                "The element is animated every time it appears in the viewport."
-              end
+            uk_card(:default, :body, scrollspy(cls: "uk-animation-slide-right", repeat: true)) do
+              p "The element is animated every time it appears in the viewport."
             end
           end
           div do
-            div(class: "uk-card uk-card-default uk-card-body", "uk-scrollspy": "cls: uk-animation-slide-right; delay: 1500; repeat: true") do
-              p do
-                "The element is animated every time it appears in the viewport but delayed by 1.5s."
+            uk_card(:default, :body, scrollspy(cls: "uk-animation-slide-right", delay: 1500, repeat: true)) do
+              p "The element is animated every time it appears in the viewport but delayed by 1.5s."
+            end
+          end
+        end
+
+        h2(id: "animation-delay") do "Group, Repeat, Delay" end
+        uk_grid(child_width("1-4@m"), scrollspy(cls: "uk-animation-fade", target: "> div > .uk-card", delay: 300, repeat: true)) do
+          for x <- 1..4 do
+            div do
+              uk_card(:default, :body) do
+                p "The animation of this element is delayed by some milliseconds."
               end
             end
           end
         end
-        h2(id: "animation-delay") do
-          "Group, Repeat, Delay"
-        end
-        div(class: "uk-child-width-1-4@m", "uk-grid": true, "uk-scrollspy": "cls: uk-animation-fade; target: > div > .uk-card; delay: 300; repeat: true") do
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              p do
-                "The animation of this element is delayed by some milliseconds."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              p do
-                "The animation of this element is delayed by some milliseconds."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              p do
-                "The animation of this element is delayed by some milliseconds."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              p do
-                "The animation of this element is delayed by some milliseconds."
+
+        h2(id: "animation-fade") do "Group: Fade" end
+        uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-fade", target: "> div > .uk-card", delay: 300, repeat: true)) do
+          for x <- 1..4 do
+            div do
+              uk_card(:default, :body) do
+                uk_card_title(do: "Fade")
+                p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               end
             end
           end
         end
-        h2(id: "animation-fade") do
-          "Group: Fade"
-        end
-        div(class: "uk-child-width-1-4@m uk-margin-xlarge-bottom", "uk-grid": true, "uk-scrollspy": "cls: uk-animation-fade; target: > div > .uk-card; delay: 300; repeat: true") do
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Fade"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Fade"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Fade"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Fade"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+        h2(id: "animation-scale-up") do "Group: Scale Up" end
+        uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-scale-up", target: "> div > .uk-card", delay: 300, repeat: true)) do
+          for x <- 1..20 do
+            div do
+              uk_card(:default, :body) do
+                uk_card_title(do: "Scale Up")
+                p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               end
             end
           end
         end
-        h2(id: "animation-scale-up") do
-          "Group: Scale Up"
-        end
-        div(class: "uk-child-width-1-4@m uk-margin-xlarge-bottom", "uk-grid": true, "uk-scrollspy": "cls: uk-animation-scale-up; target: > div > .uk-card; delay: 300; repeat: true") do
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+        h2(id: "animation-scale-down") do "Group: Scale Down" end
+        uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-scale-down", target: "> div > .uk-card", delay: 300, repeat: true)) do
+          for x <- 1..4 do
+            div do
+              uk_card(:default, :body) do
+                uk_card_title(do: "Scale Down")
+                p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               end
             end
           end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Up"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        end        
+
+        h2(id: "animation-slide-left") do "Group: Left" end
+        uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-slide-left", target: "> div > .uk-card", delay: 300, repeat: true)) do
+          for x <- 1..4 do
+            div do
+              uk_card(:default, :body) do
+                uk_card_title(do: "Left")
+                p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               end
             end
           end
         end
-        h2(id: "animation-scale-down") do
-          "Group: Scale Down"
-        end
-        div(class: "uk-child-width-1-4@m uk-margin-xlarge-bottom", "uk-grid": true, "uk-scrollspy": "cls: uk-animation-scale-down; target: > div > .uk-card; delay: 300; repeat: true") do
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Down"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Down"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Down"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Scale Down"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+        h2(id: "animation-slide-right") do "Group: Right" end
+        uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-slide-right", target: "> div > .uk-card", delay: 300, repeat: true)) do
+          for x <- 1..4 do
+            div do
+              uk_card(:default, :body) do
+                uk_card_title(do: "Right")
+                p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               end
             end
           end
         end
-        h2(id: "animation-slide-left") do
-          "Group: Left"
-        end
-        div(class: "uk-child-width-1-4@m uk-margin-xlarge-bottom", "uk-grid": true, "uk-scrollspy": "cls: uk-animation-slide-left; target: > div > .uk-card; delay: 300; repeat: true") do
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Left"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Left"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Left"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Left"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+        h2(id: "animation-slide-top") do "Group: Top" end
+        uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-slide-top", target: "> div > .uk-card", delay: 300, repeat: true)) do
+          for x <- 1..4 do
+            div do
+              uk_card(:default, :body) do
+                uk_card_title(do: "Top")
+                p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               end
             end
           end
         end
-        h2(id: "animation-slide-right") do
-          "Group: Right"
-        end
-        div(class: "uk-child-width-1-4@m uk-margin-xlarge-bottom", "uk-grid": true, "uk-scrollspy": "cls: uk-animation-slide-right; target: > div > .uk-card; delay: 300; repeat: true") do
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Right"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Right"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Right"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Right"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+        h2(id: "animation-slide-bottom") do "Group: Bottom" end
+        uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-slide-bottom", target: "> div > .uk-card", delay: 300, repeat: true)) do
+          for x <- 1..4 do
+            div do
+              uk_card(:default, :body) do
+                uk_card_title(do: "Bottom")
+                p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               end
             end
           end
         end
-        h2(id: "animation-slide-top") do
-          "Group: Top"
-        end
-        div(class: "uk-child-width-1-4@m uk-margin-xlarge-bottom", "uk-grid": true, "uk-scrollspy": "cls: uk-animation-slide-top; target: > div > .uk-card; delay: 300; repeat: true") do
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Top"
+
+        h2(id: "animation-different") do "Different Animations" end
+        uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-slide-bottom", target: "> div > .uk-card", delay: 300, repeat: true)) do
+          for x <- 1..2 do
+            taggart do
+              div do
+                uk_card(:default, :body) do
+                  uk_card_title(do: "Bottom")
+                  p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                end
               end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Top"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Top"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Top"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              div do
+                div(class: "uk-card uk-card-default uk-card-body", "uk-scrollspy-class": "uk-animation-slide-top") do
+                  uk_card_title(do: "Top")
+                  p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                end
               end
             end
           end
         end
-        h2(id: "animation-slide-bottom") do
-          "Group: Bottom"
+
+        h2 "Adjacent Sibling"
+        uk_section(:primary, text(:center), attr(id: "adjacent1")) do
+          p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         end
-        div(class: "uk-child-width-1-4@m uk-margin-xlarge-bottom", "uk-grid": true, "uk-scrollspy": "cls: uk-animation-slide-bottom; target: > div > .uk-card; delay: 300; repeat: true") do
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Bottom"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Bottom"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Bottom"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Bottom"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
+        uk_section(:secondary, text(:center), attr(id: "adjacent2")) do
+          p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         end
-        h2(id: "animation-different") do
-          "Different Animations"
+
+        h2 "Javascript Options"
+
+        h3 "Scrollspy"
+        uk(:div, overflow(:auto)) do          
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["cls", "String",  "uk-scrollspy-inview", "Class to add when the element is in view. If two, comma separated classes are provided those will be toggled."],
+              ["hidden", "Boolean", "true", "Hides the element while out of view."],
+              ["offset-top", "Number", "0", "Top offset before triggering in view."],
+              ["offset-left", "Number", "0", "Left offset before triggering in view."],
+              ["repeat", "Boolean", "false", "Applies the 'cls' class every time the element is in view."],
+              ["delay", "Number", "0", "Delay time in ms."],
+            ]
+          )
         end
-        div(class: "uk-child-width-1-4@m uk-margin-xlarge-bottom", "uk-grid": true, "uk-scrollspy": "cls: uk-animation-slide-bottom; target: > div > .uk-card; delay: 300; repeat: true") do
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Bottom"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body", "uk-scrollspy-class": "uk-animation-slide-top") do
-              h3(class: "uk-card-title") do
-                "Top"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              h3(class: "uk-card-title") do
-                "Bottom"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-          div do
-            div(class: "uk-card uk-card-default uk-card-body", "uk-scrollspy-class": "uk-animation-slide-top") do
-              h3(class: "uk-card-title") do
-                "Top"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-            end
-          end
-        end
-        h2 do
-          "Adjacent Sibling"
-        end
-        div(id: "adjacent1", class: "uk-section uk-section-primary uk-text-center") do
-          p do
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          end
-        end
-        div(id: "adjacent2", class: "uk-section uk-section-secondary uk-text-center") do
-          p do
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          end
-        end
-        h2 do
-          "Javascript Options"
-        end
-        h3 do
-          "Scrollspy"
-        end
+
+        h3 "Scrollspy Nav"
         div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "cls"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-scrollspy-inview"
-                end
-                td do
-                  "Class to add when the element is in view. If two, comma separated classes are provided those will be toggled."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "hidden"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "true"
-                end
-                td do
-                  "Hides the element while out of view."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "offset-top"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "0"
-                end
-                td do
-                  "Top offset before triggering in view."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "offset-left"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "0"
-                end
-                td do
-                  "Left offset before triggering in view."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "repeat"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Applies the 'cls' class every time the element is in view."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "delay"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "0"
-                end
-                td do
-                  "Delay time in ms."
-                end
-              end
-            end
-          end
-        end
-        h3 do
-          "Scrollspy Nav"
-        end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "cls"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-active"
-                end
-                td do
-                  "Class to add to the active links."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "closest"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-scrollspy-init-inview"
-                end
-                td do
-                  "Target to apply the class to."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "scroll"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Adds the Scroll component to its links."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "overflow"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "true"
-                end
-                td do
-                  "If overflow is set to true, the first or last item will stay active if above or below the navigation."
-                end
-              end
-            end
-          end
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["cls", "String", "uk-active", "Class to add to the active links."],
+              ["closest", "String", "uk-scrollspy-init-inview", "Target to apply the class to."],
+              ["scroll", "Boolean", "false", "Adds the Scroll component to its links."],
+              ["overflow", "Boolean", "true", "If overflow is set to true, the first or last item will stay active if above or below the navigation."],
+            ]
+          )
         end
       end
     end
