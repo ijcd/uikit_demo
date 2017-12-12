@@ -353,7 +353,7 @@ defmodule UIKitDemo.Core.Layout.Flex do
         h2 do
           "Inline Flex"
         end
-        uk_text(:center, tag: :div) do
+        uk(:div, text(:center)) do
           div(class: "uk-flex uk-flex-inline") do
             div do
               "1-4"

@@ -17,7 +17,8 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
 
   def demo_content do
     taggart do
-      div(class: "uk-card uk-card-default uk-card-body test-fixed") do
+      # div(class: "uk-card uk-card-default uk-card-body test-fixed") do
+      uk_card(:default, :body, class("test-fixed")) do 
         h3(class: "uk-card-title") do
           "Scrollspy Nav"
         end

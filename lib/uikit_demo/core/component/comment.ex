@@ -17,7 +17,7 @@ defmodule UIKitDemo.Core.Layout.Comment do
           uk_comment_list() do
             li do
               uk_comment() do
-                uk_comment_header(grid(:medium) | flex(:middle)) do
+                uk_comment_header(grid(:medium), flex(:middle)) do
                   uk_width(:auto) do
                     img(class: "uk-comment-avatar", src: "/images/avatar.jpg", width: "50", alt: "")
                   end
@@ -103,7 +103,7 @@ defmodule UIKitDemo.Core.Layout.Comment do
                   end
                   ul do
                     li do
-                      uk_comment(:primary | visible(:toggle)) do
+                      uk_comment(:primary, visible(:toggle)) do
                         uk_comment_header(position(:relative)) do
                           div(class: "uk-grid-medium uk-flex-middle", "uk-grid": true) do
                             uk_width(:auto) do
@@ -239,7 +239,7 @@ defmodule UIKitDemo.Core.Layout.Comment do
               end
             end
             li do
-              uk_comment(:primary | visible(:toggle)) do
+              uk_comment(:primary, visible(:toggle)) do
                 uk_comment_header(position(:relative)) do
                   div(class: "uk-grid-medium uk-flex-middle", "uk-grid": true) do
                     uk_width(:auto) do

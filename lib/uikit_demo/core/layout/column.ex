@@ -6,7 +6,7 @@ defmodule UIKitDemo.Core.Layout.Column do
     taggart do
       uk_container do
         h1 "Column"
-        div(class: uk_classes(margin() | column("1-2@s") | column("1-3@m") | column("1-4@l") | column("1-5@xl") | text(:justify))) do
+        uk(:div, margin(), column("1-2@s", "1-3@m", "1-4@l", "1-5@xl"), text(:justify)) do
           lorem()
           h3 "Headline"
           lorem()
@@ -14,7 +14,7 @@ defmodule UIKitDemo.Core.Layout.Column do
           lorem()
         end
         h2 "Divider"
-        div(class: uk_classes(margin() | column(:divider) | column("1-2@s") | column("1-3@m") | column("1-4@l") | column("1-5@xl") | text(:justify))) do
+        uk(:div, margin(), column(:divider), column("1-2@s", "1-3@m", "1-4@l", "1-5@xl"), text(:justify)) do
           lorem()
           h3 "Headline"
           lorem()
@@ -22,11 +22,11 @@ defmodule UIKitDemo.Core.Layout.Column do
           lorem()
         end
         h2 "Span all columns"
-        div(class: uk_classes(margin() | column(:divider) | column("1-2@s") | column("1-3@m") | text(:justify))) do
+        uk(:div, margin(), column(:divider), column("1-2@s", "1-3@m"), text(:justify)) do
           lorem()
           h3 "Headline"
           lorem()
-          blockquote(cite: "#", class: uk_classes(column(:span) | width("3-4@m") | margin(:auto) | margin(:large))) do
+          uk(:blockquote, attr(cite: "#"), column(:span), width("3-4@m"), margin(:auto), margin(:large)) do
             p "The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a footer or cite element."
             footer do
               "Someone famous in "

@@ -12,7 +12,7 @@ defmodule UIKitDemo.Core.Behavior.Animation do
 
   def animated_card(animation) do
     title = animation_to_title(animation)
-    uk_card(:default | :body | animation(animation)) do
+    uk_card(:default, :body, animation(animation)) do
       uk_card_title do: title
       p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     end
@@ -20,7 +20,7 @@ defmodule UIKitDemo.Core.Behavior.Animation do
 
   def animated_card(animation, :reverse) do
     title = animation_to_title(animation)
-    uk_card(:default | :body | animation(animation) | animation(:reverse)) do
+    uk_card(:default, :body, animation(animation), animation(:reverse)) do
       uk_card_title do: title
       p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     end
@@ -36,34 +36,30 @@ defmodule UIKitDemo.Core.Behavior.Animation do
 
     taggart do
       uk_container do
-        h1 do
-          "Animation"
-        end
+        h1 "Animation"
         uk_grid(child_width("1-4@m")) do
           for animation <- animations do
             uk_animation_toggle do: animated_card(animation)
           end
         end
-        h2 do
-          "Reverse"
-        end
+
+        h2 "Reverse"
         uk_grid(child_width("1_4@m")) do
           for animation <- animations do
             uk_animation_toggle do: animated_card(animation, :reverse)
           end
         end
-        h2 do
-          "Kenburns"
-        end
+
+        h2 "Kenburns"
         uk_grid(child_width("1-2@m")) do
           div do
-            div(class: "uk-overflow-hidden") do
-              img(class: uk_classes(animation(:kenburns) | transform_origin(:center_right)), src: "/images/dark.jpg", alt: "")
+            uk(:div, overflow(:hidden)) do
+              uk(:img, animation(:kenburns), transform_origin(:center_right), attr(src: "/images/dark.jpg", alt: ""))
             end
           end
           div do
-            div(class: "uk-overflow-hidden") do
-              img(class: uk_classes(animation(:kenburns) | animation(:reverse) | transform_origin(:top_center)), src: "/images/dark.jpg", alt: "")
+            uk(:div, overflow(:hidden)) do
+              uk(:img, animation(:kenburns), animation(:reverse), transform_origin(:top_center), attr(src: "/images/dark.jpg", alt: ""))
             end
           end
         end
