@@ -32,16 +32,12 @@ defmodule UIKitDemo.Core.Layout.Flex do
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Flex"
-        end
-        h2 do
-          "Alignment and Justify"
-        end
-        h3 do
-          "Stretch / Left (Default)"
-        end
-        div(class: "uk-flex uk-child-width-1-4") do
+        h1 "Flex"
+
+        h2 "Alignment and Justify"
+        
+        h3 "Stretch / Left (Default)"
+        uk_flex(child_width("1-4")) do
           div do
             "1-4"
           end
@@ -58,10 +54,9 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "..."
           end
         end
-        h3 do
-          "Middle / Center"
-        end
-        div(class: "uk-flex uk-flex-middle uk-flex-center uk-child-width-1-4") do
+        
+        h3 "Middle / Center"
+        uk_flex(:middle, :center, child_width("1-4")) do
           div do
             "1-4"
           end
@@ -78,10 +73,9 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "..."
           end
         end
-        h3 do
-          "Bottom / Right"
-        end
-        div(class: "uk-flex uk-flex-bottom uk-flex-right uk-child-width-1-4") do
+        
+        h3 "Bottom / Right"
+        uk_flex(:bottom, :right, child_width("1-4")) do
           div do
             "1-4"
           end
@@ -98,10 +92,9 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "..."
           end
         end
-        h3 do
-          "Top / Space-between"
-        end
-        div(class: "uk-flex uk-flex-top uk-flex-between uk-child-width-1-4") do
+        
+        h3 "Top / Space-between"
+        uk_flex(:top, :between, child_width("1-4")) do
           div do
             "1-4"
           end
@@ -118,10 +111,9 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "..."
           end
         end
-        h3 do
-          "Stretch / Space-around"
-        end
-        div(class: "uk-flex uk-flex-around uk-child-width-1-4") do
+        
+        h3 "Stretch / Space-around"
+        uk_flex(:around, child_width("1-4")) do
           div do
             "1-4"
           end
@@ -138,37 +130,35 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "..."
           end
         end
-        h2 do
-          "Wrap and Alignment"
-        end
-        h3 do
-          "Stretch"
-        end
-        div(class: "uk-flex uk-flex-wrap test") do
-          div(class: "uk-width-1-3") do
+
+        h2 "Wrap and Alignment"
+        
+        h3 "Stretch"
+        uk_flex(:wrap, class("test")) do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
@@ -176,34 +166,33 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "..."
           end
         end
-        h3 do
-          "Top"
-        end
-        div(class: "uk-flex uk-flex-wrap uk-flex-wrap-top test") do
-          div(class: "uk-width-1-3") do
+        
+        h3 "Top"
+        uk_flex(:wrap, :wrap_top, class("test")) do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
@@ -211,34 +200,33 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "..."
           end
         end
-        h3 do
-          "Middle"
-        end
-        div(class: "uk-flex uk-flex-wrap uk-flex-wrap-middle test") do
-          div(class: "uk-width-1-3") do
+        
+        h3 "Middle"
+        uk_flex(:wrap, :wrap_middle, class("test")) do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
@@ -246,34 +234,33 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "..."
           end
         end
-        h3 do
-          "Bottom"
-        end
-        div(class: "uk-flex uk-flex-wrap uk-flex-wrap-bottom test") do
-          div(class: "uk-width-1-3") do
+        
+        h3 "Bottom"
+        uk_flex(:wrap, :wrap_bottom, class("test")) do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
@@ -281,34 +268,33 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "..."
           end
         end
-        h3 do
-          "Space-between"
-        end
-        div(class: "uk-flex uk-flex-wrap uk-flex-wrap-between test") do
-          div(class: "uk-width-1-3") do
+        
+        h3 "Space-between"
+        uk_flex(:wrap, :wrap_between, class("test")) do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
@@ -316,34 +302,33 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "..."
           end
         end
-        h3 do
-          "Space-around"
-        end
-        div(class: "uk-flex uk-flex-wrap uk-flex-wrap-around test") do
-          div(class: "uk-width-1-3") do
+        
+        h3 "Space-around"
+        uk_flex(:wrap, :wrap_around, class("test")) do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
           end
-          div(class: "uk-width-1-2") do
+          uk_width("1-2") do
             "1-2"
             br()
             "..."
           end
-          div(class: "uk-width-1-3") do
+          uk_width("1-3") do
             "1-3"
             br()
             "..."
@@ -351,11 +336,10 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "..."
           end
         end
-        h2 do
-          "Inline Flex"
-        end
+
+        h2 "Inline Flex"
         uk(:div, text(:center)) do
-          div(class: "uk-flex uk-flex-inline") do
+          uk_flex(:inline) do
             div do
               "1-4"
             end
@@ -373,10 +357,9 @@ defmodule UIKitDemo.Core.Layout.Flex do
             end
           end
         end
-        h2 do
-          "Order"
-        end
-        div(class: "uk-flex uk-child-width-1-3") do
+
+        h2 "Order"
+        uk_flex(child_width("1-3")) do
           div do
             "1"
           end
@@ -387,7 +370,7 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "3"
           end
         end
-        div(class: "uk-flex uk-child-width-1-3") do
+        uk_flex(child_width("1-3")) do
           div(class: "uk-flex-last") do
             "1"
           end
@@ -398,7 +381,7 @@ defmodule UIKitDemo.Core.Layout.Flex do
             "3"
           end
         end
-        div(class: "uk-flex uk-child-width-1-3") do
+        uk_flex(child_width("1-3")) do
           div(class: "uk-flex-last") do
             "1"
           end
