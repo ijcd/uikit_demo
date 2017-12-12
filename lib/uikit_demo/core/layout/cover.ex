@@ -20,7 +20,7 @@ defmodule UIKitDemo.Core.Layout.Cover do
         div(class: "uk-child-width-1-2@m", "uk-grid": true) do
           div do
             h3 "Image"
-            div(class: "test-height uk-cover-container uk-light") do
+            uk_cover_container(class("test-height"), light()) do
               img(src: "/images/photo.jpg", alt: "", "uk-cover": true)
               uk_position(:cover, flex(:center, :middle)) do
                 h1 "Heading"
@@ -29,7 +29,7 @@ defmodule UIKitDemo.Core.Layout.Cover do
           end
           div do
             h3 "Video"
-            div(class: "test-height uk-cover-container uk-light") do
+            uk_cover_container(class("test-height"), light()) do
               video(autoplay: true, loop: true, muted: true, playsinline: true, "uk-cover": true) do
                 source(src: "//www.quirksmode.org/html5/videos/big_buck_bunny.mp4", type: "video/mp4")
                 source(src: "//www.quirksmode.org/html5/videos/big_buck_bunny.ogv", type: "video/ogg")
@@ -41,7 +41,7 @@ defmodule UIKitDemo.Core.Layout.Cover do
           end
           div do
             h3 "Iframe (YouTube)"
-            div(class: "test-height uk-cover-container uk-light") do
+            uk_cover_container(class("test-height"), light()) do
               iframe(src: "//www.youtube.com/embed/YE7VzlLtp-4?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&modestbranding=1&wmode=transparent&playsinline=1", width: "560", height: "315", frameborder: "0", allowfullscreen: true, "uk-cover": true)
               uk_position(:cover, flex(:center, :middle)) do
                 h1 "Heading"
@@ -50,7 +50,7 @@ defmodule UIKitDemo.Core.Layout.Cover do
           end
           div do
             h3 "Iframe (Vimeo)"
-            div(class: "test-height uk-cover-container uk-light") do
+            uk_cover_container(class("test-height"), light()) do
               iframe(src: "//player.vimeo.com/video/1084537?title=0&byline=0&autoplay=1&loop=1&setVolume=0", width: "500", height: "281", frameborder: "0", allowfullscreen: true, "uk-cover": true)
               uk_position(:cover, flex(:center, :middle)) do
                 h1 "Heading"
@@ -59,12 +59,11 @@ defmodule UIKitDemo.Core.Layout.Cover do
           end
         end
 
-
         h2 "Responsive Height"
         div(class: "uk-child-width-1-2@m", "uk-grid": true) do
           div do
             h3 "Video (JS)"
-            div(class: "uk-cover-container uk-light") do
+            uk_cover_container(light()) do
               canvas(width: "600", height: "400")
               video(autoplay: true, loop: true, muted: true, playsinline: true, "uk-cover": true) do
                 source(src: "//www.quirksmode.org/html5/videos/big_buck_bunny.mp4?test2", type: "video/mp4")
@@ -77,7 +76,7 @@ defmodule UIKitDemo.Core.Layout.Cover do
           end
           div do
             h3 "Iframe (YouTube)"
-            div(class: "uk-cover-container uk-light") do
+            uk_cover_container(light()) do
               canvas(width: "600", height: "400")
               iframe(src: "//www.youtube.com/embed/YE7VzlLtp-4?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&modestbranding=1&wmode=transparent&playsinline=1", width: "560", height: "315", frameborder: "0", allowfullscreen: true, "uk-cover": true)
               uk_position(:cover, flex(:center, :middle)) do
@@ -88,7 +87,7 @@ defmodule UIKitDemo.Core.Layout.Cover do
         end
 
         h2 "Viewport Height"
-        div(class: "uk-child-width-1-2@m", "uk-grid": true) do
+        uk_grid(child_width("1-2@m")) do
           div do
             h3 "Video (JS)"
             div(class: "uk-cover-container uk-light", "uk-height-viewport": true) do
