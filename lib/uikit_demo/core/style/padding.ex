@@ -4,9 +4,11 @@ defmodule UIKitDemo.Core.Style.Padding do
 
   def head_content do
     style(type: "text/css") do
-      Phoenix.HTML.raw """
+      Phoenix.HTML.raw(
+        """
         .uk-panel { background: #f0f0f0; }
-      """
+        """
+      )
     end
   end
 

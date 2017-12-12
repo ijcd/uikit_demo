@@ -4,12 +4,14 @@ defmodule UIKitDemo.Core.Style.Margin do
 
   def head_content do
     style(type: "text/css") do
-      Phoenix.HTML.raw """
+      Phoenix.HTML.raw(
+        """
         .uk-panel {
                padding: 20px;
                background: rgba(0,0,0,0.1);
         }
-      """
+        """
+      )
     end
   end
 

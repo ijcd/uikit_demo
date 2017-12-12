@@ -6,7 +6,7 @@ defmodule UIKitDemo.Core.Behavior.Parallax do
   def head_content do
     style(type: "text/css") do
       """
-        .test-color { border: 10px #fff solid; }
+      .test-color { border: 10px #fff solid; }
       """
     end
   end

@@ -6,7 +6,7 @@ defmodule UIKitDemo.Core.Behavior.Sticky do
   def head_content do
     style(type: "text/css") do
       """
-        #viewport { border: 1px dashed rgba(0,0,0,0.2); }
+      #viewport { border: 1px dashed rgba(0,0,0,0.2); }
       """
     end
   end

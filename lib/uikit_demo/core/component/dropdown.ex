@@ -5,11 +5,11 @@ defmodule UIKitDemo.Core.Component.Dropdown do
   def head_content do
     style(type: "text/css") do
       """
-        .test {
-                display: block;
-                position: relative;
-                width: 100%;
-        }
+      .test {
+              display: block;
+              position: relative;
+              width: 100%;
+      }
       """
     end
   end

@@ -5,8 +5,8 @@ defmodule UIKitDemo.Core.Behavior.Drop do
   def head_content do
     style(type: "text/css") do
       """
-        .boundary { border: 1px dashed rgba(0,0,0,0.2); }
-        .small-width { width: 165px; }
+      .boundary { border: 1px dashed rgba(0,0,0,0.2); }
+      .small-width { width: 165px; }
       """
     end
   end

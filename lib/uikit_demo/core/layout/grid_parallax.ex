@@ -4,18 +4,19 @@ defmodule UIKitDemo.Core.Layout.GridParallax do
 
   def head_content do
     style(type: "text/css") do
-      Phoenix.HTML.raw """
+      Phoenix.HTML.raw(
+        """
+        .uk-panel { height: 300px; }
 
-      .uk-panel { height: 300px; }
+        :nth-child(5n-4) > .uk-panel { background: rgba(0,0,0,0.2); }
+        :nth-child(5n-3) > .uk-panel { background: rgba(0,0,0,0.3); }
+        :nth-child(5n-2) > .uk-panel { background: rgba(0,0,0,0.4); }
+        :nth-child(5n-1) > .uk-panel { background: rgba(0,0,0,0.5); }
+        :nth-child(5n) > .uk-panel { background: rgba(0,0,0,0.6); }
 
-      :nth-child(5n-4) > .uk-panel { background: rgba(0,0,0,0.2); }
-      :nth-child(5n-3) > .uk-panel { background: rgba(0,0,0,0.3); }
-      :nth-child(5n-2) > .uk-panel { background: rgba(0,0,0,0.4); }
-      :nth-child(5n-1) > .uk-panel { background: rgba(0,0,0,0.5); }
-      :nth-child(5n) > .uk-panel { background: rgba(0,0,0,0.6); }
-
-      .test { background: rgba(0,0,0,0.05); }
-      """
+        .test { background: rgba(0,0,0,0.05); }
+        """
+      )
     end
   end
 

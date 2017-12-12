@@ -6,12 +6,12 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
   def head_content do
     style(type: "text/css") do
       """
-        .test-fixed {
-               position: fixed;
-               top: 20px;
-               right: 20px;
-               z-index: 1;
-        }
+      .test-fixed {
+             position: fixed;
+             top: 20px;
+             right: 20px;
+             z-index: 1;
+      }
       """
     end
   end

@@ -4,8 +4,8 @@ defmodule UIKitDemo.Core.Layout.Flex do
 
   def head_content do
     style(type: "text/css") do
-      Phoenix.HTML.raw """
-
+      Phoenix.HTML.raw(
+        """
         .uk-flex > * {
           padding: 10px;
           text-align: center;
@@ -24,7 +24,8 @@ defmodule UIKitDemo.Core.Layout.Flex do
           height: 300px;
           background: #f0f0f0;
         }
-      """
+        """
+      )
     end
   end
 

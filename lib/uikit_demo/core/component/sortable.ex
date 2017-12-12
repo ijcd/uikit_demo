@@ -5,9 +5,9 @@ defmodule UIKitDemo.Core.Component.Sortable do
   def head_content do
     style(type: "text/css") do
       """
-        .test-item {
-               font-size: 0.875rem;
-        }
+      .test-item {
+             font-size: 0.875rem;
+      }
       """
     end
   end

@@ -5,33 +5,35 @@ defmodule UIKitDemo.Core.Layout.Position do
 
   def head_content do
     style(type: "text/css") do
-      Phoenix.HTML.raw """
-      .uk-overlay { background: rgba(255,255,255,0.8); }
-
-      /* JavaScript */
-      #js-boundary {
-        height: 300px;
-        outline: 1px solid rgba(0,0,0,0.1);
-        position: relative;
-      }
-
-      #js-target {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 200px;
-        height: 100px;
-        background: rgba(0,0,0,0.1);
-      }
-
-      #js-element {
-        position: absolute;
-        display: none;
-        width: 75px;
-        height: 75px;
-        background: rgba(0,0,0,0.1);
-      }
-      """
+      Phoenix.HTML.raw(
+        """
+        .uk-overlay { background: rgba(255,255,255,0.8); }
+  
+        /* JavaScript */
+        #js-boundary {
+          height: 300px;
+          outline: 1px solid rgba(0,0,0,0.1);
+          position: relative;
+        }
+  
+        #js-target {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 200px;
+          height: 100px;
+          background: rgba(0,0,0,0.1);
+        }
+  
+        #js-element {
+          position: absolute;
+          display: none;
+          width: 75px;
+          height: 75px;
+          background: rgba(0,0,0,0.1);
+        }
+        """
+      )
     end
   end
 

@@ -4,7 +4,8 @@ defmodule UIKitDemo.Core.Layout.Grid do
 
   def head_content do
     style(type: "text/css") do
-      Phoenix.HTML.raw """
+      Phoenix.HTML.raw(
+        """
         .uk-panel {
                padding: 10px;
                text-align: center;
@@ -20,7 +21,8 @@ defmodule UIKitDemo.Core.Layout.Grid do
         :nth-child(10n-2) > .uk-panel { background: rgba(0,0,0,0.45); }
         :nth-child(10n-1) > .uk-panel { background: rgba(0,0,0,0.50); }
         :nth-child(10n) > .uk-panel { background: rgba(0,0,0,0.55); }
-      """
+        """
+      )
     end
   end
 

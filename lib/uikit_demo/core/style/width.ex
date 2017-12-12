@@ -4,24 +4,25 @@ defmodule UIKitDemo.Core.Style.Width do
 
   def head_content do
     style(type: "text/css") do
-      Phoenix.HTML.raw """
-
-       .uk-panel {
-               padding: 10px;
-               text-align: center;
-       }
-
-       :nth-child(10n-9) > .uk-panel { background: rgba(0,0,0,0.1); }
-       :nth-child(10n-8) > .uk-panel { background: rgba(0,0,0,0.15); }
-       :nth-child(10n-7) > .uk-panel { background: rgba(0,0,0,0.2); }
-       :nth-child(10n-6) > .uk-panel { background: rgba(0,0,0,0.25); }
-       :nth-child(10n-5) > .uk-panel { background: rgba(0,0,0,0.3); }
-       :nth-child(10n-4) > .uk-panel { background: rgba(0,0,0,0.35); }
-       :nth-child(10n-3) > .uk-panel { background: rgba(0,0,0,0.40); }
-       :nth-child(10n-2) > .uk-panel { background: rgba(0,0,0,0.45); }
-       :nth-child(10n-1) > .uk-panel { background: rgba(0,0,0,0.50); }
-       :nth-child(10n) > .uk-panel { background: rgba(0,0,0,0.55); }
-      """
+      Phoenix.HTML.raw(
+        """
+        .uk-panel {
+                padding: 10px;
+                text-align: center;
+        }
+ 
+        :nth-child(10n-9) > .uk-panel { background: rgba(0,0,0,0.1); }
+        :nth-child(10n-8) > .uk-panel { background: rgba(0,0,0,0.15); }
+        :nth-child(10n-7) > .uk-panel { background: rgba(0,0,0,0.2); }
+        :nth-child(10n-6) > .uk-panel { background: rgba(0,0,0,0.25); }
+        :nth-child(10n-5) > .uk-panel { background: rgba(0,0,0,0.3); }
+        :nth-child(10n-4) > .uk-panel { background: rgba(0,0,0,0.35); }
+        :nth-child(10n-3) > .uk-panel { background: rgba(0,0,0,0.40); }
+        :nth-child(10n-2) > .uk-panel { background: rgba(0,0,0,0.45); }
+        :nth-child(10n-1) > .uk-panel { background: rgba(0,0,0,0.50); }
+        :nth-child(10n) > .uk-panel { background: rgba(0,0,0,0.55); }
+        """
+      )
     end
   end
 

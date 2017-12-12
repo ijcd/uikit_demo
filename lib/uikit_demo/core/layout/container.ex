@@ -5,25 +5,28 @@ defmodule UIKitDemo.Core.Layout.Container do
 
   def demo_content do
     taggart do
+
       uk_container do
         h1 "Container"
-        div(class: "uk-margin uk-column-1-2@s uk-column-1-3@m uk-text-justify") do
+        uk(:div, margin(), column("1-2@s", "1-3@m"), text(:justify)) do
           lorem()
           lorem()
           lorem()
         end
       end
+
       uk_container(:small) do
         h1 "Small"
-        div(class: "uk-margin uk-column-1-2@s uk-text-justify") do
+        uk(:div, margin(), column("1-2@s"), text(:justify)) do
           lorem()
           lorem()
           lorem()
         end
       end
+
       uk_container(:expand) do
         h1 "Expand"
-        div(class: "uk-margin uk-column-1-2@s uk-column-1-3@m uk-column-1-4@l uk-text-justify") do
+        uk(:div, margin(), column("1-2@s", "1-3@m", "1-4@l"), text(:justify)) do
           lorem()
           lorem()
           lorem()

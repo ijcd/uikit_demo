@@ -5,13 +5,13 @@ defmodule UIKitDemo.Core.Navigation.Navbar do
   def head_content do
     style(type: "text/css") do
       """
-        .test {
-               display: block;
-               position: relative;
-               z-index: 1;
-               width: 100%;
-               margin-left: 0;
-        }
+      .test {
+             display: block;
+             position: relative;
+             z-index: 1;
+             width: 100%;
+             margin-left: 0;
+      }
       """
     end
   end

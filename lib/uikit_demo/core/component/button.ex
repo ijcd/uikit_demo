@@ -5,7 +5,7 @@ defmodule UIKitDemo.Core.Component.Button do
   def head_content do
     style(type: "text/css") do
       """
-        body { padding-bottom: 500px; }
+      body { padding-bottom: 500px; }
       """
     end
   end
