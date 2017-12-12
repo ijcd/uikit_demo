@@ -9,6 +9,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
           "Transition"
         end
         uk_grid(:small, child_width("1-3@s", "1-6@m")) do
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -20,6 +21,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Fade"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -31,6 +33,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Fade Cover"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -42,6 +45,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Fade Cover Small"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle), light()) do
               img(src: "/images/photo.jpg", alt: "")
@@ -54,6 +58,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Without Text"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle), light()) do
               img(src: "/images/photo.jpg", alt: "")
@@ -65,6 +70,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Icon"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle), light()) do
               img(src: "/images/photo.jpg", alt: "")
@@ -74,6 +80,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Fade 2 Images"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle), light()) do
               img(src: "/images/photo.jpg", alt: "")
@@ -87,6 +94,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Scale Up"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -98,6 +106,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Scale Down Cover"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               uk(:img, transition(:scale_up, :opaque), attr(src: "/images/photo.jpg", alt: ""))
@@ -106,6 +115,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Scale Up Image"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               uk(:img, transition(:scale_down, :opaque), attr(src: "/images/photo.jpg", alt: ""))
@@ -114,6 +124,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Scale Down Image"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -123,6 +134,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "2 Images"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle), light()) do
               img(src: "/images/photo.jpg", alt: "")
@@ -135,6 +147,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "2 Images + Icon"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -146,6 +159,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Top"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -157,6 +171,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Bottom"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -168,6 +183,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Left"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -179,6 +195,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Right"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -190,6 +207,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Top Cover"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -201,6 +219,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Bottom Cover"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle), light()) do
               img(src: "/images/photo.jpg", alt: "")
@@ -217,6 +236,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Small Top + Bottom"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle), light()) do
               img(src: "/images/photo.jpg", alt: "")
@@ -233,6 +253,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Small Left + Right"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -244,6 +265,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Top Small"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -255,6 +277,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Bottom Small"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -266,6 +289,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Left Small"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -277,6 +301,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Right Small"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle), light()) do
               img(src: "/images/photo.jpg", alt: "")
@@ -293,6 +318,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Medium Top + Bottom"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle), light()) do
               img(src: "/images/photo.jpg", alt: "")
@@ -309,6 +335,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Medium Left + Right"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -320,6 +347,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Top Medium"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -331,6 +359,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Bottom Medium"
             end
           end
+
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")
@@ -342,6 +371,7 @@ defmodule UIKitDemo.Core.Behavior.Transition do
               "Left Medium"
             end
           end
+          
           uk(:div, text(:center)) do
             uk_inline(:clip, transition(:toggle)) do
               img(src: "/images/photo.jpg", alt: "")

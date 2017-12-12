@@ -66,7 +66,7 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
 
         h2(id: "animation-delay") do "Group, Repeat, Delay" end
         uk_grid(child_width("1-4@m"), scrollspy(cls: "uk-animation-fade", target: "> div > .uk-card", delay: 300, repeat: true)) do
-          for x <- 1..4 do
+          for _x <- 1..4 do
             div do
               uk_card(:default, :body) do
                 p "The animation of this element is delayed by some milliseconds."
@@ -77,7 +77,7 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
 
         h2(id: "animation-fade") do "Group: Fade" end
         uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-fade", target: "> div > .uk-card", delay: 300, repeat: true)) do
-          for x <- 1..4 do
+          for _x <- 1..4 do
             div do
               uk_card(:default, :body) do
                 uk_card_title(do: "Fade")
@@ -89,7 +89,7 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
 
         h2(id: "animation-scale-up") do "Group: Scale Up" end
         uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-scale-up", target: "> div > .uk-card", delay: 300, repeat: true)) do
-          for x <- 1..20 do
+          for _x <- 1..20 do
             div do
               uk_card(:default, :body) do
                 uk_card_title(do: "Scale Up")
@@ -101,7 +101,7 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
 
         h2(id: "animation-scale-down") do "Group: Scale Down" end
         uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-scale-down", target: "> div > .uk-card", delay: 300, repeat: true)) do
-          for x <- 1..4 do
+          for _x <- 1..4 do
             div do
               uk_card(:default, :body) do
                 uk_card_title(do: "Scale Down")
@@ -113,7 +113,7 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
 
         h2(id: "animation-slide-left") do "Group: Left" end
         uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-slide-left", target: "> div > .uk-card", delay: 300, repeat: true)) do
-          for x <- 1..4 do
+          for _x <- 1..4 do
             div do
               uk_card(:default, :body) do
                 uk_card_title(do: "Left")
@@ -125,7 +125,7 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
 
         h2(id: "animation-slide-right") do "Group: Right" end
         uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-slide-right", target: "> div > .uk-card", delay: 300, repeat: true)) do
-          for x <- 1..4 do
+          for _x <- 1..4 do
             div do
               uk_card(:default, :body) do
                 uk_card_title(do: "Right")
@@ -137,7 +137,7 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
 
         h2(id: "animation-slide-top") do "Group: Top" end
         uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-slide-top", target: "> div > .uk-card", delay: 300, repeat: true)) do
-          for x <- 1..4 do
+          for _x <- 1..4 do
             div do
               uk_card(:default, :body) do
                 uk_card_title(do: "Top")
@@ -149,7 +149,7 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
 
         h2(id: "animation-slide-bottom") do "Group: Bottom" end
         uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-slide-bottom", target: "> div > .uk-card", delay: 300, repeat: true)) do
-          for x <- 1..4 do
+          for _x <- 1..4 do
             div do
               uk_card(:default, :body) do
                 uk_card_title(do: "Bottom")
@@ -161,7 +161,7 @@ defmodule UIKitDemo.Core.Behavior.Scrollspy do
 
         h2(id: "animation-different") do "Different Animations" end
         uk_grid(child_width("1-4@m"), margin(:xlarge_bottom), scrollspy(cls: "uk-animation-slide-bottom", target: "> div > .uk-card", delay: 300, repeat: true)) do
-          for x <- 1..2 do
+          for _x <- 1..2 do
             taggart do
               div do
                 uk_card(:default, :body) do
