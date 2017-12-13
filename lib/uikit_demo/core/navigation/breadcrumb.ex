@@ -5,16 +5,16 @@ defmodule UIKitDemo.Core.Navigation.Breadcrumb do
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Breadcrumb"
-        end
-        ul(class: "uk-breadcrumb") do
-          li do
+
+        h1 "Breadcrumb"
+
+        uk_breadcrumb do
+          uk_breadcrumb_item do
             a(href: "#") do
               "Home"
             end
           end
-          li do
+          uk_breadcrumb_item do
             a(href: "#") do
               "Blog"
             end
@@ -24,29 +24,30 @@ defmodule UIKitDemo.Core.Navigation.Breadcrumb do
               "Category"
             end
           end
-          li do
+          uk_breadcrumb_item do
             span do
               "Span"
             end
           end
         end
-        ul(class: "uk-breadcrumb") do
-          li do
+
+        uk_breadcrumb do
+          uk_breadcrumb_item do
             a(href: "#") do
               "Home"
             end
           end
-          li do
+          uk_breadcrumb_item do
             a(href: "#") do
               "Blog"
             end
           end
-          li(class: "uk-disabled") do
+          uk_breadcrumb_item(disabled()) do
             a(href: "#") do
               "Category"
             end
           end
-          li(class: "uk-disabled") do
+          uk_breadcrumb_item(disabled()) do
             a(href: "#") do
               "Link"
             end

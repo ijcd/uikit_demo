@@ -11,8 +11,8 @@ defmodule UIKitDemo.Web.HTML.PageView do
   """
 
   @sections %{
-    "style" => ~w[align base margin padding print visibility width],
-    "layout" => ~w[column comment container cover dynamic_grid flex grid grid_parallax panel position section utility],
+    "style" => ~w[align base margin padding print utility visibility width],
+    "layout" => ~w[column comment container cover dynamic_grid flex grid grid_parallax panel position section],
     "navigation" => ~w[breadcrumb dotnav dynamic_pagination iconnav nav navbar pagination slidenav subnav tab thumbnav],
     "component" => ~w[accordion alert article background badge button card close countdown datepicker description_list divider drop dropdown form heading html_editor icon label lightbox link list marker modal nestable notification off_canvas overlay placeholder progress search slider slideset slideshow sortable spinner switcher table text thumbnail tile timepicker toggle tooltip upload],
     "behavior" => ~w[animation autocomplete inverse parallax scroll scrollspy sticky totop transition],

@@ -2,228 +2,68 @@ defmodule UIKitDemo.Core.Navigation.Dotnav do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
 
+
+  def dots do
+    taggart do
+      li(class: "uk-active") do
+        a(href: "#") do
+          "Item 1"
+        end
+      end
+      for x <- 2..6 do            
+        uk_dotnav_item do
+          a(href: "#") do
+            "Item #{x}"
+          end
+        end
+      end
+    end
+  end
+
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Dotnav"
+
+        h1 "Dotnav"
+
+        h2 "Horizontal"
+        uk_dotnav do
+          dots()
         end
-        h2 do
-          "Horizontal"
+
+        h2 "Vertical"
+        uk_dotnav(:vertical) do
+          dots()
         end
-        ul(class: "uk-dotnav") do
-          li(class: "uk-active") do
-            a(href: "#") do
-              "Item 1"
-            end
-          end
-          li do
-            a(href: "#") do
-              "Item 2"
-            end
-          end
-          li do
-            a(href: "#") do
-              "Item 3"
-            end
-          end
-          li do
-            a(href: "#") do
-              "Item 4"
-            end
-          end
-          li do
-            a(href: "#") do
-              "Item 5"
-            end
-          end
-          li do
-            a(href: "#") do
-              "Item 6"
-            end
-          end
-        end
-        h2 do
-          "Vertical"
-        end
-        ul(class: "uk-dotnav uk-dotnav-vertical") do
-          li(class: "uk-active") do
-            a(href: "#") do
-              "Item 1"
-            end
-          end
-          li do
-            a(href: "#") do
-              "Item 2"
-            end
-          end
-          li do
-            a(href: "#") do
-              "Item 3"
-            end
-          end
-          li do
-            a(href: "#") do
-              "Item 4"
-            end
-          end
-          li do
-            a(href: "#") do
-              "Item 5"
-            end
-          end
-          li do
-            a(href: "#") do
-              "Item 6"
-            end
-          end
-        end
-        h2 do
-          "Image"
-        end
-        div(class: "uk-child-width-1-3@m", "uk-grid": true) do
+
+        h2 "Image"
+        uk_grid(child_width("1-3@m")) do
           div do
-            div(class: "uk-inline uk-light") do
+            uk_inline(light()) do
               img(src: "/images/photo.jpg", alt: "")
-              div(class: "uk-position-small uk-position-bottom-center") do
-                ul(class: "uk-dotnav") do
-                  li(class: "uk-active") do
-                    a(href: "#") do
-                      "Item 1"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 2"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 3"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 4"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 5"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 6"
-                    end
-                  end
+              uk_position(:small, position(:bottom_center)) do
+                uk_dotnav do
+                  dots()
                 end
               end
-              div(class: "uk-position-small uk-position-center-right") do
-                ul(class: "uk-dotnav uk-dotnav-vertical") do
-                  li(class: "uk-active") do
-                    a(href: "#") do
-                      "Item 1"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 2"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 3"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 4"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 5"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 6"
-                    end
-                  end
+              uk_position(:small, position(:center_right)) do
+                uk_dotnav(:vertical) do
+                  dots()
                 end
               end
             end
           end
           div do
-            div(class: "uk-inline uk-light") do
+            uk_inline(light()) do
               img(src: "/images/dark.jpg", alt: "")
-              div(class: "uk-position-small uk-position-bottom-center") do
-                ul(class: "uk-dotnav") do
-                  li(class: "uk-active") do
-                    a(href: "#") do
-                      "Item 1"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 2"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 3"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 4"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 5"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 6"
-                    end
-                  end
+              uk_position(:small, position(:bottom_center)) do
+                uk_dotnav do
+                  dots()
                 end
               end
-              div(class: "uk-position-small uk-position-center-right") do
-                ul(class: "uk-dotnav uk-dotnav-vertical") do
-                  li(class: "uk-active") do
-                    a(href: "#") do
-                      "Item 1"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 2"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 3"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 4"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 5"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 6"
-                    end
-                  end
+              uk_position(:small, position(:center_right)) do
+                uk_dotnav(:vertical) do
+                  dots()
                 end
               end
             end
@@ -231,109 +71,22 @@ defmodule UIKitDemo.Core.Navigation.Dotnav do
           div do
             div(class: "uk-inline uk-dark") do
               img(src: "/images/light.jpg", alt: "")
-              div(class: "uk-position-small uk-position-bottom-center") do
-                ul(class: "uk-dotnav") do
-                  li(class: "uk-active") do
-                    a(href: "#") do
-                      "Item 1"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 2"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 3"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 4"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 5"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 6"
-                    end
-                  end
+              uk_position(:small, position(:bottom_center)) do
+                uk_dotnav do
+                  dots()
                 end
               end
-              div(class: "uk-position-small uk-position-center-right") do
-                ul(class: "uk-dotnav uk-dotnav-vertical") do
-                  li(class: "uk-active") do
-                    a(href: "#") do
-                      "Item 1"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 2"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 3"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 4"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 5"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Item 6"
-                    end
-                  end
+              uk_position(:small, position(:center_right)) do
+                uk_dotnav(:vertical) do
+                  dots()
                 end
               end
             end
           end
         end
-        div(class: "uk-position-medium uk-position-center-right uk-position-fixed uk-visible@l") do
-          ul(class: "uk-dotnav uk-dotnav-vertical") do
-            li(class: "uk-active") do
-              a(href: "#") do
-                "Item 1"
-              end
-            end
-            li do
-              a(href: "#") do
-                "Item 2"
-              end
-            end
-            li do
-              a(href: "#") do
-                "Item 3"
-              end
-            end
-            li do
-              a(href: "#") do
-                "Item 4"
-              end
-            end
-            li do
-              a(href: "#") do
-                "Item 5"
-              end
-            end
-            li do
-              a(href: "#") do
-                "Item 6"
-              end
-            end
+        uk_position(:medium, :center_right, :fixed, visible("@l")) do
+          uk_dotnav(:vertical) do
+            dots()
           end
         end
       end
