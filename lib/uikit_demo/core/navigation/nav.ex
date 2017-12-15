@@ -1,329 +1,226 @@
 defmodule UIKitDemo.Core.Navigation.Nav do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
+
+  def sub_item_link do
+    a(href: "#", do: "Sub item")
+  end
+
+  defmacro uk_icon(icon, styles \\ []) do
+    quote location: :keep do
+      styles = [attr("uk-icon": "icon: #{unquote(icon)}"), unquote(styles)]
+      uk(:span, styles)
+    end
+  end
 
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Nav"
-        end
+
+        h1 "Nav"
+
         uk_grid(child_width("1-4@m")) do
           div do
-            h2 do
-              "Default"
-            end
-            ul(class: "uk-nav uk-nav-default") do
-              li(class: "uk-active") do
+            
+            h2 "Default"
+            uk_nav(:default) do
+              uk(:li, active()) do
                 a(href: "#") do
                   "Active"
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
                   li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
+                    sub_item_link()
                     ul do
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
+                      li sub_item_link()
+                      li sub_item_link()
                     end
                   end
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
+                  li sub_item_link()
                 end
               end
-              li(class: "uk-nav-header") do
-                "Header"
-              end
+              uk_nav_header "Header"
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                  uk_icon(:table, margin(:small_right))
                   " Item"
                 end
               end
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                  uk_icon(:thumbnails, margin(:small_right))
                   " Item"
                 end
               end
-              li(class: "uk-nav-divider")
+              uk_nav_divider()
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                  uk_icon(:trash, margin(:small_right))
                   " Item"
                 end
               end
             end
           end
           div do
-            h2 do
-              "Accordion"
-            end
-            ul(class: "uk-nav-default uk-nav-parent-icon", "uk-nav": true) do
-              li(class: "uk-active") do
+            
+            h2 "Accordion"
+            uk_nav_accordion(:default, :parent_icon) do
+              uk(:li, active()) do
                 a(href: "#") do
                   "Active"
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
                   li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
+                    sub_item_link()
                     ul do
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
+                      li sub_item_link()
+                      li sub_item_link()
                     end
                   end
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
+                  li sub_item_link()
                 end
               end
-              li(class: "uk-nav-header") do
-                "Header"
-              end
+              uk_nav_header "Header"
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                  uk_icon(:table, margin(:small_right))
                   " Item"
                 end
               end
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                  uk_icon(:thumbnails, margin(:small_right))
                   " Item"
                 end
               end
-              li(class: "uk-nav-divider")
+              uk_nav_divider()
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                  uk_icon(:trash, margin(:small_right))
                   " Item"
                 end
               end
             end
           end
           div do
-            h2 do
-              "Multiple"
-            end
-            ul(class: "uk-nav-default uk-nav-parent-icon", "uk-nav": "multiple: true") do
-              li(class: "uk-active") do
+            
+            h2 "Multiple"
+            uk_nav_accordion(:default, :parent_icon, multiple: true) do
+              uk(:li, active()) do
                 a(href: "#") do
                   "Active"
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
                   li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
+                    sub_item_link()
                     ul do
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
+                      li sub_item_link()
+                      li sub_item_link()
                     end
                   end
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
+                  li sub_item_link()
                 end
               end
-              li(class: "uk-nav-header") do
-                "Header"
-              end
+              uk_nav_header "Header"
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                  uk_icon(:table, margin(:small_right))
                   " Item"
                 end
               end
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                  uk_icon(:thumbnails, margin(:small_right))
                   " Item"
                 end
               end
-              li(class: "uk-nav-divider")
+              uk_nav_divider()
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                  uk_icon(:trash, margin(:small_right))
                   " Item"
                 end
               end
             end
           end
           div do
-            h2(class: "uk-text-center") do
+            uk(:h2, text(:center)) do
               "Center"
             end
-            ul(class: "uk-nav-default uk-nav-center uk-nav-parent-icon", "uk-nav": true) do
-              li(class: "uk-active") do
+            uk_nav_accordion(:default, :center, :parent_icon) do              
+              uk(:li, active()) do
                 a(href: "#") do
                   "Active"
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
                   li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
+                    sub_item_link()
                     ul do
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
+                      li sub_item_link()
+                      li sub_item_link()
                     end
                   end
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
+                  li sub_item_link()
                 end
               end
-              li(class: "uk-nav-header") do
-                "Header"
-              end
+              uk_nav_header "Header"
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                  uk_icon(:table, margin(:small_right))
                   " Item"
                 end
               end
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                  uk_icon(:thumbnails, margin(:small_right))
                   " Item"
                 end
               end
-              li(class: "uk-nav-divider")
+              uk_nav_divider()
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                  uk_icon(:trash, margin(:small_right))
                   " Item"
                 end
               end
@@ -332,493 +229,228 @@ defmodule UIKitDemo.Core.Navigation.Nav do
         end
         uk_grid(child_width("1-4@m")) do
           div do
-            h2 do
-              "Primary"
-            end
-            ul(class: "uk-nav uk-nav-primary") do
-              li(class: "uk-active") do
+            
+            h2 "Primary"
+            uk_nav(:primary) do
+              uk(:li, active()) do
                 a(href: "#") do
                   "Active"
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
                   li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
+                    sub_item_link()
                     ul do
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
+                      li sub_item_link()
+                      li sub_item_link()
                     end
                   end
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
+                  li sub_item_link()
                 end
               end
-              li(class: "uk-nav-header") do
-                "Header"
-              end
+              uk_nav_header "Header"
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                  uk_icon(:table, margin(:small_right))
                   " Item"
                 end
               end
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                  uk_icon(:thumbnails, margin(:small_right))
                   " Item"
                 end
               end
-              li(class: "uk-nav-divider")
+              uk_nav_divider()
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                  uk_icon(:trash, margin(:small_right))
                   " Item"
                 end
               end
             end
           end
           div do
-            h2 do
-              "Accordion"
-            end
-            ul(class: "uk-nav-primary uk-nav-parent-icon", "uk-nav": true) do
-              li(class: "uk-active") do
+            
+            h2 "Accordion"
+            uk_nav_accordion(:primary, :parent_icon) do
+              uk(:li, active()) do
                 a(href: "#") do
                   "Active"
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
                   li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
+                    sub_item_link()
                     ul do
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
+                      li sub_item_link()
+                      li sub_item_link()
                     end
                   end
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
+                  li sub_item_link()
                 end
               end
-              li(class: "uk-nav-header") do
-                "Header"
-              end
+              uk_nav_header "Header"
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                  uk_icon(:table, margin(:small_right))
                   " Item"
                 end
               end
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                  uk_icon(:thumbnails, margin(:small_right))
                   " Item"
                 end
               end
-              li(class: "uk-nav-divider")
+              uk_nav_divider()
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                  uk_icon(:trash, margin(:small_right))
                   " Item"
                 end
               end
             end
           end
           div do
-            h2 do
-              "Multiple"
-            end
-            ul(class: "uk-nav-primary uk-nav-parent-icon", "uk-nav": "multiple: true") do
-              li(class: "uk-active") do
+            
+            h2 "Multiple"
+            uk_nav_accordion(:primary, :parent_icon, multiple: true) do
+              uk(:li, active()) do
                 a(href: "#") do
                   "Active"
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
                   li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
+                    sub_item_link()
                     ul do
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
+                      li sub_item_link()
+                      li sub_item_link()
                     end
                   end
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
+                  li sub_item_link()
                 end
               end
-              li(class: "uk-nav-header") do
-                "Header"
-              end
+              uk_nav_header "Header"
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                  uk_icon(:table, margin(:small_right))
                   " Item"
                 end
               end
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                  uk_icon(:thumbnails, margin(:small_right))
                   " Item"
                 end
               end
-              li(class: "uk-nav-divider")
+              uk_nav_divider()
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                  uk_icon(:trash, margin(:small_right))
                   " Item"
                 end
               end
             end
           end
           div do
-            h2(class: "uk-text-center") do
+            uk(:h2, text(:center)) do
               "Center"
             end
-            ul(class: "uk-nav-primary uk-nav-center uk-nav-parent-icon", "uk-nav": true) do
-              li(class: "uk-active") do
+            uk_nav_accordion(:primary, :center, :parent_icon) do
+              uk(:li, active()) do
                 a(href: "#") do
                   "Active"
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
                   li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
+                    sub_item_link()
                     ul do
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
-                      li do
-                        a(href: "#") do
-                          "Sub item"
-                        end
-                      end
+                      li sub_item_link()
+                      li sub_item_link()
                     end
                   end
                 end
               end
-              li(class: "uk-parent") do
-                a(href: "#") do
-                  "Parent"
-                end
-                ul(class: "uk-nav-sub") do
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
-                  li do
-                    a(href: "#") do
-                      "Sub item"
-                    end
-                  end
+              uk(:li, parent()) do
+                a(href: "#", do: "Parent")
+                uk_nav_sub do
+                  li sub_item_link()
+                  li sub_item_link()
                 end
               end
-              li(class: "uk-nav-header") do
-                "Header"
-              end
+              uk_nav_header "Header"
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                  uk_icon(:table, margin(:small_right))
                   " Item"
                 end
               end
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                  uk_icon(:thumbnails, margin(:small_right))
                   " Item"
                 end
               end
-              li(class: "uk-nav-divider")
+              uk_nav_divider()
               li do
                 a(href: "#") do
-                  span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                  uk_icon(:trash, margin(:small_right))
                   " Item"
                 end
               end
             end
           end
         end
-        h2 do
-          "Javascript Options"
-        end
-        Taggart.HTML.table(class: "uk-table uk-table-striped") do
-          thead do
-            tr do
-              th do
-                "Option"
-              end
-              th do
-                "Value"
-              end
-              th do
-                "Default"
-              end
-              th do
-                "Description"
-              end
-            end
-          end
-          tbody do
-            tr do
-              td do
-                code do
-                  "targets"
-                end
-              end
-              td do
-                "CSS selector"
-              end
-              td do
-                "> .uk-parent"
-              end
-              td do
-                "The element(s) to toggle."
-              end
-            end
-            tr do
-              td do
-                code do
-                  "toggle"
-                end
-              end
-              td do
-                "CSS selector"
-              end
-              td do
-                "> a"
-              end
-              td do
-                "The toggle element(s)."
-              end
-            end
-            tr do
-              td do
-                code do
-                  "content"
-                end
-              end
-              td do
-                "CSS selector"
-              end
-              td do
-                "> ul"
-              end
-              td do
-                "The content element(s)."
-              end
-            end
-            tr do
-              td do
-                code do
-                  "active"
-                end
-              end
-              td do
-                "Number"
-              end
-              td do
-                "false"
-              end
-              td do
-                "The element(s) to toggle."
-              end
-            end
-            tr do
-              td do
-                code do
-                  "collapsible"
-                end
-              end
-              td do
-                "Boolean"
-              end
-              td do
-                "true"
-              end
-              td do
-                "Allow all items to be closed."
-              end
-            end
-            tr do
-              td do
-                code do
-                  "multiple"
-                end
-              end
-              td do
-                "Boolean"
-              end
-              td do
-                "false"
-              end
-              td do
-                "Allow multiple open items."
-              end
-            end
-            tr do
-              td do
-                code do
-                  "transition"
-                end
-              end
-              td do
-                "String"
-              end
-              td do
-                "ease"
-              end
-              td do
-                "The transition to use."
-              end
-            end
-            tr do
-              td do
-                code do
-                  "animation"
-                end
-              end
-              td do
-                "String"
-              end
-              td do
-                "true"
-              end
-              td do
-                "The space separated names of animations to use. (Comma separate for animation out)"
-              end
-            end
-            tr do
-              td do
-                code do
-                  "duration"
-                end
-              end
-              td do
-                "Number"
-              end
-              td do
-                "200"
-              end
-              td do
-                "The animation duration."
-              end
-            end
-          end
-        end
+
+        h2 "Javascript Options"
+        striped_table(
+          ["Option", "Value", "Default", "Description"],
+          [
+            ["targets", "CSS selector", "> .uk-parent", "The element(s) to toggle."],
+            ["toggle", "CSS selector", "> a", "The toggle element(s)."],
+            ["content", "CSS selector", "> ul", "The content element(s)."],
+            ["active", "Number", "false", "The element(s) to toggle."],
+            ["collapsible", "Boolean", "true", "Allow all items to be closed."],
+            ["multiple", "Boolean", "false", "Allow multiple open items."],
+            ["transition", "String", "ease", "The transition to use."],
+            ["animation", "String", "true", "The space separated names of animations to use. (Comma separate for animation out)"],
+            ["duration", "Number", "200", "The animation duration."],
+          ]
+        )
+
       end
     end
   end

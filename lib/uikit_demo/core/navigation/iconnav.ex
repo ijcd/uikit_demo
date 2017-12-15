@@ -5,42 +5,23 @@ defmodule UIKitDemo.Core.Navigation.Iconnav do
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Iconnav"
+
+        h1 "Iconnav"
+
+        h2 "Horizontal"
+        uk_iconnav do
+          li(class: "uk-active", do: uk_icon_link(:plus))
+          li uk_icon_link(:pencil)
+          li uk_icon_link(:copy)
+          li uk_icon_link(:trash)
         end
-        h2 do
-          "Horizontal"
-        end
-        ul(class: "uk-iconnav") do
-          li(class: "uk-active") do
-            a(href: "#", "uk-icon": "icon: plus")
-          end
-          li do
-            a(href: "#", "uk-icon": "icon: pencil")
-          end
-          li do
-            a(href: "#", "uk-icon": "icon: copy")
-          end
-          li do
-            a(href: "#", "uk-icon": "icon: trash")
-          end
-        end
-        h2 do
-          "Vertical"
-        end
-        ul(class: "uk-iconnav uk-iconnav-vertical") do
-          li(class: "uk-active") do
-            a(href: "#", "uk-icon": "icon: plus")
-          end
-          li do
-            a(href: "#", "uk-icon": "icon: pencil")
-          end
-          li do
-            a(href: "#", "uk-icon": "icon: copy")
-          end
-          li do
-            a(href: "#", "uk-icon": "icon: trash")
-          end
+
+        h2 "Vertical"
+        uk_iconnav(:vertical) do
+          li(class: "uk-active", do: uk_icon_link(:plus))
+          li uk_icon_link(:pencil)
+          li uk_icon_link(:copy)
+          li uk_icon_link(:trash)
         end
       end
     end
