@@ -71,7 +71,7 @@ defmodule UIKitDemo.Mixfile do
 
       # frontend
       {:taggart, path: "~/work/ijcd/taggart"},
-      {:uikit_ex, path: "~/work/ijcd/uikit_ex"},
+      # {:uikit_ex, path: "~/work/ijcd/uikit_ex"},
 
       # {:macpato, "~> 0.1.2"},
 

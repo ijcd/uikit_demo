@@ -7,13 +7,6 @@ defmodule UIKitDemo.Core.Navigation.Nav do
     a(href: "#", do: "Sub item")
   end
 
-  defmacro uk_icon(icon, styles \\ []) do
-    quote location: :keep do
-      styles = [attr("uk-icon": "icon: #{unquote(icon)}"), unquote(styles)]
-      uk(:span, styles)
-    end
-  end
-
   def demo_content do
     taggart do
       uk_container do
