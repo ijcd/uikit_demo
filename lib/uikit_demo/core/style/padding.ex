@@ -12,41 +12,31 @@ defmodule UIKitDemo.Core.Style.Padding do
     end
   end
 
+  def paragraph(kind) do
+    taggart do
+      h3 kind 
+      p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    end
+  end
+
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Padding"
-        end
-        div(class: "uk-child-width-1-2@s", "uk-grid": true) do
+        h1 "Padding"
+        uk_grid(child_width("1-2@s")) do
           div do
-            div(class: "uk-panel uk-padding") do
-              h3 do
-                "Medium"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
+            uk_panel(padding()) do
+              paragraph("Medium")
             end
           end
           div do
-            div(class: "uk-panel uk-padding-small") do
-              h3 do
-                "Small"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
+            uk_panel(padding(:small)) do
+              paragraph("Small")
             end
           end
           div do
-            div(class: "uk-panel uk-padding-large") do
-              h3 do
-                "Large"
-              end
-              p do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              end
+            uk_panel(padding(:large)) do
+              paragraph("Large")
             end
           end
         end
