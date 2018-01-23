@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Slideshow do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -517,159 +518,26 @@ defmodule UIKitDemo.Core.Component.Slideshow do
         end
       end
       uk_container do
-        h3 do
-          "Slideshow"
+  
+        h3 "Slideshow"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["animation", "String", "slide", "The animation to use. (slide, fade, scale, pull, push)"],
+              ["autoplay", "Boolean", "false", "Starts autoplaying the slideshow."],
+              ["autoplay-interval", "Number", "7000", "The delay between switching slides in autoplay mode."],
+              # ["finite", "Boolean", "false", "Disable infinite sliding."],
+              # ["index", "Number", "0", "Slideshow item to show. 0 based index."],
+              ["pause-on-hover", "Boolean", "false", "Pause autoplay mode on hover."],
+              ["velocity", "Number", "1", "The animation velocity (pixel/ms)."],
+              ["ratio", "Boolean, String", "16:9", "The ratio. (`false` prevents height adjustment)"],
+              ["min-height", "Boolean, Number", "false", "The minimum height."],
+              ["max-height", "Boolean, Number", "false", "The maximum height."],
+            ]
+          )
         end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "animation"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "slide"
-                end
-                td do
-                  "The animation to use. (slide, fade, scale, pull, push)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "autoplay"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Starts autoplaying the slideshow."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "autoplay-interval"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "7000"
-                end
-                td do
-                  "The delay between switching slides in autoplay mode."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "pause-on-hover"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Pause autoplay mode on hover."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "velocity"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "1"
-                end
-                td do
-                  "The animation velocity (pixel/ms)."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "ratio"
-                  end
-                end
-                td do
-                  "Boolean, String"
-                end
-                td do
-                  "16:9"
-                end
-                td do
-                  "The ratio. (`false` prevents height adjustment)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "min-height"
-                  end
-                end
-                td do
-                  "Boolean, Number"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "The minimum height."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "max-height"
-                  end
-                end
-                td do
-                  "Boolean, Number"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "The maximum height."
-                end
-              end
-            end
-          end
-        end
+
       end
     end
   end

@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Tooltip do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -71,142 +72,21 @@ defmodule UIKitDemo.Core.Component.Tooltip do
             end
           end
         end
-        h2 do
-          "Javascript Options"
-        end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "pos"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "'bottom-left'"
-                end
-                td do
-                  "Tooltip position."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "offset"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "0"
-                end
-                td do
-                  "The offset of the Tooltip."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "animation"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "The space separated names of animations to use. (Comma separate for animation out)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "duration"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "200"
-                end
-                td do
-                  "The animation duration."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "delay"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "0"
-                end
-                td do
-                  "The show delay."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "cls"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-active"
-                end
-                td do
-                  "The active class."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "container"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "true"
-                end
-                td do
-                  "Define a target container via a selector to specify where the tooltip should be appended in the DOM."
-                end
-              end
-            end
-          end
+
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["pos", "String", "'bottom-left'", "Tooltip position."],
+              ["offset", "Number", "0", "The offset of the Tooltip."],
+              ["animation", "String", "false", "The space separated names of animations to use. (Comma separate for animation out)"],
+              ["duration", "Number", "200", "The animation duration."],
+              ["delay", "Number", "0", "The show delay."],
+              ["cls", "String", "uk-active", "The active class."],
+              ["container", "Boolean", "true", "Define a target container via a selector to specify where the tooltip should be appended in the DOM."],
+            ]
+          )
         end
       end
     end

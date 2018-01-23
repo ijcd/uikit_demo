@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Countdown do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -113,55 +114,17 @@ defmodule UIKitDemo.Core.Component.Countdown do
             end
           end
         end
-        h2 do
-          "Javascript Options"
+
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["date", "String", "false", ["Any string parsable by ", code("Date.parse"), " - ", a(href: "https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/parse", target: "_blank", do: "Reference"), "."]],
+            ]
+          )
         end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "date"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Any string parsable by "
-                  code do
-                    "Date.parse"
-                  end
-                  " - "
-                  a(href: "https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/parse", target: "_blank") do
-                    "Reference"
-                  end
-                  "."
-                end
-              end
-            end
-          end
-        end
+
       end
     end
   end

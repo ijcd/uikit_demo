@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.OffCanvas do
   use Taggart.HTML, except: [table: 2]
   use UIKit
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -133,79 +134,19 @@ defmodule UIKitDemo.Core.Component.OffCanvas do
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             end
           end
-          h2(id: "js-options") do
-            "Javascript Options"
+
+          h2("Javascript Options", id: "js-options")
+          uk(:div, overflow(:auto)) do
+            striped_table(
+              ["Option", "Value", "Default", "Description"],
+              [
+                ["mode", "slide|reveal|push|none", "slide", "Offcanvas open mode."],
+                ["flip", "Boolean", "false", "Flip Offcanvas to right side."],
+                ["overlay", "Boolean", "false", "Show Offcanvas together with an overlay."],
+              ]
+            )
           end
-          div(class: "uk-overflow-auto") do
-            Taggart.HTML.table(class: "uk-table uk-table-striped") do
-              thead do
-                tr do
-                  th do
-                    "Option"
-                  end
-                  th do
-                    "Value"
-                  end
-                  th do
-                    "Default"
-                  end
-                  th do
-                    "Description"
-                  end
-                end
-              end
-              tbody do
-                tr do
-                  td do
-                    code do
-                      "mode"
-                    end
-                  end
-                  td do
-                    "slide|reveal|push|none"
-                  end
-                  td do
-                    "slide"
-                  end
-                  td do
-                    "Offcanvas open mode."
-                  end
-                end
-                tr do
-                  td do
-                    code do
-                      "flip"
-                    end
-                  end
-                  td do
-                    "Boolean"
-                  end
-                  td do
-                    "false"
-                  end
-                  td do
-                    "Flip Offcanvas to right side."
-                  end
-                end
-                tr do
-                  td do
-                    code do
-                      "overlay"
-                    end
-                  end
-                  td do
-                    "Boolean"
-                  end
-                  td do
-                    "false"
-                  end
-                  td do
-                    "Show Offcanvas together with an overlay."
-                  end
-                end
-              end
-            end
-          end
+
           div(id: "offcanvas-slide", "uk-offcanvas": true) do
             div(class: "uk-offcanvas-bar uk-flex uk-flex-column uk-text-center") do
               button(class: "uk-offcanvas-close uk-close-large", type: "button", "uk-close": true)

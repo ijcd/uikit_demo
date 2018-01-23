@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Notification do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -104,110 +105,19 @@ defmodule UIKitDemo.Core.Component.Notification do
             end
           end
         end
-        h2 do
-          "Javascript Options"
-        end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "message"
-                  end
-                end
-                td do
-                  "string"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Notification message to show."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "status"
-                  end
-                end
-                td do
-                  "string"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "Notification status color."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "timeout"
-                  end
-                end
-                td do
-                  "integer"
-                end
-                td do
-                  "5000"
-                end
-                td do
-                  "Visibility duration before a notification disappears."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "group"
-                  end
-                end
-                td do
-                  "string"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "Useful if you want to close all notifications in a specific group."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "pos"
-                  end
-                end
-                td do
-                  "string"
-                end
-                td do
-                  "top-center"
-                end
-                td do
-                  "Notification display position."
-                end
-              end
-            end
-          end
+
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["message", "string", "false", "Notification message to show."],
+              ["status", "string", "null", "Notification status color."],
+              ["timeout", "integer", "5000", "Visibility duration before a notification disappears."],
+              ["group", "string", "null", "Useful if you want to close all notifications in a specific group."],
+              ["pos", "string", "top-center", "Notification display position."],
+            ]
+          )
         end
       end
     end

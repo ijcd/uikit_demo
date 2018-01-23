@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Alert do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -170,79 +171,20 @@ defmodule UIKitDemo.Core.Component.Alert do
             " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           end
         end
-        h2 do
-          "Javascript Options"
+
+
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["animation", "Boolean|String", "true", "On close fade out or use given animation."],
+              ["duration", "Number", "150", "The animation duration."],
+              ["sel-close", "CSS selector", ".uk-alert-close", "The close trigger element."],
+            ]
+          )
         end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "animation"
-                  end
-                end
-                td do
-                  "Boolean|String"
-                end
-                td do
-                  "true"
-                end
-                td do
-                  "On close fade out or use given animation."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "duration"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "150"
-                end
-                td do
-                  "The animation duration."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "sel-close"
-                  end
-                end
-                td do
-                  "CSS selector"
-                end
-                td do
-                  ".uk-alert-close"
-                end
-                td do
-                  "The close trigger element."
-                end
-              end
-            end
-          end
-        end
+
       end
     end
   end

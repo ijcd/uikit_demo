@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Lightbox do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -137,313 +138,42 @@ defmodule UIKitDemo.Core.Component.Lightbox do
         button(id: "js-lightbox", class: "uk-button uk-button-default", type: "button") do
           "Dynamic lightbox"
         end
-        h2 do
-          "Javascript Options"
+
+        h2 "Javascript Options"
+
+        h3 "Lightbox"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["animation", "String", "slide", "The animation to use. (fade, slide, scale)"],
+              ["autoplay", "Boolean", "0", "Starts autoplaying the lightbox."],
+              ["autoplay-interval", "Number", "0", "The delay between switching slides in autoplay mode."],
+              ["pause-on-hover", "Boolean", "0", "Pause autoplay mode on hover."],
+              ["video-autoplay", "Boolean", "false", "Lets videos autoplay."],
+              ["toggle", "CSS selector", "a", "Toggle selector - triggers the lightbox."],
+            ]
+          )
         end
-        h3 do
-          "Lightbox"
-        end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "animation"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "slide"
-                end
-                td do
-                  "The animation to use. (fade, slide, scale)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "autoplay"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "0"
-                end
-                td do
-                  "Starts autoplaying the lightbox."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "autoplay-interval"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "0"
-                end
-                td do
-                  "The delay between switching slides in autoplay mode."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "pause-on-hover"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "0"
-                end
-                td do
-                  "Pause autoplay mode on hover."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "video-autoplay"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Lets videos autoplay."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "toggle"
-                  end
-                end
-                td do
-                  "CSS selector"
-                end
-                td do
-                  "a"
-                end
-                td do
-                  "Toggle selector - triggers the lightbox."
-                end
-              end
-            end
-          end
-        end
-        h3 do
-          "Lightbox Panel"
-        end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "animation"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "slide"
-                end
-                td do
-                  "The animation to use. (slide, fade, scale)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "autoplay"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Starts autoplaying the lightbox."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "autoplay-interval"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "7000"
-                end
-                td do
-                  "The delay between switching slides in autoplay mode."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "video-autoplay"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Lightbox videos autoplay."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "velocity"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "2"
-                end
-                td do
-                  "The animation velocity (pixel/ms)."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "index"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "0"
-                end
-                td do
-                  "The initial item to show. (zero based)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "preload"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "1"
-                end
-                td do
-                  "The number of items to preload. (left and right of the currently active item)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "items"
-                  end
-                end
-                td do
-                  "Array"
-                end
-                td do
-                  "[]"
-                end
-                td do
-                  "An array of items to display. ([{source: 'images/size1.jpg', caption: '900x600'}])"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "template"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td()
-                td do
-                  "The template string."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "delay-controls"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "3000"
-                end
-                td do
-                  "Delay time before controls fade out in ms."
-                end
-              end
-            end
-          end
-        end
+
+        h3 "Lightbox Panel"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["animation", "String", "slide", "The animation to use. (slide, fade, scale)"],
+              ["autoplay", "Boolean", "false", "Starts autoplaying the lightbox."],
+              ["autoplay-interval", "Number", "7000", "The delay between switching slides in autoplay mode."],
+              ["video-autoplay", "Boolean", "false", "Lightbox videos autoplay."],
+              ["velocity", "Number", "2", "The animation velocity (pixel/ms)."],
+              ["index", "Number", "0", "The initial item to show. (zero based)"],
+              ["preload", "Number", "1", "The number of items to preload. (left and right of the currently active item)"],
+              ["items", "Array", "[]", "An array of items to display. ([{source: 'images/size1.jpg', caption: '900x600'}])"],
+              ["template", "String", "", "The template string."],
+              ["delay-controls", "Number", "3000", "Delay time before controls fade out in ms."],
+            ]
+          )
+        end        
       end
     end
   end

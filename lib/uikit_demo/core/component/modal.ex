@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Modal do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -205,100 +206,23 @@ defmodule UIKitDemo.Core.Component.Modal do
         p do
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         end
-        h2 do
-          "Javascript Options"
+
+
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["container", "Boolean", "true", "Define a target container via a selector to specify where the modal should be appended in the DOM."],
+              ["esc-close", "Boolean", "true", ["Close the modal when ", em("Esc"), " key is pressed."]],
+              ["bg-close", "Boolean", "true", "Close the modal when background is clicked."],
+              ["stack", "Boolean", "false", "Stack modals, when more than one is open? By default, the previous modal will be hidden."],
+            ]
+          )
         end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "container"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "true"
-                end
-                td do
-                  "Define a target container via a selector to specify where the modal should be appended in the DOM."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "esc-close"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "true"
-                end
-                td do
-                  "Close the modal when "
-                  em do
-                    "Esc"
-                  end
-                  " key is pressed."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "bg-close"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "true"
-                end
-                td do
-                  "Close the modal when background is clicked."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "stack"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Stack modals, when more than one is open? By default, the previous modal will be hidden."
-                end
-              end
-            end
-          end
-        end
+
       end
+
       div(id: "modal", "uk-modal": true) do
         div(class: "uk-modal-dialog uk-modal-body") do
           button(class: "uk-modal-close-default", type: "button", "uk-close": true)

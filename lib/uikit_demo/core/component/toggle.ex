@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Toggle do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -149,126 +150,21 @@ defmodule UIKitDemo.Core.Component.Toggle do
             end
           end
         end
-        h2 do
-          "Javascript Options"
-        end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "target"
-                  end
-                end
-                td do
-                  "CSS selector"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "The element(s) to toggle."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "mode"
-                  end
-                end
-                td do
-                  "hover | click | media"
-                end
-                td do
-                  "click"
-                end
-                td do
-                  "Comma separated list of trigger behaviour modes."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "cls"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "The class that is being toggled. Defaults to the \"hidden\" attribute."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "animation"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "The space separated names of animations to use. (Comma separate for animation out)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "duration"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "200"
-                end
-                td do
-                  "The animation duration."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "queued"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "true"
-                end
-                td do
-                  "Toggle the targets successively."
-                end
-              end
-            end
-          end
+
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["target", "CSS selector", "false", "The element(s) to toggle."],
+              ["mode", "hover | click | media", "click", "Comma separated list of trigger behaviour modes."],
+              ["cls", "String", "false", "The class that is being toggled. Defaults to the \"hidden\" attribute."],
+              # ["media", "media", "false", "In media mode, the breakpoint that triggers the toggle."],
+              ["animation", "String", "false", "The space separated names of animations to use. (Comma separate for animation out)"],
+              ["duration", "Number", "200", "The animation duration."],
+              ["queued", "Boolean", "true", "Toggle the targets successively."],
+            ]
+          )
         end
       end
     end

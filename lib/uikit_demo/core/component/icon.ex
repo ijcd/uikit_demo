@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Icon do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -1888,62 +1889,16 @@ defmodule UIKitDemo.Core.Component.Icon do
             end
           end
         end
-        h2 do
-          "Javascript Options"
-        end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "icon"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "''"
-                end
-                td do
-                  "The icon to display."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "ratio"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "1"
-                end
-                td do
-                  "The icon size ratio."
-                end
-              end
-            end
-          end
+    
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["icon", "String", "''", "The icon to display."],
+              ["ratio", "Number", "1", "The icon size ratio."],
+            ]
+          )
         end
       end
     end

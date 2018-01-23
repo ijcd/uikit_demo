@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Switcher do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -554,126 +555,20 @@ defmodule UIKitDemo.Core.Component.Switcher do
             end
           end
         end
-        h2 do
-          "Javascript Options"
-        end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "connect"
-                  end
-                end
-                td do
-                  "CSS selector"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Related items container. By default next element with class 'uk-switcher'."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "toggle"
-                  end
-                end
-                td do
-                  "CSS selector"
-                end
-                td do
-                  "> *"
-                end
-                td do
-                  "Toggle selector - triggers content switching on click."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "active"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "0"
-                end
-                td do
-                  "Active index on init. (Providing a negative number indicates a position starting from the end of the set)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "animation"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "The space separated names of animations to use. (Comma separate for animation out)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "duration"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "200"
-                end
-                td do
-                  "The animation duration."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "swiping"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "true"
-                end
-                td do
-                  "Use swiping."
-                end
-              end
-            end
-          end
+
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["connect", "CSS selector", "false", "Related items container. By default next element with class 'uk-switcher'."],
+              ["toggle", "CSS selector", "> *", "Toggle selector - triggers content switching on click."],
+              ["active", "Number", "0", "Active index on init. (Providing a negative number indicates a position starting from the end of the set)"],
+              ["animation", "String", "false", "The space separated names of animations to use. (Comma separate for animation out)"],
+              ["duration", "Number", "200", "The animation duration."],
+              ["swiping", "Boolean", "true", "Use swiping."],
+            ]
+          )
         end
       end
     end

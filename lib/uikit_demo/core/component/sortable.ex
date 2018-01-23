@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Sortable do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def head_content do
     style(type: "text/css") do
@@ -342,223 +343,28 @@ defmodule UIKitDemo.Core.Component.Sortable do
             end
           end
         end
-        h2 do
-          "Javascript Options"
+
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["group", "String", "''", "The group"],
+              ["animation", "Number", "150", "The animation duration."],
+              ["threshold", "Number", "10", "Mouse move threshold before dragging starts."],
+              ["cls-item", "String", "uk-sortable-item", "The item class."],
+              ["cls-placeholder", "String", "uk-sortable-placeholder", "The placeholder class."],
+              ["cls-drag", "String", "uk-sortable-drag", "The ghost class."],
+              ["cls-drag-state", "String", "uk-sortable-dragging", "The body's dragging class."],
+              ["cls-base", "String", "uk-sortable", "The list's class."],
+              ["cls-no-drag", "String", "uk-sortable-nodrag", "Prevent dragging on elements with this class."],
+              ["cls-empty", "String", "uk-sortable-empty", "The empty list class."],
+              ["cls-custom", "String", "''", "The ghost's custom class."],
+              ["handle", "String", "false", "The handle selector."],
+            ]
+          )
         end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "group"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "''"
-                end
-                td do
-                  "The group"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "animation"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "150"
-                end
-                td do
-                  "The animation duration."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "threshold"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "10"
-                end
-                td do
-                  "Mouse move threshold before dragging starts."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "cls-item"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-sortable-item"
-                end
-                td do
-                  "The item class."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "cls-placeholder"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-sortable-placeholder"
-                end
-                td do
-                  "The placeholder class."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "cls-drag"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-sortable-drag"
-                end
-                td do
-                  "The ghost class."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "cls-drag-state"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-sortable-dragging"
-                end
-                td do
-                  "The body's dragging class."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "cls-base"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-sortable"
-                end
-                td do
-                  "The list's class."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "cls-no-drag"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-sortable-nodrag"
-                end
-                td do
-                  "Prevent dragging on elements with this class."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "cls-empty"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "uk-sortable-empty"
-                end
-                td do
-                  "The empty list class."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "cls-custom"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "''"
-                end
-                td do
-                  "The ghost's custom class."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "handle"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "The handle selector."
-                end
-              end
-            end
-          end
-        end
+
       end
     end
   end

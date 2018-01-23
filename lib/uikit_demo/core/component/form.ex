@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Form do
   use Taggart.HTML, except: [table: 2]
   use UIKit
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -944,46 +945,15 @@ defmodule UIKitDemo.Core.Component.Form do
             end
           end
         end
-        h2 do
-          "Javascript Options"
-        end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "target"
-                  end
-                end
-                td do
-                  "CSS selector | Boolean"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Value display target."
-                end
-              end
-            end
-          end
+
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["target", "CSS selector | Boolean", "false", "Value display target."],
+            ]
+          )
         end
       end
     end

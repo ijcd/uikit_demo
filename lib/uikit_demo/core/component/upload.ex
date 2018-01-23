@@ -1,6 +1,7 @@
 defmodule UIKitDemo.Core.Component.Upload do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
+  import UIKitDemo.Core.Common
 
   def demo_content do
     taggart do
@@ -35,398 +36,37 @@ defmodule UIKitDemo.Core.Component.Upload do
         end
         progress(id: "js-progressbar", class: "uk-progress", value: "0", max: "100", hidden: true)
 
-        h2 do
-          "Javascript Options"
-        end
-        div(class: "uk-overflow-auto") do
-          Taggart.HTML.table(class: "uk-table uk-table-striped") do
-            thead do
-              tr do
-                th do
-                  "Option"
-                end
-                th do
-                  "Value"
-                end
-                th do
-                  "Default"
-                end
-                th do
-                  "Description"
-                end
-              end
-            end
-            tbody do
-              tr do
-                td do
-                  code do
-                    "url"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "''"
-                end
-                td do
-                  "The request url."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "multiple"
-                  end
-                end
-                td do
-                  "Boolean"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "Allow multiple files to be uploaded."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "name"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "'files[]'"
-                end
-                td do
-                  "The name parameter."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "type"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "POST"
-                end
-                td do
-                  "The request type."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "params"
-                  end
-                end
-                td do
-                  "Object"
-                end
-                td do
-                  "{}"
-                end
-                td do
-                  "Additional parameters."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "allow"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "File name filter. (eg. *.png)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "mime"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "false"
-                end
-                td do
-                  "File MIME type filter. (eg. images/*)"
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "concurrent"
-                  end
-                end
-                td do
-                  "Number"
-                end
-                td do
-                  "1"
-                end
-                td do
-                  "Number of files that will be uploaded simultaneously."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "data-type"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "(xml, json, script, or html)"
-                end
-                td do
-                  "The expected response data type."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "msg-invalid-mime"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "Invalid File Type: %s"
-                end
-                td do
-                  "Invalid MIME type message."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "msg-invalid-name"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "Invalid File Name: %s"
-                end
-                td do
-                  "Invalid name message."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "cls-dragover"
-                  end
-                end
-                td do
-                  "String"
-                end
-                td do
-                  "'uk-dragover'"
-                end
-                td do
-                  "File name filter."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "abort"
-                  end
-                end
-                td do
-                  "Function"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "The abort callback."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "before-all"
-                  end
-                end
-                td do
-                  "Function"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "The beforeAll callback."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "before-send"
-                  end
-                end
-                td do
-                  "Function"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "The beforeSend callback."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "complete"
-                  end
-                end
-                td do
-                  "Function"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "The complete callback."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "complete-all"
-                  end
-                end
-                td do
-                  "Function"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "The completeAll callback."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "error"
-                  end
-                end
-                td do
-                  "Function"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "The error callback."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "load"
-                  end
-                end
-                td do
-                  "Function"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "The load callback."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "load-end"
-                  end
-                end
-                td do
-                  "Function"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "The loadEnd callback."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "load-start"
-                  end
-                end
-                td do
-                  "Function"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "The loadStart callback."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "progress"
-                  end
-                end
-                td do
-                  "Function"
-                end
-                td do
-                  "null"
-                end
-                td do
-                  "The progress callback."
-                end
-              end
-              tr do
-                td do
-                  code do
-                    "fail"
-                  end
-                end
-                td do
-                  "Function"
-                end
-                td do
-                  "alert"
-                end
-                td do
-                  "The fail callback. If name or MIME type are invalid."
-                end
-              end
-            end
-          end
+        h2 "Javascript Options"
+        uk(:div, overflow(:auto)) do
+          striped_table(
+            ["Option", "Value", "Default", "Description"],
+            [
+              ["url", "String", "''", "The request url."],
+              ["multiple", "Boolean", "false", "Allow multiple files to be uploaded."],
+              ["name", "String", "'files[]'", "The name parameter."],
+              ["type", "String", "POST", "The request type."],
+              ["params", "Object", "{}", "Additional parameters."],
+              ["allow", "String", "false", "File name filter. (eg. *.png)"],
+              ["mime", "String", "false", "File MIME type filter. (eg. images/*)"],
+              # ["maxSize", "Number", "0", "The maximum file size per file. (kB)"],
+              ["concurrent", "Number", "1", "Number of files that will be uploaded simultaneously."],
+              ["data-type", "String", "(xml, json, script, or html)", "The expected response data type."],
+              ["msg-invalid-mime", "String", "Invalid File Type: %s", "Invalid MIME type message."],
+              ["msg-invalid-name", "String", "Invalid File Name: %s", "Invalid name message."],
+              ["cls-dragover", "String", "'uk-dragover'", "File name filter."],
+              ["abort", "Function", "null", "The abort callback."],
+              ["before-all", "Function", "null", "The beforeAll callback."],
+              ["before-send", "Function", "null", "The beforeSend callback."],
+              ["complete", "Function", "null", "The complete callback."],
+              ["complete-all", "Function", "null", "The completeAll callback."],
+              ["error", "Function", "null", "The error callback."],
+              ["load", "Function", "null", "The load callback."],
+              ["load-end", "Function", "null", "The loadEnd callback."],
+              ["load-start", "Function", "null", "The loadStart callback."],
+              ["progress", "Function", "null", "The progress callback."],
+              ["fail", "Function", "alert", "The fail callback. If name or MIME type are invalid."],
+            ]
+          )
         end
       end
     end
