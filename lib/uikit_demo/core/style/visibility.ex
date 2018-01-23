@@ -5,21 +5,18 @@ defmodule UIKitDemo.Core.Style.Visibility do
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Visibility"
-        end
-        h2 do
-          "Hidden"
-        end
-        div(class: "uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center", "uk-grid": true) do
+        h1 "Visibility"
+
+        h2 "Hidden"
+        uk_grid(child_width("1-2@s", "1-4@m"), text(:center)) do
           div do
-            div(class: "uk-panel") do
-              div(class: "uk-alert uk-margin-remove uk-alert-success") do
+            uk_panel do
+              uk_alert(margin(:remove), :success) do
                 "✔ Small"
                 br()
                 "(Phone Landscape)"
               end
-              div(class: "uk-alert uk-position-cover uk-margin-remove uk-hidden@s") do
+              uk_alert(position(:cover), margin(:remove), hidden("@s")) do
                 "Small"
                 br()
                 "(Phone Landscape)"
@@ -27,13 +24,13 @@ defmodule UIKitDemo.Core.Style.Visibility do
             end
           end
           div do
-            div(class: "uk-panel") do
-              div(class: "uk-alert uk-margin-remove uk-alert-success") do
+            uk_panel do
+              uk_alert(margin(:remove), :success) do
                 "✔ Medium"
                 br()
                 "(Tablet Landscape)"
               end
-              div(class: "uk-alert uk-position-cover uk-margin-remove uk-hidden@m") do
+              uk_alert(position(:cover), margin(:remove), hidden("@m")) do
                 "Medium"
                 br()
                 "(Tablet Landscape)"
@@ -41,13 +38,13 @@ defmodule UIKitDemo.Core.Style.Visibility do
             end
           end
           div do
-            div(class: "uk-panel") do
-              div(class: "uk-alert uk-margin-remove uk-alert-success") do
+            uk_panel do
+              uk_alert(margin(:remove), :success) do
                 "✔ Large"
                 br()
                 "(Desktop)"
               end
-              div(class: "uk-alert uk-position-cover uk-margin-remove uk-hidden@l") do
+              uk_alert(position(:cover), margin(:remove), hidden("@l")) do
                 "Large"
                 br()
                 "(Desktop)"
@@ -55,13 +52,13 @@ defmodule UIKitDemo.Core.Style.Visibility do
             end
           end
           div do
-            div(class: "uk-panel") do
-              div(class: "uk-alert uk-margin-remove uk-alert-success") do
+            uk_panel do
+              uk_alert(margin(:remove), :success) do
                 "✔ XLarge"
                 br()
                 "(Large Screens)"
               end
-              div(class: "uk-alert uk-position-cover uk-margin-remove uk-hidden@xl") do
+              uk_alert(position(:cover), margin(:remove), hidden("@xl")) do
                 "XLarge"
                 br()
                 "(Large Screens)"
@@ -69,18 +66,17 @@ defmodule UIKitDemo.Core.Style.Visibility do
             end
           end
         end
-        h2 do
-          "Visible"
-        end
-        div(class: "uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center", "uk-grid": true) do
+
+        h2 "Visible"
+        uk_grid(child_width("1-2@s", "1-4@m"), text(:center)) do
           div do
-            div(class: "uk-panel") do
-              div(class: "uk-alert uk-margin-remove") do
+            uk_panel do
+              uk_alert(margin(:remove)) do
                 "Small"
                 br()
                 "(Phone Landscape)"
               end
-              div(class: "uk-alert uk-alert-success uk-position-cover uk-margin-remove uk-visible@s") do
+              uk_alert(:success, position(:cover), margin(:remove), visible("@s")) do
                 "✔ Small"
                 br()
                 "(Phone Landscape)"
@@ -88,13 +84,13 @@ defmodule UIKitDemo.Core.Style.Visibility do
             end
           end
           div do
-            div(class: "uk-panel") do
-              div(class: "uk-alert uk-margin-remove") do
+            uk_panel do
+              uk_alert(margin(:remove)) do
                 "Medium"
                 br()
                 "(Tablet Landscape)"
               end
-              div(class: "uk-alert uk-alert-success uk-position-cover uk-margin-remove uk-visible@m") do
+              uk_alert(:success, position(:cover), margin(:remove), visible("@m")) do
                 "✔ Medium"
                 br()
                 "(Tablet Landscape)"
@@ -102,13 +98,13 @@ defmodule UIKitDemo.Core.Style.Visibility do
             end
           end
           div do
-            div(class: "uk-panel") do
-              div(class: "uk-alert uk-margin-remove") do
+            uk_panel do
+              uk_alert(margin(:remove)) do
                 "Large"
                 br()
                 "(Desktop)"
               end
-              div(class: "uk-alert uk-alert-success uk-position-cover uk-margin-remove uk-visible@l") do
+              uk_alert(:success, position(:cover), margin(:remove), visible("@l")) do
                 "✔ Large"
                 br()
                 "(Desktop)"
@@ -116,13 +112,13 @@ defmodule UIKitDemo.Core.Style.Visibility do
             end
           end
           div do
-            div(class: "uk-panel") do
-              div(class: "uk-alert uk-margin-remove") do
+            uk_panel do
+              uk_alert(margin(:remove)) do
                 "XLarge"
                 br()
                 "(Large Screens)"
               end
-              div(class: "uk-alert uk-alert-success uk-position-cover uk-margin-remove uk-visible@xl") do
+              uk_alert(:success, position(:cover), margin(:remove), visible("@xl")) do
                 "✔ XLarge"
                 br()
                 "(Large Screens)"
@@ -130,51 +126,49 @@ defmodule UIKitDemo.Core.Style.Visibility do
             end
           end
         end
-        h2 do
-          "Hover"
-        end
-        div(class: "uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center", "uk-grid": true) do
+
+        h2 "Hover"
+        uk_grid(child_width("1-2@s", "1-4@m"), text(:center)) do
           div do
-            div(class: "uk-panel uk-visible-toggle") do
-              div(class: "uk-alert uk-margin-remove") do
+            uk_panel(visible(:toggle)) do
+              uk_alert(margin(:remove)) do
                 "Hidden Hover"
               end
-              div(class: "uk-alert uk-alert-success uk-position-cover uk-margin-remove uk-hidden-hover") do
+              uk_alert(:success, position(:cover), margin(:remove), hidden(:hover)) do
                 "✔ Hidden Hover"
               end
             end
           end
           div do
-            div(class: "uk-panel uk-visible-toggle") do
-              div(class: "uk-alert uk-margin-remove") do
+            uk_panel(visible(:toggle)) do
+              uk_alert(margin(:remove)) do
                 "Invisible Hover"
               end
-              div(class: "uk-alert uk-alert-success uk-position-cover uk-margin-remove uk-invisible-hover") do
+              uk_alert(:success, position(:cover), margin(:remove), invisible(:hover)) do
                 "✔ Invisible Hover"
               end
             end
           end
         end
-        h2 do
-          "Touch"
-        end
-        div(class: "uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center", "uk-grid": true) do
+
+        h2 "Touch"
+        uk_grid(child_width("1-2@s", "1-4@m"), text(:center)) do
           div do
-            div(class: "uk-panel") do
-              div(class: "uk-alert uk-margin-remove uk-alert-success") do
+            uk_panel do
+              uk_alert(margin(:remove), :success) do
                 "✔ Hidden Touch"
               end
-              div(class: "uk-alert uk-position-cover uk-margin-remove uk-hidden-touch") do
+              uk_alert(position(:cover), margin(:remove), hidden("touch")) do
                 "Hidden Touch"
               end
             end
           end
           div do
-            div(class: "uk-panel") do
-              div(class: "uk-alert uk-margin-remove uk-alert-success") do
+            uk_panel do
+              uk_alert(margin(:remove), :success) do
                 "✔ Hidden No-Touch"
               end
-              div(class: "uk-alert uk-position-cover uk-margin-remove uk-hidden-notouch") do
+              uk_alert(position(:cover), margin(:remove), hidden("notouch")) do
                 "Hidden No-Touch"
               end
             end
