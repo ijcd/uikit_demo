@@ -3,158 +3,85 @@ defmodule UIKitDemo.Core.Component.Accordion do
   use UIKit
   import UIKitDemo.Core.Common
 
+  def p_lorem() do
+    p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  end
+
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Accordion"
-        end
+
+        h1 "Accordion"
         uk_grid(child_width("1-4@m")) do
+
           div do
-            h3 do
-              "Animated"
-            end
-            ul("uk-accordion": true) do
-              li(class: "uk-open") do
-                h3(class: "uk-accordion-title") do
-                  "Item 1"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+            h3 "Animated"
+            uk_accordion() do
+              uk_open() do
+                uk_accordion_title "Item 1"
+                uk_accordion_content p_lorem()
               end
               li do
-                h3(class: "uk-accordion-title") do
-                  "Item 2"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+                uk_accordion_title "Item 2"
+                uk_accordion_content p_lorem()
               end
               li do
-                h3(class: "uk-accordion-title") do
-                  "Item 3"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+                uk_accordion_title "Item 3"
+                uk_accordion_content p_lorem()
               end
             end
           end
+
           div do
-            h3 do
-              "Multiple"
-            end
-            ul("uk-accordion": "multiple: true") do
+            h3 "Multiple"
+            uk_accordion(multiple: true) do
               li do
-                h3(class: "uk-accordion-title") do
-                  "Item 1"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+                uk_accordion_title "Item 1"
+                uk_accordion_content p_lorem()
               end
-              li(class: "uk-open") do
-                h3(class: "uk-accordion-title") do
-                  "Item 2"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+              uk_open() do
+                uk_accordion_title "Item 2"
+                uk_accordion_content p_lorem()
               end
-              li(class: "uk-open") do
-                h3(class: "uk-accordion-title") do
-                  "Item 3"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+              uk_open() do
+                uk_accordion_title "Item 3"
+                uk_accordion_content p_lorem()
               end
             end
           end
+
           div do
-            h3 do
-              "Not Animated"
-            end
-            ul("uk-accordion": "animation: false; active: 0") do
+            h3 "Not Animated"
+            uk_accordion(animation: false, active: 0) do
               li do
-                h3(class: "uk-accordion-title") do
-                  "Item 1"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+                uk_accordion_title "Item 1"
+                uk_accordion_content p_lorem()
               end
               li do
-                h3(class: "uk-accordion-title") do
-                  "Item 2"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+                uk_accordion_title "Item 2"
+                uk_accordion_content p_lorem()
               end
               li do
-                h3(class: "uk-accordion-title") do
-                  "Item 3"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+                uk_accordion_title "Item 3"
+                uk_accordion_content p_lorem()
               end
             end
           end
+
           div do
-            h3 do
-              "Not collapsible"
-            end
-            ul("uk-accordion": "collapsible: false") do
+            h3 "Not collapsible"
+            uk_accordion(collapsible: false) do
               li do
-                h3(class: "uk-accordion-title") do
-                  "Item 1"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+                uk_accordion_title "Item 1"
+                uk_accordion_content p_lorem()
               end
               li do
-                h3(class: "uk-accordion-title") do
-                  "Item 2"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+                uk_accordion_title "Item 2"
+                uk_accordion_content p_lorem()
               end
               li do
-                h3(class: "uk-accordion-title") do
-                  "Item 3"
-                end
-                div(class: "uk-accordion-content") do
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  end
-                end
+                uk_accordion_title "Item 3"
+                uk_accordion_content p_lorem()
               end
             end
           end

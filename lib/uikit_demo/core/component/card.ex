@@ -2,156 +2,118 @@ defmodule UIKitDemo.Core.Component.Card do
   use Taggart.HTML, except: [table: 2]
   use UIKit
 
+  def card_content() do
+    taggart do
+      p do
+        "Lorem ipsum "
+        a(href: "#") do
+          "dolor"
+        end
+        " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      end
+      p("uk-margin": true) do
+        uk_button_link(:default, href: "#") do
+          "Button"
+        end
+        " "
+        uk_button_link(:text, margin(:small_left), href: "#") do
+          "Button"
+        end
+      end
+    end
+  end
+
+  def lorem() do
+    p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
+  end
+
   def demo_content do
     taggart do
-      div(class: "uk-section uk-section-default uk-section-small uk-padding-remove-top") do
+      uk_section(:default, :small, padding(:remove_top)) do
         uk_container do
-          h1 do
-            "Card"
-          end
-          div(class: "uk-child-width-1-4@m uk-grid-match", "uk-grid": true) do
+
+          h1 "Card"
+          uk_grid(child_width("1-4@m"), :match) do
             div do
-              div(class: "uk-card uk-card-default uk-card-hover") do
-                div(class: "uk-card-badge") do
+              uk_card(:default, :hover) do
+                uk_card_badge() do
                   "Hot"
                 end
-                div(class: "uk-card-body") do
-                  h3(class: "uk-card-title") do
+                uk_card_body() do
+                  uk_card_title() do
                     "Default"
                   end
-                  p do
-                    "Lorem ipsum "
-                    a(href: "#") do
-                      "dolor"
-                    end
-                    " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  end
-                  p("uk-margin": true) do
-                    a(class: "uk-button uk-button-default", href: "#") do
-                      "Button"
-                    end
-                    a(class: "uk-button uk-button-text uk-margin-small-left", href: "#") do
-                      "Button"
-                    end
-                  end
+                  card_content()
                 end
               end
             end
             div do
-              div(class: "uk-card uk-card-primary uk-card-hover") do
-                div(class: "uk-card-badge") do
+              uk_card(:primary, :hover) do
+                uk_card_badge() do
                   "Hot"
                 end
-                div(class: "uk-card-body") do
-                  h3(class: "uk-card-title") do
+                uk_card_body() do
+                  uk_card_title() do
                     "Primary"
                   end
-                  p do
-                    "Lorem ipsum "
-                    a(href: "#") do
-                      "dolor"
-                    end
-                    " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  end
-                  p("uk-margin": true) do
-                    a(class: "uk-button uk-button-default", href: "#") do
-                      "Button"
-                    end
-                    a(class: "uk-button uk-button-text uk-margin-small-left", href: "#") do
-                      "Button"
-                    end
-                  end
+                  card_content()
                 end
               end
             end
             div do
-              div(class: "uk-card uk-card-secondary uk-card-hover") do
-                div(class: "uk-card-badge") do
+              uk_card(:secondary, :hover) do
+                uk_card_badge() do
                   "Hot"
                 end
-                div(class: "uk-card-body") do
-                  h3(class: "uk-card-title") do
+                uk_card_body() do
+                  uk_card_title() do
                     "Secondary"
                   end
-                  p do
-                    "Lorem ipsum "
-                    a(href: "#") do
-                      "dolor"
-                    end
-                    " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  end
-                  p("uk-margin": true) do
-                    a(class: "uk-button uk-button-default", href: "#") do
-                      "Button"
-                    end
-                    a(class: "uk-button uk-button-text uk-margin-small-left", href: "#") do
-                      "Button"
-                    end
-                  end
+                  card_content()
                 end
               end
             end
             div do
               div(class: "uk-card uk-card-hover") do
-                div(class: "uk-card-badge") do
+                uk_card_badge() do
                   "Hot"
                 end
-                div(class: "uk-card-body") do
-                  h3(class: "uk-card-title") do
+                uk_card_body() do
+                  uk_card_title() do
                     "Hover"
                   end
-                  p do
-                    "Lorem ipsum "
-                    a(href: "#") do
-                      "dolor"
-                    end
-                    " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  end
-                  p("uk-margin": true) do
-                    a(class: "uk-button uk-button-default", href: "#") do
-                      "Button"
-                    end
-                    a(class: "uk-button uk-button-text uk-margin-small-left", href: "#") do
-                      "Button"
-                    end
-                  end
+                  card_content()
                 end
               end
             end
           end
         end
       end
-      div(class: "uk-section uk-section-muted uk-section-small") do
+      uk_section(:muted, :small) do
         uk_container do
-          div(class: "uk-child-width-1-3@m uk-grid-match", "uk-grid": true) do
+          uk_grid(child_width("1-3@m"), :match) do
             div do
-              div(class: "uk-card uk-card-default uk-card-hover uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body(:default, :hover) do
+                uk_card_title() do
                   "Default"
                 end
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                end
+                lorem()
               end
             end
             div do
-              div(class: "uk-card uk-card-primary uk-card-hover uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body(:primary, :hover) do
+                uk_card_title() do
                   "Primary"
                 end
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                end
+                lorem()
               end
             end
             div do
-              div(class: "uk-card uk-card-secondary uk-card-hover uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body(:secondary, :hover) do
+                uk_card_title() do
                   "Secondary"
                 end
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                end
+                lorem()
               end
             end
           end
@@ -159,35 +121,29 @@ defmodule UIKitDemo.Core.Component.Card do
       end
       div(class: "uk-section uk-section-primary uk-section-small uk-preserve-color") do
         uk_container do
-          div(class: "uk-child-width-1-3@m uk-grid-match", "uk-grid": true) do
+          uk_grid(child_width("1-3@m"), :match) do
             div do
-              div(class: "uk-card uk-card-default uk-card-hover uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body(:default, :hover) do
+                uk_card_title() do
                   "Default"
                 end
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                end
+                lorem()
               end
             end
             div do
-              div(class: "uk-card uk-card-primary uk-card-hover uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body(:primary, :hover) do
+                uk_card_title() do
                   "Primary"
                 end
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                end
+                lorem()
               end
             end
             div do
-              div(class: "uk-card uk-card-secondary uk-card-hover uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body(:secondary, :hover) do
+                uk_card_title() do
                   "Secondary"
                 end
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                end
+                lorem()
               end
             end
           end
@@ -195,35 +151,29 @@ defmodule UIKitDemo.Core.Component.Card do
       end
       div(class: "uk-section uk-section-secondary uk-section-small uk-preserve-color") do
         uk_container do
-          div(class: "uk-child-width-1-3@m uk-grid-match", "uk-grid": true) do
+          uk_grid(child_width("1-3@m"), :match) do
             div do
-              div(class: "uk-card uk-card-default uk-card-hover uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body(:default, :hover) do
+                uk_card_title() do
                   "Default"
                 end
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                end
+                lorem()
               end
             end
             div do
-              div(class: "uk-card uk-card-primary uk-card-hover uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body(:primary, :hover) do
+                uk_card_title() do
                   "Primary"
                 end
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                end
+                lorem()
               end
             end
             div do
-              div(class: "uk-card uk-card-secondary uk-card-hover uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body(:secondary, :hover) do
+                uk_card_title() do
                   "Secondary"
                 end
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                end
+                lorem()
               end
             end
           end
@@ -232,35 +182,29 @@ defmodule UIKitDemo.Core.Component.Card do
       div(class: "uk-section-default ") do
         div(class: "uk-section uk-section-small uk-background-cover", style: "background-image: url('/images/photo.jpg');") do
           uk_container do
-            div(class: "uk-child-width-1-3@m uk-grid-match", "uk-grid": true) do
+            uk_grid(child_width("1-3@m"), :match) do
               div do
-                div(class: "uk-card uk-card-default uk-card-hover uk-card-body") do
-                  h3(class: "uk-card-title") do
+                uk_card_body(:default, :hover) do
+                  uk_card_title() do
                     "Default"
                   end
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                  end
+                  lorem()
                 end
               end
               div do
-                div(class: "uk-card uk-card-primary uk-card-hover uk-card-body") do
-                  h3(class: "uk-card-title") do
+                uk_card_body(:primary, :hover) do
+                  uk_card_title() do
                     "Primary"
                   end
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                  end
+                  lorem()
                 end
               end
               div do
-                div(class: "uk-card uk-card-secondary uk-card-hover uk-card-body") do
-                  h3(class: "uk-card-title") do
+                uk_card_body(:secondary, :hover) do
+                  uk_card_title() do
                     "Secondary"
                   end
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-                  end
+                  lorem()
                 end
               end
             end
@@ -277,8 +221,8 @@ defmodule UIKitDemo.Core.Component.Card do
               div(class: "uk-card-media-top") do
                 img(src: "/images/photo.jpg", alt: "")
               end
-              div(class: "uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body() do
+                uk_card_title() do
                   "Media Top"
                 end
                 p do
@@ -289,8 +233,8 @@ defmodule UIKitDemo.Core.Component.Card do
           end
           div do
             div(class: "uk-card uk-card-default") do
-              div(class: "uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body() do
+                uk_card_title() do
                   "Media Bottom"
                 end
                 p do
@@ -309,8 +253,8 @@ defmodule UIKitDemo.Core.Component.Card do
                 canvas(width: "1800", height: "1200")
               end
               div do
-                div(class: "uk-card-body") do
-                  h3(class: "uk-card-title") do
+                uk_card_body() do
+                  uk_card_title() do
                     "Media Left"
                   end
                   p do
@@ -325,8 +269,8 @@ defmodule UIKitDemo.Core.Component.Card do
                 canvas(width: "1800", height: "1200")
               end
               div do
-                div(class: "uk-card-body") do
-                  h3(class: "uk-card-title") do
+                uk_card_body() do
+                  uk_card_title() do
                     "Media Right"
                   end
                   p do
@@ -344,11 +288,11 @@ defmodule UIKitDemo.Core.Component.Card do
           div do
             div(class: "uk-card uk-card-default") do
               div(class: "uk-card-header") do
-                h3(class: "uk-card-title") do
+                uk_card_title() do
                   "Title"
                 end
               end
-              div(class: "uk-card-body") do
+              uk_card_body() do
                 p do
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                 end
@@ -373,8 +317,8 @@ defmodule UIKitDemo.Core.Component.Card do
               div(class: "uk-card-media-top") do
                 img(src: "/images/light.jpg", alt: "")
               end
-              div(class: "uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body() do
+                uk_card_title() do
                   "Title"
                 end
                 p do
@@ -396,11 +340,11 @@ defmodule UIKitDemo.Core.Component.Card do
           div do
             div(class: "uk-card uk-card-default") do
               div(class: "uk-card-header") do
-                h3(class: "uk-card-title") do
+                uk_card_title() do
                   "Title"
                 end
               end
-              div(class: "uk-card-body") do
+              uk_card_body() do
                 p do
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
                 end
@@ -432,7 +376,7 @@ defmodule UIKitDemo.Core.Component.Card do
               div(class: "uk-card-media") do
                 img(src: "/images/light.jpg", alt: "")
               end
-              div(class: "uk-card-body") do
+              uk_card_body() do
                 p do
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
                 end
@@ -496,7 +440,7 @@ defmodule UIKitDemo.Core.Component.Card do
           end
           div do
             div(class: "uk-card uk-card-primary uk-card-body") do
-              h3(class: "uk-card-title") do
+              uk_card_title() do
                 "Title"
               end
               ul(class: "uk-nav uk-nav-default") do
@@ -550,11 +494,11 @@ defmodule UIKitDemo.Core.Component.Card do
           div do
             div(class: "uk-card uk-card-default") do
               div(class: "uk-card-header") do
-                h3(class: "uk-card-title") do
+                uk_card_title() do
                   "Title"
                 end
               end
-              div(class: "uk-card-body") do
+              uk_card_body() do
                 ul(class: "uk-nav uk-nav-default") do
                   li(class: "uk-active") do
                     a(href: "#") do
@@ -622,7 +566,7 @@ defmodule UIKitDemo.Core.Component.Card do
               div(class: "uk-card-media-top") do
                 img(src: "/images/dark.jpg", alt: "")
               end
-              div(class: "uk-card-body") do
+              uk_card_body() do
                 ul(class: "uk-nav uk-nav-default") do
                   li(class: "uk-active") do
                     a(href: "#") do
@@ -683,11 +627,11 @@ defmodule UIKitDemo.Core.Component.Card do
           div do
             div(class: "uk-card uk-card-default uk-card-small") do
               div(class: "uk-card-header") do
-                h3(class: "uk-card-title") do
+                uk_card_title() do
                   "Title"
                 end
               end
-              div(class: "uk-card-body") do
+              uk_card_body() do
                 p do
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                 end
@@ -712,8 +656,8 @@ defmodule UIKitDemo.Core.Component.Card do
               div(class: "uk-card-media-top") do
                 img(src: "/images/light.jpg", alt: "")
               end
-              div(class: "uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body() do
+                uk_card_title() do
                   "Title"
                 end
                 p do
@@ -774,7 +718,7 @@ defmodule UIKitDemo.Core.Component.Card do
           end
           div do
             div(class: "uk-card uk-card-default uk-card-body uk-card-small") do
-              h3(class: "uk-card-title") do
+              uk_card_title() do
                 "Title"
               end
               ul(class: "uk-nav uk-nav-default") do
@@ -833,11 +777,11 @@ defmodule UIKitDemo.Core.Component.Card do
           div do
             div(class: "uk-card uk-card-default uk-card-large") do
               div(class: "uk-card-header") do
-                h3(class: "uk-card-title") do
+                uk_card_title() do
                   "Title"
                 end
               end
-              div(class: "uk-card-body") do
+              uk_card_body() do
                 p do
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                 end
@@ -862,8 +806,8 @@ defmodule UIKitDemo.Core.Component.Card do
               div(class: "uk-card-media-top") do
                 img(src: "/images/light.jpg", alt: "")
               end
-              div(class: "uk-card-body") do
-                h3(class: "uk-card-title") do
+              uk_card_body() do
+                uk_card_title() do
                   "Title"
                 end
                 p do
@@ -924,7 +868,7 @@ defmodule UIKitDemo.Core.Component.Card do
           end
           div do
             div(class: "uk-card uk-card-default uk-card-body uk-card-large") do
-              h3(class: "uk-card-title") do
+              uk_card_title() do
                 "Title"
               end
               ul(class: "uk-nav uk-nav-default") do

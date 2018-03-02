@@ -3,175 +3,96 @@ defmodule UIKitDemo.Core.Component.Alert do
   use UIKit 
   import UIKitDemo.Core.Common
 
+  def alert_content(title) do
+    p do
+      strong title
+      " Lorem ipsum "
+      a(href: "#") do
+        "dolor"
+      end
+      " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    end
+  end
+
+  def alert_content_h3(title) do
+    taggart do
+      h3 title
+      p do
+        "Lorem ipsum "
+        a(href: "#") do
+          "dolor"
+        end
+        " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      end    
+    end
+  end
+
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Alert"
-        end
-        div("uk-alert": true) do
-          a(href: "#", class: "uk-alert-close", "uk-close": true)
-          p do
-            strong do
-              "Alert!"
-            end
-            " Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          end
-        end
-        div(class: "uk-alert-primary", "uk-alert": true) do
-          a(href: "#", class: "uk-alert-close", "uk-close": true)
-          p do
-            strong do
-              "Primary!"
-            end
-            " Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          end
-        end
-        div(class: "uk-alert-success", "uk-alert": true) do
-          a(href: "#", class: "uk-alert-close", "uk-close": true)
-          p do
-            strong do
-              "Success!"
-            end
-            " Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          end
-        end
-        div(class: "uk-alert-warning", "uk-alert": true) do
-          a(href: "#", class: "uk-alert-close", "uk-close": true)
-          p do
-            strong do
-              "Warning!"
-            end
-            " Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          end
-        end
-        div(class: "uk-alert-danger", "uk-alert": true) do
-          a(href: "#", class: "uk-alert-close", "uk-close": true)
-          p do
-            strong do
-              "Danger!"
-            end
-            " Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          end
-        end
-        h2 do
-          "More Content"
-        end
-        div("uk-alert": true) do
-          button(class: "uk-alert-close", type: "button", "uk-close": true)
-          h3 do
-            "Alert!"
-          end
-          p do
-            "Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          end
-        end
-        div(class: "uk-alert-primary", "uk-alert": true) do
-          button(class: "uk-alert-close", type: "button", "uk-close": true)
-          h3 do
-            "Primary!"
-          end
-          p do
-            "Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          end
-        end
-        div(class: "uk-alert-success", "uk-alert": true) do
-          button(class: "uk-alert-close", type: "button", "uk-close": true)
-          h3 do
-            "Success!"
-          end
-          p do
-            "Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          end
-        end
-        div(class: "uk-alert-warning", "uk-alert": true) do
-          button(class: "uk-alert-close", type: "button", "uk-close": true)
-          h3 do
-            "Warning!"
-          end
-          p do
-            "Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          end
-        end
-        div(class: "uk-alert-danger", "uk-alert": true) do
-          button(class: "uk-alert-close", type: "button", "uk-close": true)
-          h3 do
-            "Danger!"
-          end
-          p do
-            "Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          end
-        end
-        h2 do
-          "Animations"
-        end
-        div("uk-alert": "animation: uk-animation-scale-up; duration:1000") do
-          a(href: "#", class: "uk-alert-close", "uk-close": true)
-          p do
-            strong do
-              "Alert!"
-            end
-            " Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          end
-        end
-        div(class: "uk-alert-primary", "uk-alert": "animation: uk-animation-scale-down") do
-          a(href: "#", class: "uk-alert-close", "uk-close": true)
-          p do
-            strong do
-              "Primary!"
-            end
-            " Lorem ipsum "
-            a(href: "#") do
-              "dolor"
-            end
-            " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          end
+        h1 "Alert"
+
+        uk_alert() do
+          uk_alert_close_link("#")
+          alert_content("Alert!")
         end
 
+        uk_alert(:primary) do
+          uk_alert_close_link("#")
+          alert_content("Primary!")
+        end
+
+        uk_alert(:success) do
+          uk_alert_close_link("#")
+          alert_content("Success!")
+        end
+
+        uk_alert(:warning) do
+          uk_alert_close_link("#")
+          alert_content("Warning!")
+        end
+
+        uk_alert(:danger) do
+          uk_alert_close_link("#")
+          alert_content("Danger!")
+        end
+
+        h2 "More Content"
+        uk_alert() do
+          uk_alert_close_button()
+          alert_content_h3 "Alert!"
+        end
+
+        uk_alert(:primary) do
+          uk_alert_close_button()
+          alert_content_h3 "Primary!"
+        end
+
+        uk_alert(:success) do
+          uk_alert_close_button()
+          alert_content_h3 "Success!"
+        end
+
+        uk_alert(:warning) do
+          uk_alert_close_button()
+          alert_content_h3 "Warning!"
+        end
+
+        uk_alert(:danger) do
+          uk_alert_close_button()
+          alert_content_h3 "Danger!"
+        end
+
+        h2 "Animations"
+        uk_alert(animation: "uk-animation-scale-up", duration: 1000) do
+          uk_alert_close_link("#")
+          alert_content("Alert!")
+        end
+
+        uk_alert(:primary, animation: "uk-animation-scale-down") do
+          uk_alert_close_link("#")
+          alert_content("Primary!")
+        end
 
         h2 "Javascript Options"
         uk(:div, overflow(:auto)) do
@@ -184,7 +105,6 @@ defmodule UIKitDemo.Core.Component.Alert do
             ]
           )
         end
-
       end
     end
   end
