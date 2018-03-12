@@ -5,21 +5,19 @@ defmodule UIKitDemo.Core.Component.Close do
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Close"
-        end
+        h1 "Close"
         p do
-          a(href: "#", "uk-close": true)
+          uk_close_link(href: "#")
           " Link"
           br()
-          button(type: "button", "uk-close": true)
+          uk_close()
           " Button\n            "
         end
         p do
-          a(class: "uk-close-large", href: "#", "uk-close": true)
+          uk_close_link(:large, href: "#")
           " Link"
           br()
-          button(class: "uk-close-large", type: "button", "uk-close": true)
+          uk_close(:large) 
           " Button\n            "
         end
       end
