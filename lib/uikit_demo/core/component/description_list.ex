@@ -5,58 +5,31 @@ defmodule UIKitDemo.Core.Component.DescriptionList do
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Description List"
-        end
-        div(class: "uk-child-width-1-2@m", "uk-grid": true) do
+        h1 "Description List"
+
+        uk_grid(child_width("1-2@m")) do
           div do
-            h3 do
-              "Default"
-            end
-            dl(class: "uk-description-list") do
-              dt do
-                "Description term"
-              end
-              dd do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-              end
-              dt do
-                "Description term"
-              end
-              dd do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-              dt do
-                "Description term"
-              end
-              dd do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
+            h3 "Default"
+
+            uk_description_list() do
+              dt "Description term"
+              dd "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              dt "Description term"
+              dd "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              dt "Description term"
+              dd "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             end
           end
           div do
-            h3 do
-              "Divider"
-            end
-            dl(class: "uk-description-list uk-description-list-divider") do
-              dt do
-                "Description term"
-              end
-              dd do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-              end
-              dt do
-                "Description term"
-              end
-              dd do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
-              dt do
-                "Description term"
-              end
-              dd do
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              end
+            h3 "Divider"
+
+            uk_description_list(:divider) do
+              dt "Description term"
+              dd "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              dt "Description term"
+              dd "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              dt "Description term"
+              dd "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             end
           end
         end
