@@ -6,109 +6,88 @@ defmodule UIKitDemo.Core.Component.Countdown do
   def demo_content do
     taggart do
       uk_container do
-        h1 do
-          "Countdown"
-        end
-        h2 do
-          "Grid"
-        end
-        div(class: "uk-grid-small uk-child-width-auto uk-margin", "uk-grid": true, "js-countdown": true) do
+        h1 "Countdown"
+
+        h2 "Grid"
+        uk_grid(:small, child_width(:auto), margin(), attr("js-countdown": true)) do
           div do
-            div(class: "uk-countdown-number uk-countdown-days")
+            uk(:div, countdown_days())
           end
-          div(class: "uk-countdown-separator") do
-            ":"
-          end
+          uk(:div, countdown_separator(), do: ":")
           div do
-            div(class: "uk-countdown-number uk-countdown-hours")
+            uk(:div, countdown_hours())
           end
-          div(class: "uk-countdown-separator") do
-            ":"
-          end
+          uk(:div, countdown_separator(), do: ":")
           div do
-            div(class: "uk-countdown-number uk-countdown-minutes")
+            uk(:div, countdown_minutes())
           end
-          div(class: "uk-countdown-separator") do
-            ":"
-          end
+          uk(:div, countdown_separator(), do: ":")
           div do
-            div(class: "uk-countdown-number uk-countdown-seconds")
+            uk(:div, countdown_seconds())
           end
         end
-        div(class: "uk-grid-small uk-child-width-auto", "uk-grid": true, "js-countdown": true) do
+        uk_grid(:small, child_width(:auto), attr("js-countdown": true)) do
           div do
-            div(class: "uk-countdown-number uk-countdown-days")
-            div(class: "uk-countdown-label uk-margin-small uk-text-center uk-visible@s") do
+            uk(:div, countdown_days())
+            uk_countdown_label(margin(:small), text(:center), visible("@s")) do
               "Days"
             end
           end
-          div(class: "uk-countdown-separator") do
-            ":"
-          end
+          uk(:div, countdown_separator(), do: ":")
           div do
-            div(class: "uk-countdown-number uk-countdown-hours")
-            div(class: "uk-countdown-label uk-margin-small uk-text-center uk-visible@s") do
+            uk(:div, countdown_hours())
+            uk_countdown_label(margin(:small), text(:center), visible("@s")) do
               "Hours"
             end
           end
-          div(class: "uk-countdown-separator") do
-            ":"
-          end
+          uk(:div, countdown_separator(), do: ":")
           div do
-            div(class: "uk-countdown-number uk-countdown-minutes")
-            div(class: "uk-countdown-label uk-margin-small uk-text-center uk-visible@s") do
+            uk(:div, countdown_minutes())
+            uk_countdown_label(margin(:small), text(:center), visible("@s")) do
               "Minutes"
             end
           end
-          div(class: "uk-countdown-separator") do
-            ":"
-          end
+          uk(:div, countdown_separator(), do: ":")
           div do
-            div(class: "uk-countdown-number uk-countdown-seconds")
-            div(class: "uk-countdown-label uk-margin-small uk-text-center uk-visible@s") do
+            uk(:div, countdown_seconds())
+            uk_countdown_label(margin(:small), text(:center), visible("@s")) do
               "Seconds"
             end
           end
         end
-        h2 do
-          "Text"
+
+        h2 "Text"
+        uk_margin(attr("js-countdown": true)) do
+          uk_countdown_days(text(:middle), do: "")
+          uk_countdown_separator(text(:middle), do: ":")
+          uk_countdown_hours(text(:middle), do: "")
+          uk_countdown_separator(text(:middle), do: ":")
+          uk_countdown_minutes(text(:middle), do: "")
+          uk_countdown_separator(text(:middle), do: ":")
+          uk_countdown_seconds(text(:middle), do: "")
         end
-        div(class: "uk-margin", "js-countdown": true) do
-          span(class: "uk-countdown-number uk-countdown-days uk-text-middle")
-          span(class: "uk-countdown-separator uk-text-middle") do
-            ":"
-          end
-          span(class: "uk-countdown-number uk-countdown-hours uk-text-middle")
-          span(class: "uk-countdown-separator uk-text-middle") do
-            ":"
-          end
-          span(class: "uk-countdown-number uk-countdown-minutes uk-text-middle")
-          span(class: "uk-countdown-separator uk-text-middle") do
-            ":"
-          end
-          span(class: "uk-countdown-number uk-countdown-seconds uk-text-middle")
-        end
+
         div("js-countdown": true) do
-          span(class: "uk-countdown-number") do
-            span(class: "uk-countdown-days")
+          uk_countdown_number() do
+            uk_countdown_days()
             small do
               "d"
             end
           end
-          span(class: "uk-countdown-number") do
-            span(class: "uk-countdown-hours")
+          uk_countdown_number() do
+            uk_countdown_hours()
             small do
               "h"
             end
           end
-          span(class: "uk-countdown-number") do
-            span(class: "uk-countdown-minutes")
+          uk_countdown_number() do
+            uk_countdown_minutes()
             small do
               "m"
             end
           end
-          span(class: "uk-countdown-number") do
-            span(class: "uk-countdown-seconds")
+          uk_countdown_number() do
+            uk_countdown_seconds()
             small do
               "s"
             end

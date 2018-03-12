@@ -1,4 +1,4 @@
-defmodule UIKitDemo.Core.Layout.Comment do
+defmodule UIKitDemo.Core.Component.Comment do
   use Taggart.HTML, except: [table: 2]
   use UIKit 
   use UIKit
