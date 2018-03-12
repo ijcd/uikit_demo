@@ -70,7 +70,7 @@ defmodule UIKitDemo.Mixfile do
       {:cowboy, "~> 1.0"},
 
       # frontend
-      {:taggart, path: "~/work/ijcd/taggart"},
+      {:taggart, path: "~/work/taggart"},
       # {:uikit_ex, path: "~/work/ijcd/uikit_ex"},
 
       # {:macpato, "~> 0.1.2"},

@@ -74,7 +74,7 @@ defmodule UIKitDemo.Core.Component.Card do
               end
             end
             div do
-              div(class: "uk-card uk-card-hover") do
+              uk_card(:hover) do
                 uk_card_badge() do
                   "Hot"
                 end
@@ -119,7 +119,7 @@ defmodule UIKitDemo.Core.Component.Card do
           end
         end
       end
-      div(class: "uk-section uk-section-primary uk-section-small uk-preserve-color") do
+      uk_section(:primary, :small, preserve(:color)) do
         uk_container do
           uk_grid(child_width("1-3@m"), :match) do
             div do
@@ -149,7 +149,7 @@ defmodule UIKitDemo.Core.Component.Card do
           end
         end
       end
-      div(class: "uk-section uk-section-secondary uk-section-small uk-preserve-color") do
+      uk_section(:secondary, :small, preserve(:color)) do
         uk_container do
           uk_grid(child_width("1-3@m"), :match) do
             div do
@@ -179,8 +179,8 @@ defmodule UIKitDemo.Core.Component.Card do
           end
         end
       end
-      div(class: "uk-section-default ") do
-        div(class: "uk-section uk-section-small uk-background-cover", style: "background-image: url('/images/photo.jpg');") do
+      uk_section(:default) do
+        uk_section(:small, background(:cover), attr(style: "background-image: url('/images/photo.jpg');")) do
           uk_container do
             uk_grid(child_width("1-3@m"), :match) do
               div do
@@ -211,14 +211,12 @@ defmodule UIKitDemo.Core.Component.Card do
           end
         end
       end
-      div(class: "uk-container uk-margin-large-top") do
-        h2 do
-          "Media"
-        end
+      uk_container(margin(:large_top)) do
+        h2 "Media"
         uk_grid(child_width("1-4@m")) do
           div do
-            div(class: "uk-card uk-card-default") do
-              div(class: "uk-card-media-top") do
+            uk_card(:default) do
+              uk_card_media(:top) do
                 img(src: "/images/photo.jpg", alt: "")
               end
               uk_card_body() do
@@ -232,7 +230,7 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-default") do
+            uk_card(:default) do
               uk_card_body() do
                 uk_card_title() do
                   "Media Bottom"
@@ -241,14 +239,14 @@ defmodule UIKitDemo.Core.Component.Card do
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
                 end
               end
-              div(class: "uk-card-media-bottom") do
+              uk_card_media(:bottom) do
                 img(src: "/images/photo.jpg", alt: "")
               end
             end
           end
-          div(class: "uk-width-1-2@m") do
-            div(class: "uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin", "uk-grid": true) do
-              div(class: "uk-card-media-left uk-cover-container") do
+          uk_width("1-2@m") do
+            uk_card(:default, grid(:collapse), child_width("1-2@s"), margin()) do
+              uk_card_media(:left, cover_container()) do
                 img(src: "/images/photo.jpg", alt: "", "uk-cover": true)
                 canvas(width: "1800", height: "1200")
               end
@@ -257,14 +255,12 @@ defmodule UIKitDemo.Core.Component.Card do
                   uk_card_title() do
                     "Media Left"
                   end
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
-                  end
+                  p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
                 end
               end
             end
-            div(class: "uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin", "uk-grid": true) do
-              div(class: "uk-flex-last@s uk-card-media-right uk-cover-container") do
+            uk_card(:default, grid(:collapse), child_width("1-2@s"), margin()) do
+              uk_flex_last("@s", card_media(:right), cover_container()) do 
                 img(src: "/images/photo.jpg", alt: "", "uk-cover": true)
                 canvas(width: "1800", height: "1200")
               end
@@ -273,9 +269,7 @@ defmodule UIKitDemo.Core.Component.Card do
                   uk_card_title() do
                     "Media Right"
                   end
-                  p do
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
-                  end
+                  p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
                 end
               end
             end
@@ -286,19 +280,17 @@ defmodule UIKitDemo.Core.Component.Card do
         end
         uk_grid(child_width("1-4@m")) do
           div do
-            div(class: "uk-card uk-card-default") do
-              div(class: "uk-card-header") do
+            uk_card(:default) do
+              uk_card_header() do
                 uk_card_title() do
                   "Title"
                 end
               end
               uk_card_body() do
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                end
+                p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               end
-              div(class: "uk-card-footer") do
-                p(class: "uk-text-meta") do
+              uk_card_footer() do
+                uk_text(:meta) do
                   "Written by "
                   a(href: "#") do
                     "Super User"
@@ -313,8 +305,8 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-default") do
-              div(class: "uk-card-media-top") do
+            uk_card(:default) do
+              uk_card_media(:top) do
                 img(src: "/images/light.jpg", alt: "")
               end
               uk_card_body() do
@@ -325,12 +317,12 @@ defmodule UIKitDemo.Core.Component.Card do
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
                 end
               end
-              div(class: "uk-card-footer") do
+              uk_card_footer() do
                 p do
-                  a(class: "uk-button uk-button-primary", href: "#") do
+                  uk_button_link(:primary, href: "#") do
                     "Button"
                   end
-                  a(class: "uk-button uk-button-text uk-margin-small-left", href: "#") do
+                  uk_button_link(:text, margin(:small_left), href: "#") do
                     "Button"
                   end
                 end
@@ -338,8 +330,8 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-default") do
-              div(class: "uk-card-header") do
+            uk_card(:default) do
+              uk_card_header() do
                 uk_card_title() do
                   "Title"
                 end
@@ -349,23 +341,23 @@ defmodule UIKitDemo.Core.Component.Card do
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
                 end
               end
-              div(class: "uk-card-media-bottom") do
+              uk_card_media(:bottom) do
                 img(src: "/images/dark.jpg", alt: "")
               end
             end
           end
           div do
-            div(class: "uk-card uk-card-default") do
-              div(class: "uk-card-header") do
-                div(class: "uk-grid-small uk-flex-middle", "uk-grid": true) do
-                  div(class: "uk-width-auto") do
-                    img(class: "uk-border-circle", src: "/images/avatar.jpg", width: "50", alt: "")
+            uk_card(:default) do
+              uk_card_header() do
+                uk_grid(:small, flex(:middle)) do
+                  uk_width(:auto) do
+                    uk(:img, border(:circle), attr(src: "/images/avatar.jpg", width: "50", alt: ""))
                   end
-                  div(class: "uk-width-expand") do
-                    h3(class: "uk-card-title uk-margin-remove-bottom") do
+                  uk_width(:expand) do
+                    uk_card_title(margin(:remove_bottom)) do
                       "Title"
                     end
-                    p(class: "uk-text-meta uk-margin-remove-top") do
+                    uk_text(:meta, margin(:remove_top)) do
                       time(datetime: "2016-04-01T19:00") do
                         "April 01, 2016"
                       end
@@ -373,7 +365,7 @@ defmodule UIKitDemo.Core.Component.Card do
                   end
                 end
               end
-              div(class: "uk-card-media") do
+              uk_card_media() do
                 img(src: "/images/light.jpg", alt: "")
               end
               uk_card_body() do
@@ -389,18 +381,18 @@ defmodule UIKitDemo.Core.Component.Card do
         end
         uk_grid(child_width("1-4@m")) do
           div do
-            div(class: "uk-card uk-card-default uk-card-body") do
-              ul(class: "uk-nav uk-nav-default") do
-                li(class: "uk-active") do
+            uk_card(:default, :body) do
+              uk_nav(:default) do
+                uk(:li, active()) do
                   a(href: "#") do
                     "Active"
                   end
                 end
-                li(class: "uk-parent") do
+                uk(:li, parent()) do
                   a(href: "#") do
                     "Parent"
                   end
-                  ul(class: "uk-nav-sub") do
+                  uk_nav_sub() do
                     li do
                       a(href: "#") do
                         "Sub item"
@@ -413,25 +405,25 @@ defmodule UIKitDemo.Core.Component.Card do
                     end
                   end
                 end
-                li(class: "uk-nav-header") do
+                uk_nav_header() do
                   "Header"
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                    uk_icon(:table, margin(:small_right))
                     " Item"
                   end
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                    uk_icon(:thumbnails, margin(:small_right))
                     " Item"
                   end
                 end
-                li(class: "uk-nav-divider")
+                uk_nav_divider()
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                    uk_icon(:trash, margin(:small_right))
                     " Item"
                   end
                 end
@@ -439,21 +431,21 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-primary uk-card-body") do
+            uk_card(:primary, :body) do
               uk_card_title() do
                 "Title"
               end
-              ul(class: "uk-nav uk-nav-default") do
-                li(class: "uk-active") do
+              uk_nav(:default) do
+                uk(:li, active()) do
                   a(href: "#") do
                     "Active"
                   end
                 end
-                li(class: "uk-parent") do
+                uk(:li, parent()) do
                   a(href: "#") do
                     "Parent"
                   end
-                  ul(class: "uk-nav-sub") do
+                  uk_nav_sub() do
                     li do
                       a(href: "#") do
                         "Sub item"
@@ -466,25 +458,25 @@ defmodule UIKitDemo.Core.Component.Card do
                     end
                   end
                 end
-                li(class: "uk-nav-header") do
+                uk_nav_header() do
                   "Header"
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                    uk_icon(:table, margin(:small_right))
                     " Item"
                   end
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                    uk_icon(:thumbnails, margin(:small_right))
                     " Item"
                   end
                 end
-                li(class: "uk-nav-divider")
+                uk_nav_divider()
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                    uk_icon(:trash, margin(:small_right))
                     " Item"
                   end
                 end
@@ -492,24 +484,24 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-default") do
-              div(class: "uk-card-header") do
+            uk_card(:default) do
+              uk_card_header() do
                 uk_card_title() do
                   "Title"
                 end
               end
               uk_card_body() do
-                ul(class: "uk-nav uk-nav-default") do
-                  li(class: "uk-active") do
+                uk_nav(:default) do
+                  uk(:li, active()) do
                     a(href: "#") do
                       "Active"
                     end
                   end
-                  li(class: "uk-parent") do
+                  uk(:li, parent()) do
                     a(href: "#") do
                       "Parent"
                     end
-                    ul(class: "uk-nav-sub") do
+                    uk_nav_sub() do
                       li do
                         a(href: "#") do
                           "Sub item"
@@ -522,32 +514,32 @@ defmodule UIKitDemo.Core.Component.Card do
                       end
                     end
                   end
-                  li(class: "uk-nav-header") do
+                  uk_nav_header() do
                     "Header"
                   end
                   li do
                     a(href: "#") do
-                      span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                      uk_icon(:table, margin(:small_right))
                       " Item"
                     end
                   end
                   li do
                     a(href: "#") do
-                      span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                      uk_icon(:thumbnails, margin(:small_right))
                       " Item"
                     end
                   end
-                  li(class: "uk-nav-divider")
+                  uk_nav_divider()
                   li do
                     a(href: "#") do
-                      span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                      uk_icon(:trash, margin(:small_right))
                       " Item"
                     end
                   end
                 end
               end
-              div(class: "uk-card-footer") do
-                p(class: "uk-text-meta") do
+              uk_card_footer() do
+                uk_text(:meta) do
                   "Written by "
                   a(href: "#") do
                     "Super User"
@@ -562,22 +554,22 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-secondary") do
-              div(class: "uk-card-media-top") do
+            uk_card(:secondary) do
+              uk_card_media(:top) do
                 img(src: "/images/dark.jpg", alt: "")
               end
               uk_card_body() do
-                ul(class: "uk-nav uk-nav-default") do
-                  li(class: "uk-active") do
+                uk_nav(:default) do
+                  uk(:li, active()) do
                     a(href: "#") do
                       "Active"
                     end
                   end
-                  li(class: "uk-parent") do
+                  uk(:li, parent()) do
                     a(href: "#") do
                       "Parent"
                     end
-                    ul(class: "uk-nav-sub") do
+                    uk_nav_sub() do
                       li do
                         a(href: "#") do
                           "Sub item"
@@ -590,31 +582,31 @@ defmodule UIKitDemo.Core.Component.Card do
                       end
                     end
                   end
-                  li(class: "uk-nav-header") do
+                  uk_nav_header() do
                     "Header"
                   end
                   li do
                     a(href: "#") do
-                      span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                      uk_icon(:table, margin(:small_right))
                       " Item"
                     end
                   end
                   li do
                     a(href: "#") do
-                      span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                      uk_icon(:thumbnails, margin(:small_right))
                       " Item"
                     end
                   end
-                  li(class: "uk-nav-divider")
+                  uk_nav_divider()
                   li do
                     a(href: "#") do
-                      span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                      uk_icon(:trash, margin(:small_right))
                       " Item"
                     end
                   end
                 end
               end
-              div(class: "uk-card-media-bottom") do
+              uk_card_media(:bottom) do
                 img(src: "/images/dark.jpg", alt: "")
               end
             end
@@ -625,19 +617,17 @@ defmodule UIKitDemo.Core.Component.Card do
         end
         uk_grid(child_width("1-4@m")) do
           div do
-            div(class: "uk-card uk-card-default uk-card-small") do
-              div(class: "uk-card-header") do
+            uk_card(:default, :small) do
+              uk_card_header() do
                 uk_card_title() do
                   "Title"
                 end
               end
               uk_card_body() do
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                end
+                p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               end
-              div(class: "uk-card-footer") do
-                p(class: "uk-text-meta") do
+              uk_card_footer() do
+                uk_text(:meta) do
                   "Written by "
                   a(href: "#") do
                     "Super User"
@@ -652,8 +642,8 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-default uk-card-small") do
-              div(class: "uk-card-media-top") do
+            uk_card(:default, :small) do
+              uk_card_media(:top) do
                 img(src: "/images/light.jpg", alt: "")
               end
               uk_card_body() do
@@ -667,18 +657,18 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-default uk-card-body uk-card-small") do
-              ul(class: "uk-nav uk-nav-default") do
-                li(class: "uk-active") do
+            uk_card(:default, :body, :small) do
+              uk_nav(:default) do
+                uk(:li, active()) do
                   a(href: "#") do
                     "Active"
                   end
                 end
-                li(class: "uk-parent") do
+                uk(:li, parent()) do
                   a(href: "#") do
                     "Parent"
                   end
-                  ul(class: "uk-nav-sub") do
+                  uk_nav_sub() do
                     li do
                       a(href: "#") do
                         "Sub item"
@@ -691,25 +681,25 @@ defmodule UIKitDemo.Core.Component.Card do
                     end
                   end
                 end
-                li(class: "uk-nav-header") do
+                uk_nav_header() do
                   "Header"
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                    uk_icon(:table, margin(:small_right))
                     " Item"
                   end
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                    uk_icon(:thumbnails, margin(:small_right))
                     " Item"
                   end
                 end
-                li(class: "uk-nav-divider")
+                uk_nav_divider()
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                    uk_icon(:trash, margin(:small_right))
                     " Item"
                   end
                 end
@@ -717,21 +707,21 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-default uk-card-body uk-card-small") do
+            uk_card(:default, :body, :small) do
               uk_card_title() do
                 "Title"
               end
-              ul(class: "uk-nav uk-nav-default") do
-                li(class: "uk-active") do
+              uk_nav(:default) do
+                uk(:li, active()) do
                   a(href: "#") do
                     "Active"
                   end
                 end
-                li(class: "uk-parent") do
+                uk(:li, parent()) do
                   a(href: "#") do
                     "Parent"
                   end
-                  ul(class: "uk-nav-sub") do
+                  uk_nav_sub() do
                     li do
                       a(href: "#") do
                         "Sub item"
@@ -744,25 +734,25 @@ defmodule UIKitDemo.Core.Component.Card do
                     end
                   end
                 end
-                li(class: "uk-nav-header") do
+                uk_nav_header() do
                   "Header"
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                    uk_icon(:table, margin(:small_right))
                     " Item"
                   end
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                    uk_icon(:thumbnails, margin(:small_right))
                     " Item"
                   end
                 end
-                li(class: "uk-nav-divider")
+                uk_nav_divider()
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                    uk_icon(:trash, margin(:small_right))
                     " Item"
                   end
                 end
@@ -773,21 +763,19 @@ defmodule UIKitDemo.Core.Component.Card do
         h2 do
           "Large"
         end
-        div(class: "uk-child-width-1-2@m", "uk-grid": true) do
+        uk_grid(child_width("1-2@m")) do
           div do
-            div(class: "uk-card uk-card-default uk-card-large") do
-              div(class: "uk-card-header") do
+            uk_card(:default, :large) do
+              uk_card_header() do
                 uk_card_title() do
                   "Title"
                 end
               end
               uk_card_body() do
-                p do
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                end
+                p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               end
-              div(class: "uk-card-footer") do
-                p(class: "uk-text-meta") do
+              uk_card_footer() do
+                uk_text(:meta) do
                   "Written by "
                   a(href: "#") do
                     "Super User"
@@ -802,8 +790,8 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-default uk-card-large") do
-              div(class: "uk-card-media-top") do
+            uk_card(:default, :large) do
+              uk_card_media(:top) do
                 img(src: "/images/light.jpg", alt: "")
               end
               uk_card_body() do
@@ -817,18 +805,18 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-default uk-card-body uk-card-large") do
-              ul(class: "uk-nav uk-nav-default") do
-                li(class: "uk-active") do
+            uk_card(:default, :body, :large) do
+              uk_nav(:default) do
+                uk(:li, active()) do
                   a(href: "#") do
                     "Active"
                   end
                 end
-                li(class: "uk-parent") do
+                uk(:li, parent()) do
                   a(href: "#") do
                     "Parent"
                   end
-                  ul(class: "uk-nav-sub") do
+                  uk_nav_sub() do
                     li do
                       a(href: "#") do
                         "Sub item"
@@ -841,25 +829,25 @@ defmodule UIKitDemo.Core.Component.Card do
                     end
                   end
                 end
-                li(class: "uk-nav-header") do
+                uk_nav_header() do
                   "Header"
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                    uk_icon(:table, margin(:small_right))
                     " Item"
                   end
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                    uk_icon(:thumbnails, margin(:small_right))
                     " Item"
                   end
                 end
-                li(class: "uk-nav-divider")
+                uk_nav_divider()
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                    uk_icon(:trash, margin(:small_right))
                     " Item"
                   end
                 end
@@ -867,21 +855,21 @@ defmodule UIKitDemo.Core.Component.Card do
             end
           end
           div do
-            div(class: "uk-card uk-card-default uk-card-body uk-card-large") do
+            uk_card(:default, :body, :large) do
               uk_card_title() do
                 "Title"
               end
-              ul(class: "uk-nav uk-nav-default") do
-                li(class: "uk-active") do
+              uk_nav(:default) do
+                uk(:li, active()) do
                   a(href: "#") do
                     "Active"
                   end
                 end
-                li(class: "uk-parent") do
+                uk(:li, parent()) do
                   a(href: "#") do
                     "Parent"
                   end
-                  ul(class: "uk-nav-sub") do
+                  uk_nav_sub() do
                     li do
                       a(href: "#") do
                         "Sub item"
@@ -894,25 +882,25 @@ defmodule UIKitDemo.Core.Component.Card do
                     end
                   end
                 end
-                li(class: "uk-nav-header") do
+                uk_nav_header() do
                   "Header"
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: table")
+                    uk_icon(:table, margin(:small_right))
                     " Item"
                   end
                 end
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: thumbnails")
+                    uk_icon(:thumbnails, margin(:small_right))
                     " Item"
                   end
                 end
-                li(class: "uk-nav-divider")
+                uk_nav_divider()
                 li do
                   a(href: "#") do
-                    span(class: "uk-margin-small-right", "uk-icon": "icon: trash")
+                    uk_icon(:trash, margin(:small_right))
                     " Item"
                   end
                 end
